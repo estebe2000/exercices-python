@@ -1,0 +1,380 @@
+Première Générale
+1. Représentation des données : types et valeurs de base
+•
+Thème 1 : Conversion de bases numériques
+◦
+Niveau 1 : Écrire une fonction qui convertit un nombre entier positif de la base 10 vers la base 2.
+◦
+Niveau 2 : Écrire une fonction qui convertit un nombre entier positif de la base b1 vers la base b2 (où b1 et b2 sont comprises entre 2 et 16).
+•
+Thème 2 : Arithmétique binaire
+◦
+Niveau 1 : Écrire une fonction qui additionne deux nombres binaires représentés sous forme de chaînes de caractères.
+◦
+Niveau 2 : Écrire une fonction qui effectue la multiplication de deux nombres binaires représentés sous forme de chaînes de caractères.
+•
+Thème 3 : Représentation des entiers relatifs (complément à deux)
+◦
+Niveau 1 : Écrire une fonction qui prend un entier relatif et le représente sur N bits en complément à deux (si possible).
+◦
+Niveau 2 : Écrire une fonction qui prend une représentation binaire en complément à deux sur N bits et renvoie l'entier relatif correspondant.
+•
+Thème 4 : Manipulation de chaînes de caractères (encodage)
+◦
+Niveau 1 : Écrire une fonction qui prend une chaîne de caractères et affiche les codes ASCII de chaque caractère.
+◦
+Niveau 2 : Écrire une fonction qui convertit une chaîne de caractères en une liste de sa représentation binaire (en utilisant l'encodage UTF-8 par exemple).
+•
+Thème 5 : Valeurs booléennes et expressions logiques
+◦
+Niveau 1 : Évaluer manuellement puis en Python des expressions booléennes simples utilisant and, or, not.
+◦
+Niveau 2 : Écrire une fonction qui prend une expression booléenne sous forme de chaîne de caractères (avec des variables) et un dictionnaire de valeurs pour les variables, et évalue l'expression.
+2. Représentation des données : types construits
+•
+Thème 1 : Manipulation de p-uplets
+◦
+Niveau 1 : Écrire une fonction qui prend un p-uplet de coordonnées (x, y) et renvoie la distance à l'origine.
+◦
+Niveau 2 : Écrire une fonction qui prend une liste de p-uplets de coordonnées et renvoie le p-uplet représentant le centre de gravité.
+•
+Thème 2 : Utilisation de tableaux (listes en Python)
+◦
+Niveau 1 : Écrire une fonction qui recherche un élément dans un tableau et renvoie son index (ou -1 s'il n'est pas trouvé).
+◦
+Niveau 2 : Écrire une fonction qui inverse l'ordre des éléments d'un tableau sans utiliser de tableau auxiliaire.
+•
+Thème 3 : Tableaux en compréhension
+◦
+Niveau 1 : Générer un tableau des carrés des nombres pairs entre 0 et N en utilisant la compréhension.
+◦
+Niveau 2 : Générer un tableau de toutes les combinaisons possibles de deux dés à 6 faces en utilisant la compréhension.
+•
+Thème 4 : Manipulation de dictionnaires
+◦
+Niveau 1 : Écrire une fonction qui compte la fréquence d'apparition de chaque lettre dans une chaîne de caractères en utilisant un dictionnaire.
+◦
+Niveau 2 : Écrire une fonction qui prend deux dictionnaires et renvoie un nouveau dictionnaire contenant les clés communes avec la somme de leurs valeurs (si la clé est présente dans les deux dictionnaires).
+•
+Thème 5 : Représentation de matrices avec des tableaux de tableaux
+◦
+Niveau 1 : Écrire une fonction qui calcule la transposée d'une matrice représentée par un tableau de tableaux.
+◦
+Niveau 2 : Écrire une fonction qui effectue la multiplication de deux matrices représentées par des tableaux de tableaux.
+3. Traitement de données en tables
+•
+Thème 1 : Lecture et parcours de fichiers CSV
+◦
+Niveau 1 : Écrire une fonction qui lit un fichier CSV simple (séparateur ';', sans en-tête) et affiche chaque ligne.
+◦
+Niveau 2 : Écrire une fonction qui lit un fichier CSV (séparateur ';', avec en-tête) et renvoie une liste de dictionnaires, où chaque dictionnaire représente une ligne avec les noms des colonnes comme clés.
+•
+Thème 2 : Filtrage de données dans une table
+◦
+Niveau 1 : Écrire une fonction qui prend une liste de dictionnaires (représentant une table) et un critère (par exemple, une valeur pour une clé), et renvoie une nouvelle liste contenant uniquement les dictionnaires qui satisfont le critère.
+◦
+Niveau 2 : Étendre la fonction précédente pour permettre des critères plus complexes (combinaison de plusieurs conditions avec and, or).
+•
+Thème 3 : Tri de tables
+◦
+Niveau 1 : Écrire une fonction qui prend une liste de dictionnaires et une clé, et renvoie une nouvelle liste triée selon les valeurs de cette clé.
+◦
+Niveau 2 : Étendre la fonction précédente pour permettre un tri selon plusieurs clés (primaire et secondaire).
+•
+Thème 4 : Fusion de deux tables
+◦
+Niveau 1 : Écrire une fonction qui prend deux listes de dictionnaires (représentant deux tables avec une clé commune) et effectue une jointure simple basée sur l'égalité des valeurs de cette clé, renvoyant une nouvelle liste de dictionnaires.
+◦
+Niveau 2 : Étendre la fonction précédente pour gérer les cas où une clé n'est pas présente dans les deux tables (jointure externe).
+•
+Thème 5 : Calculs statistiques simples sur des données tabulées
+◦
+Niveau 1 : Écrire une fonction qui prend une liste de dictionnaires (avec une clé numérique) et renvoie la moyenne des valeurs de cette clé.
+◦
+Niveau 2 : Étendre la fonction précédente pour calculer la médiane des valeurs d'une clé numérique.
+4. Interactions entre l’homme et la machine sur le Web
+•
+Thème 1 : Analyse d'une URL
+◦
+Niveau 1 : Écrire une fonction qui prend une URL et affiche ses différentes parties (protocole, nom de domaine, chemin).
+◦
+Niveau 2 : Écrire une fonction qui prend une URL et renvoie un dictionnaire contenant ses différents composants, y compris les paramètres de la requête s'il y en a.
+•
+Thème 2 : Simulation de requêtes HTTP (GET simple)
+◦
+Niveau 1 : Simuler l'envoi d'une requête GET simple (sans paramètres) et la réception d'une réponse basique (chaîne de caractères).
+◦
+Niveau 2 : Simuler l'envoi d'une requête GET avec des paramètres et la construction d'une réponse conditionnelle en fonction de ces paramètres.
+•
+Thème 3 : Analyse de code HTML simple
+◦
+Niveau 1 : Écrire une fonction qui prend une chaîne de caractères représentant du HTML simple et compte le nombre d'occurrences d'une balise donnée.
+◦
+Niveau 2 : Écrire une fonction qui prend une chaîne de caractères représentant du HTML simple et extrait le texte contenu entre deux balises spécifiques.
+•
+Thème 4 : Événements (simulation simple)
+◦
+Niveau 1 : Simuler la gestion d'un événement de clic sur un bouton (par exemple, afficher un message).
+◦
+Niveau 2 : Simuler la gestion de plusieurs événements (clic, survol de souris) sur différents éléments d'une page (représentée par des chaînes de caractères ou des dictionnaires).
+•
+Thème 5 : Formulaires (analyse simple)
+◦
+Niveau 1 : Écrire une fonction qui prend une chaîne de caractères représentant un formulaire HTML simple (méthode GET) et extrait les noms des champs.
+◦
+Niveau 2 : Simuler la soumission d'un formulaire GET avec des données et construire la chaîne de requête correspondante.
+5. Architectures matérielles et systèmes d’exploitation
+•
+Thème 1 : Représentation binaire et opérations logiques (en lien avec les circuits)
+◦
+Niveau 1 : Simuler le fonctionnement des portes logiques AND, OR, NOT en Python avec des entrées binaires.
+◦
+Niveau 2 : Écrire une fonction qui simule le fonctionnement d'un demi-additionneur ou d'un additionneur complet à partir de portes logiques simulées.
+•
+Thème 2 : Architecture de von Neumann (simulation simplifiée)
+◦
+Niveau 1 : Simuler une petite mémoire (tableau) et un registre. Écrire une courte séquence d'instructions (addition, chargement) et simuler son exécution pas à pas en affichant l'état de la mémoire et du registre.
+◦
+Niveau 2 : Étendre le simulateur pour inclure un compteur de programme (IP) et simuler l'exécution de boucles simples (en utilisant des sauts conditionnels).
+•
+Thème 3 : Systèmes d'exploitation (concepts)
+◦
+Niveau 1 : Simuler la création de plusieurs "processus" (représentés par des dictionnaires avec un état) et leur passage à l'état "prêt".
+◦
+Niveau 2 : Simuler un ordonnancement simple de type "premier arrivé, premier servi" (FIFO) pour les processus.
+•
+Thème 4 : Réseaux (adressage IP simple)
+◦
+Niveau 1 : Écrire une fonction qui détermine si deux adresses IPv4 appartiennent au même réseau étant donné leur adresse et leur masque (en notation CIDR /24 par exemple).
+◦
+Niveau 2 : Simuler l'envoi d'un paquet d'une machine à une autre sur un réseau simple (sans routage), en vérifiant l'adresse de destination.
+•
+Thème 5 : Systèmes sur puce (concepts)
+◦
+Niveau 1 : Imaginer et décrire en Python une classe représentant un composant simple d'un SoC (par exemple, un capteur avec des attributs et des méthodes de lecture).
+◦
+Niveau 2 : Créer plusieurs instances de ces classes et simuler leur interaction simple au sein d'un système (par exemple, un capteur envoie des données à un processeur qui les traite).
+6. Langages et programmation
+•
+Thème 1 : Diversité des langages (comparaison de structures)
+◦
+Niveau 1 : Étudier un même algorithme simple écrit en Python et dans un autre langage (fourni), en identifiant les structures de contrôle équivalentes (boucles, conditions).
+◦
+Niveau 2 : Écrire une fonction Python en s'inspirant de la structure d'un algorithme donné dans un autre langage (avec des différences syntaxiques).
+•
+Thème 2 : Spécification et documentation
+◦
+Niveau 1 : Écrire la docstring d'une fonction simple en précisant les préconditions et postconditions.
+◦
+Niveau 2 : Utiliser des assertions dans une fonction pour vérifier les préconditions et postconditions.
+•
+Thème 3 : Mise au point et gestion des bugs
+◦
+Niveau 1 : Identifier et corriger des erreurs syntaxiques et logiques simples dans un code Python donné.
+◦
+Niveau 2 : Utiliser des techniques de débogage (affichage de variables, pas à pas mental) pour trouver la cause d'un bug dans un programme plus complexe.
+•
+Thème 4 : Modularité (utilisation de bibliothèques)
+◦
+Niveau 1 : Utiliser des fonctions de la bibliothèque math pour résoudre des problèmes simples.
+◦
+Niveau 2 : Utiliser des fonctions de la bibliothèque random pour simuler des événements aléatoires.
+•
+Thème 5 : Paradigmes de programmation (impératif)
+◦
+Niveau 1 : Écrire des programmes simples en utilisant uniquement des instructions séquentielles, des conditions et des boucles (programmation impérative de base).
+◦
+Niveau 2 : Transformer un algorithme itératif simple en utilisant plusieurs niveaux d'imbrication de boucles et de conditions.
+7. Algorithmique
+•
+Thème 1 : Parcours séquentiel de tableaux
+◦
+Niveau 1 : Écrire une fonction qui calcule la somme des éléments d'un tableau.
+◦
+Niveau 2 : Écrire une fonction qui recherche le plus grand élément dans un tableau et renvoie sa valeur et son index.
+•
+Thème 2 : Tris (insertion et sélection)
+◦
+Niveau 1 : Implémenter le tri par insertion.
+◦
+Niveau 2 : Implémenter le tri par sélection.
+•
+Thème 3 : Recherche dichotomique
+◦
+Niveau 1 : Implémenter la recherche dichotomique dans un tableau trié.
+◦
+Niveau 2 : Modifier la recherche dichotomique pour renvoyer la première occurrence d'un élément s'il est présent plusieurs fois.
+•
+Thème 4 : Algorithmes gloutons
+◦
+Niveau 1 : Résoudre le problème du rendu de monnaie avec un système de pièces canonique en utilisant un algorithme glouton.
+◦
+Niveau 2 : Essayer de résoudre le problème du sac à dos (version fractionnable) avec un algorithme glouton basé sur le rapport valeur/poids.
+•
+Thème 5 : Algorithme des k plus proches voisins (introduction)
+◦
+Niveau 1 : Pour une donnée à deux dimensions et un ensemble de données labellisées (également à deux dimensions), calculer la distance euclidienne aux k plus proches voisins.
+◦
+Niveau 2 : Implémenter une version simplifiée de l'algorithme des k plus proches voisins pour classer une nouvelle donnée (la classe majoritaire parmi les k plus proches voisins est attribuée).
+Terminale Générale
+1. Structures de données
+•
+Thème 1 : Listes (chaînées - simulation)
+◦
+Niveau 1 : Simuler en Python une liste chaînée simple avec les opérations ajout_tete, suppression_tete, est_vide. Utiliser des dictionnaires ou des classes simples pour représenter les nœuds.
+◦
+Niveau 2 : Ajouter à la simulation les opérations ajout_queue, suppression_queue, et la gestion d'une taille.
+•
+Thème 2 : Piles
+◦
+Niveau 1 : Implémenter une pile en Python en utilisant une liste Python sous-jacente, avec les opérations empiler, depiler, est_vide, sommet.
+◦
+Niveau 2 : Utiliser la pile pour vérifier si une chaîne de caractères contenant des parenthèses est correctement équilibrée.
+•
+Thème 3 : Files
+◦
+Niveau 1 : Implémenter une file en Python en utilisant une liste Python sous-jacente, avec les opérations enfiler, défiler, est_vide, tete.
+◦
+Niveau 2 : Utiliser la file pour simuler une file d'attente (par exemple, des tâches à traiter).
+•
+Thème 4 : Arbres binaires
+◦
+Niveau 1 : Implémenter une classe Noeud pour représenter un nœud d'arbre binaire (valeur, fils gauche, fils droit). Écrire une fonction récursive pour calculer la taille d'un arbre binaire.
+◦
+Niveau 2 : Écrire des fonctions récursives pour effectuer les parcours infixe, préfixe et suffixe d'un arbre binaire.
+•
+Thème 5 : Arbres binaires de recherche (ABR)
+◦
+Niveau 1 : Implémenter une fonction pour rechercher une clé dans un ABR.
+◦
+Niveau 2 : Implémenter une fonction pour insérer une clé dans un ABR en respectant la propriété.
+2. Bases de données
+•
+Thème 1 : Modèle relationnel (représentation Python)
+◦
+Niveau 1 : Représenter une relation sous forme de liste de dictionnaires en Python. Identifier la clé primaire.
+◦
+Niveau 2 : Vérifier si une clé primaire est respectée dans une relation représentée en Python (pas de doublons).
+•
+Thème 2 : Requêtes SELECT simples (simulation Python)
+◦
+Niveau 1 : Écrire une fonction Python qui prend une relation (liste de dictionnaires) et une condition simple (égalité sur un attribut) et renvoie une nouvelle relation contenant les tuples satisfaisant la condition.
+◦
+Niveau 2 : Étendre la fonction précédente pour gérer des conditions combinées avec and et or.
+•
+Thème 3 : Jointures (simulation Python)
+◦
+Niveau 1 : Écrire une fonction Python qui effectue une jointure interne entre deux relations (listes de dictionnaires) sur une clé commune.
+◦
+Niveau 2 : Étendre la fonction précédente pour simuler une jointure externe gauche.
+•
+Thème 4 : Agrégation (simulation Python)
+◦
+Niveau 1 : Écrire une fonction Python qui calcule l'agrégation COUNT ou SUM sur un attribut d'une relation.
+◦
+Niveau 2 : Écrire une fonction Python qui simule l'effet d'un GROUP BY suivi d'une agrégation.
+•
+Thème 5 : Mise à jour de données (simulation Python)
+◦
+Niveau 1 : Écrire une fonction Python qui simule l'effet d'une requête UPDATE simple (modification de la valeur d'un attribut pour tous les tuples).
+◦
+Niveau 2 : Étendre la fonction précédente pour permettre une clause WHERE pour ne mettre à jour que certains tuples.
+3. Architectures matérielles, systèmes d’exploitation et réseaux
+•
+Thème 1 : Systèmes sur puce (SoC - simulation)
+◦
+Niveau 1 : Définir en Python des classes pour différents composants d'un SoC (CPU, mémoire, périphérique) avec des attributs et des interactions simples (échange de données).
+◦
+Niveau 2 : Simuler le fonctionnement d'un SoC simplifié où le CPU exécute une séquence d'instructions en interagissant avec la mémoire et un périphérique.
+•
+Thème 2 : Gestion des processus (simulation)
+◦
+Niveau 1 : Simuler les états de base d'un processus (prêt, élu, bloqué) et les transitions entre eux.
+◦
+Niveau 2 : Implémenter une simulation simple d'ordonnanceur (round robin avec un quantum de temps fixe).
+•
+Thème 3 : Interblocage (simulation)
+◦
+Niveau 1 : Simuler l'acquisition et la libération de ressources par plusieurs processus.
+◦
+Niveau 2 : Simuler une situation simple d'interblocage (deux processus ayant besoin de deux ressources acquises dans un ordre différent).
+•
+Thème 4 : Protocoles de routage (RIP - simulation simplifiée)
+◦
+Niveau 1 : Simuler l'échange de tables de routage entre deux routeurs voisins selon le principe de RIP (mise à jour des métriques - nombre de sauts).
+◦
+Niveau 2 : Étendre la simulation à un réseau linéaire de trois routeurs.
+•
+Thème 5 : Sécurisation des communications (chiffrement symétrique simple)
+◦
+Niveau 1 : Implémenter le chiffre de César en Python.
+◦
+Niveau 2 : Implémenter le chiffre de Vernam (XOR avec une clé de même longueur) pour des données binaires (chaînes de '0' et '1').
+4. Langages et programmation
+•
+Thème 1 : Calculabilité (illustration)
+◦
+Niveau 1 : Illustrer l'idée qu'un même algorithme peut être implémenté en Python de différentes manières.
+◦
+Niveau 2 : Tenter (sans preuve formelle) de montrer les limites de la calculabilité en considérant des problèmes apparemment simples mais potentiellement infinis (par exemple, générer tous les nombres premiers).
+•
+Thème 2 : Récursivité
+◦
+Niveau 1 : Écrire des fonctions récursives simples (factorielle, puissance).
+◦
+Niveau 2 : Écrire des fonctions récursives pour résoudre des problèmes comme les tours de Hanoï ou le calcul du PGCD.
+•
+Thème 3 : Modularité et API
+◦
+Niveau 1 : Créer un module Python simple contenant quelques fonctions et l'importer dans un autre programme.
+◦
+Niveau 2 : Utiliser des fonctions de l'API requests pour récupérer des données simples depuis une URL (JSON basique) et les afficher.
+•
+Thème 4 : Paradigmes (fonctionnel - introduction)
+◦
+Niveau 1 : Utiliser les fonctions map et filter avec des fonctions simples (définies classiquement) sur des listes.
+◦
+Niveau 2 : Utiliser des expressions lambda avec map et filter.
+•
+Thème 5 : Mise au point avancée
+◦
+Niveau 1 : Utiliser un débogueur simple (comme celui intégré à un IDE ou pdb en ligne de commande) pour suivre l'exécution d'un programme et examiner les valeurs des variables.
+◦
+Niveau 2 : Identifier et corriger des bugs complexes impliquant plusieurs fonctions et structures de données.
+5. Algorithmique
+•
+Thème 1 : Algorithmes sur les arbres binaires
+◦
+Niveau 1 : Implémenter des fonctions (récursives ou itératives) pour calculer la taille et la hauteur d'un ABR.
+◦
+Niveau 2 : Implémenter les parcours infixe, préfixe et suffixe d'un ABR et les utiliser pour vérifier la propriété d'ordre de l'infixe.
+•
+Thème 2 : Algorithmes sur les graphes (parcours)
+◦
+Niveau 1 : Implémenter un parcours en largeur (BFS) d'un graphe représenté par un dictionnaire de listes d'adjacence.
+◦
+Niveau 2 : Implémenter un parcours en profondeur (DFS) d'un graphe.
+•
+Thème 3 : Algorithmes sur les graphes (détection de cycles et chemins)
+◦
+Niveau 1 : Écrire une fonction qui détecte la présence d'un cycle dans un graphe non orienté (parcours avec marquage).
+◦
+Niveau 2 : Écrire une fonction qui trouve un chemin entre deux sommets dans un graphe (parcours).
+•
+Thème 4 : Diviser pour régner
+◦
+Niveau 1 : Implémenter l'algorithme de tri fusion.
+◦
+Niveau 2 : Implémenter une version récursive de la recherche du maximum dans une liste en utilisant la méthode "diviser pour régner".
+•
+Thème 5 : Programmation dynamique (introduction)
+◦
+Niveau 1 : Résoudre le problème du rendu de monnaie en utilisant une approche de programmation dynamique (mémoïsation).
+◦
+Niveau 2 : Résoudre le problème du sac à dos (version 0/1) pour une petite instance en utilisant la programmation dynamique (tableau 2D).
+•
+Thème 6 : Recherche textuelle (Boyer-Moore simplifié - Hors programme explicite mais peut être introduit)
+◦
+Niveau 1 : Implémenter une version naïve de la recherche d'un motif dans un texte.
+◦
+Niveau 2 : Implémenter la version simplifiée de l'algorithme de Boyer-Moore (algorithme de Horspool).

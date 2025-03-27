@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Service pour l'application Flask
+  app:
+    build: .
+    container_name: exercices-python-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_SECRET_KEY=${FLASK_SECRET_KEY:-exercices_python_secret_key}
+      - LOCALAI_URL=http://localai:8080/v1/chat/completions
+      - LOCALAI_MODEL=mistral-7b-instruct-v0.3
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - localai
+    networks:
+      - app-network
+
+  # Service pour LocalAI
+  localai:
+    image: localai/localai:latest
+    container_name: exercices-python-localai
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./localai-models:/models
+    environment:
+      - MODELS_PATH=/models
+      - PRELOAD_MODELS=mistral-7b-instruct-v0.3
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  localai-models:
+    driver: local

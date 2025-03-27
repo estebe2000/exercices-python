@@ -1,0 +1,136 @@
+{
+  "Première Générale": [
+    {
+      "thème": "Conversion de bases numériques",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Écrire une fonction qui convertit un nombre entier positif de la base 10 vers la base 2."
+        },
+        {
+          "niveau": 2,
+          "description": "Écrire une fonction qui convertit un nombre entier positif de la base b1 vers la base b2 (où b1 et b2 sont comprises entre 2 et 16)."
+        }
+      ]
+    },
+    {
+      "thème": "Arithmétique binaire",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Écrire une fonction qui additionne deux nombres binaires représentés sous forme de chaînes de caractères."
+        },
+        {
+          "niveau": 2,
+          "description": "Écrire une fonction qui effectue la multiplication de deux nombres binaires représentés sous forme de chaînes de caractères."
+        }
+      ]
+    },
+    {
+      "thème": "Représentation des entiers relatifs (complément à deux)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Écrire une fonction qui prend un entier relatif et le représente sur N bits en complément à deux (si possible)."
+        },
+        {
+          "niveau": 2,
+          "description": "Écrire une fonction qui prend une représentation binaire en complément à deux sur N bits et renvoie l'entier relatif correspondant."
+        }
+      ]
+    },
+    {
+      "thème": "Manipulation de chaînes de caractères (encodage)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Écrire une fonction qui prend une chaîne de caractères et affiche les codes ASCII de chaque caractère."
+        },
+        {
+          "niveau": 2,
+          "description": "Écrire une fonction qui convertit une chaîne de caractères en une liste de sa représentation binaire (en utilisant l'encodage UTF-8 par exemple)."
+        }
+      ]
+    },
+    {
+      "thème": "Valeurs booléennes et expressions logiques",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Évaluer manuellement puis en Python des expressions booléennes simples utilisant and, or, not."
+        },
+        {
+          "niveau": 2,
+          "description": "Écrire une fonction qui prend une expression booléenne sous forme de chaîne de caractères (avec des variables) et un dictionnaire de valeurs pour les variables, et évalue l'expression."
+        }
+      ]
+    }
+  ],
+  "Terminale Générale": [
+    {
+      "thème": "Listes (chaînées - simulation)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Simuler en Python une liste chaînée simple avec les opérations ajout_tete, suppression_tete, est_vide. Utiliser des dictionnaires ou des classes simples pour représenter les nœuds."
+        },
+        {
+          "niveau": 2,
+          "description": "Ajouter à la simulation les opérations ajout_queue, suppression_queue, et la gestion d'une taille."
+        }
+      ]
+    },
+    {
+      "thème": "Piles",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Implémenter une pile en Python en utilisant une liste Python sous-jacente, avec les opérations empiler, depiler, est_vide, sommet."
+        },
+        {
+          "niveau": 2,
+          "description": "Utiliser la pile pour vérifier si une chaîne de caractères contenant des parenthèses est correctement équilibrée."
+        }
+      ]
+    },
+    {
+      "thème": "Files",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Implémenter une file en Python en utilisant une liste Python sous-jacente, avec les opérations enfiler, défiler, est_vide, tete."
+        },
+        {
+          "niveau": 2,
+          "description": "Utiliser la file pour simuler une file d'attente (par exemple, des tâches à traiter)."
+        }
+      ]
+    },
+    {
+      "thème": "Arbres binaires",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Implémenter une classe Noeud pour représenter un nœud d'arbre binaire (valeur, fils gauche, fils droit). Écrire une fonction récursive pour calculer la taille d'un arbre binaire."
+        },
+        {
+          "niveau": 2,
+          "description": "Écrire des fonctions récursives pour effectuer les parcours infixe, préfixe et suffixe d'un arbre binaire."
+        }
+      ]
+    },
+    {
+      "thème": "Arbres binaires de recherche (ABR)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Implémenter une fonction pour rechercher une clé dans un ABR."
+        },
+        {
+          "niveau": 2,
+          "description": "Implémenter une fonction pour insérer une clé dans un ABR en respectant la propriété."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    <!-- Panneau de sélection -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Sélection de l'exercice</h5>
+                {% if ai_provider == 'gemini' %}
+                    <span class="badge bg-info">Gemini</span>
+                {% else %}
+                    <span class="badge bg-secondary">LocalAI</span>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                <form id="exercise-form">
+                    <div class="mb-3">
+                        <label for="niveau" class="form-label">Niveau</label>
+                        <select class="form-select" id="niveau" required>
+                            <option value="" selected disabled>Choisir un niveau</option>
+                            {% for niveau in data.keys() %}
+                            <option value="{{ niveau }}">{{ niveau }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="theme" class="form-label">Thème</label>
+                        <select class="form-select" id="theme" required disabled>
+                            <option value="" selected disabled>Choisir un thème</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="difficulte" class="form-label">Difficulté</label>
+                        <select class="form-select" id="difficulte" required disabled>
+                            <option value="" selected disabled>Choisir un niveau de difficulté</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100" id="generate-btn" disabled>Générer l'exercice</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Panneau d'énoncé -->
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Énoncé de l'exercice</h5>
+            </div>
+            <div class="card-body">
+                <div id="exercise-content" class="d-none">
+                    <div id="exercise-text" class="mb-4"></div>
+                </div>
+                <div id="loading-exercise" class="d-none text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Chargement...</span>
+                    </div>
+                    <p class="mt-2">Génération de l'énoncé en cours...</p>
+                </div>
+                <div id="no-exercise" class="text-center">
+                    <p class="text-muted">Sélectionnez un niveau, un thème et une difficulté, puis cliquez sur "Générer l'exercice" pour commencer.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Éditeur de code -->
+        <div class="card mb-4 d-none" id="code-editor-card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Éditeur de code</h5>
+            </div>
+            <div class="card-body">
+                <textarea id="code-editor" class="form-control" rows="10"></textarea>
+                <div class="d-flex justify-content-between mt-3">
+                    <button class="btn btn-primary" id="run-code-btn">Exécuter le code</button>
+                    <button class="btn btn-success" id="evaluate-code-btn">Évaluer le code</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Résultat de l'exécution -->
+        <div class="card mb-4 d-none" id="execution-result-card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">Résultat de l'exécution</h5>
+            </div>
+            <div class="card-body">
+                <pre id="execution-output" class="bg-dark text-light p-3 rounded"></pre>
+            </div>
+        </div>
+        
+        <!-- Évaluation du code -->
+        <div class="card mb-4 d-none" id="evaluation-card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Évaluation du code</h5>
+            </div>
+            <div class="card-body">
+                <div id="evaluation-content"></div>
+                <div id="loading-evaluation" class="d-none text-center">
+                    <div class="spinner-border text-info" role="status">
+                        <span class="visually-hidden">Chargement...</span>
+                    </div>
+                    <p class="mt-2">Évaluation du code en cours...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Données des exercices
+    const exerciseData = JSON.parse('{{ data|tojson|safe }}');
+    
+    // Éléments du DOM
+    const niveauSelect = document.getElementById('niveau');
+    const themeSelect = document.getElementById('theme');
+    const difficulteSelect = document.getElementById('difficulte');
+    const generateBtn = document.getElementById('generate-btn');
+    const exerciseForm = document.getElementById('exercise-form');
+    const exerciseContent = document.getElementById('exercise-content');
+    const exerciseText = document.getElementById('exercise-text');
+    const loadingExercise = document.getElementById('loading-exercise');
+    const noExercise = document.getElementById('no-exercise');
+    const codeEditorCard = document.getElementById('code-editor-card');
+    const runCodeBtn = document.getElementById('run-code-btn');
+    const evaluateCodeBtn = document.getElementById('evaluate-code-btn');
+    const executionResultCard = document.getElementById('execution-result-card');
+    const executionOutput = document.getElementById('execution-output');
+    const evaluationCard = document.getElementById('evaluation-card');
+    const evaluationContent = document.getElementById('evaluation-content');
+    const loadingEvaluation = document.getElementById('loading-evaluation');
+    
+    // Initialiser CodeMirror
+    let codeEditor;
+    document.addEventListener('DOMContentLoaded', function() {
+        codeEditor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            mode: 'python',
+            theme: 'monokai',
+            lineNumbers: true,
+            indentUnit: 4,
+            tabSize: 4,
+            indentWithTabs: false,
+            lineWrapping: true,
+            autofocus: true
+        });
+    });
+    
+    // Événements de sélection
+    niveauSelect.addEventListener('change', function() {
+        const niveau = this.value;
+        
+        // Réinitialiser les autres sélections
+        themeSelect.innerHTML = '<option value="" selected disabled>Choisir un thème</option>';
+        difficulteSelect.innerHTML = '<option value="" selected disabled>Choisir un niveau de difficulté</option>';
+        difficulteSelect.disabled = true;
+        generateBtn.disabled = true;
+        
+        // Remplir les thèmes disponibles
+        if (niveau && exerciseData[niveau]) {
+            themeSelect.disabled = false;
+            exerciseData[niveau].forEach(theme => {
+                const option = document.createElement('option');
+                option.value = theme.thème;
+                option.textContent = theme.thème;
+                themeSelect.appendChild(option);
+            });
+        } else {
+            themeSelect.disabled = true;
+        }
+    });
+    
+    themeSelect.addEventListener('change', function() {
+        const niveau = niveauSelect.value;
+        const theme = this.value;
+        
+        // Réinitialiser la sélection de difficulté
+        difficulteSelect.innerHTML = '<option value="" selected disabled>Choisir un niveau de difficulté</option>';
+        generateBtn.disabled = true;
+        
+        // Remplir les niveaux de difficulté disponibles
+        if (niveau && theme && exerciseData[niveau]) {
+            const themeData = exerciseData[niveau].find(t => t.thème === theme);
+            if (themeData && themeData.niveaux) {
+                difficulteSelect.disabled = false;
+                themeData.niveaux.forEach(niveau => {
+                    const option = document.createElement('option');
+                    option.value = niveau.niveau;
+                    option.textContent = `Niveau ${niveau.niveau}`;
+                    difficulteSelect.appendChild(option);
+                });
+            }
+        } else {
+            difficulteSelect.disabled = true;
+        }
+    });
+    
+    difficulteSelect.addEventListener('change', function() {
+        generateBtn.disabled = !this.value;
+    });
+    
+    // Génération de l'exercice
+    exerciseForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const niveau = niveauSelect.value;
+        const theme = themeSelect.value;
+        const difficulte = parseInt(difficulteSelect.value);
+        
+        if (!niveau || !theme || !difficulte) {
+            alert('Veuillez sélectionner tous les champs');
+            return;
+        }
+        
+        // Afficher le chargement
+        noExercise.classList.add('d-none');
+        exerciseContent.classList.add('d-none');
+        loadingExercise.classList.remove('d-none');
+        codeEditorCard.classList.add('d-none');
+        executionResultCard.classList.add('d-none');
+        evaluationCard.classList.add('d-none');
+        
+        // Appel à l'API pour générer l'exercice
+        fetch('/generate-exercise', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                niveau: niveau,
+                theme: theme,
+                difficulte: difficulte
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Masquer le chargement
+            loadingExercise.classList.add('d-none');
+            
+            // Afficher l'énoncé
+            exerciseContent.classList.remove('d-none');
+            exerciseText.innerHTML = formatExerciseText(data.enonce);
+            
+            // Afficher l'éditeur de code
+            codeEditorCard.classList.remove('d-none');
+            
+            // Réinitialiser l'éditeur de code
+            codeEditor.setValue('# Écrivez votre code ici\n\n');
+            
+            // Stocker l'énoncé pour l'évaluation
+            codeEditorCard.dataset.enonce = data.enonce;
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            loadingExercise.classList.add('d-none');
+            alert('Une erreur est survenue lors de la génération de l\'exercice.');
+        });
+    });
+    
+    // Exécution du code
+    runCodeBtn.addEventListener('click', function() {
+        const code = codeEditor.getValue();
+        
+        if (!code.trim()) {
+            alert('Veuillez écrire du code avant de l\'exécuter');
+            return;
+        }
+        
+        // Appel à l'API pour exécuter le code
+        fetch('/execute-code', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                code: code
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Afficher le résultat
+            executionResultCard.classList.remove('d-none');
+            
+            if (data.error) {
+                executionOutput.innerHTML = `<span class="text-danger">${escapeHtml(data.error)}</span>`;
+            } else {
+                executionOutput.innerHTML = escapeHtml(data.output) || '<span class="text-muted">Aucune sortie</span>';
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert('Une erreur est survenue lors de l\'exécution du code.');
+        });
+    });
+    
+    // Évaluation du code
+    evaluateCodeBtn.addEventListener('click', function() {
+        const code = codeEditor.getValue();
+        const enonce = codeEditorCard.dataset.enonce;
+        
+        if (!code.trim()) {
+            alert('Veuillez écrire du code avant de l\'évaluer');
+            return;
+        }
+        
+        // Afficher le chargement
+        evaluationCard.classList.remove('d-none');
+        evaluationContent.classList.add('d-none');
+        loadingEvaluation.classList.remove('d-none');
+        
+        // Appel à l'API pour évaluer le code
+        fetch('/evaluate-code', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                code: code,
+                enonce: enonce
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Masquer le chargement
+            loadingEvaluation.classList.add('d-none');
+            
+            // Afficher l'évaluation
+            evaluationContent.classList.remove('d-none');
+            evaluationContent.innerHTML = formatEvaluationText(data.evaluation);
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            loadingEvaluation.classList.add('d-none');
+            alert('Une erreur est survenue lors de l\'évaluation du code.');
+        });
+    });
+    
+    // Fonctions utilitaires
+    function formatExerciseText(text) {
+        // Le texte est déjà en HTML, nous le retournons tel quel
+        return text;
+    }
+    
+    function formatEvaluationText(text) {
+        // Le texte est déjà en HTML, nous le retournons tel quel
+        return text;
+    }
+    
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+</script>
+{% endblock %}

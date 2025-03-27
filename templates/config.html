@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Configuration du générateur d'exercices</h5>
+                </div>
+                <div class="card-body">
+                    <h2 class="mb-4">Choisir le modèle d'IA</h2>
+                    
+                    <form id="provider-form">
+                        <div class="mb-4">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name="ai-provider" id="localai" value="localai" {% if ai_provider == 'localai' %}checked{% endif %}>
+                                <label class="form-check-label" for="localai">
+                                    <strong>LocalAI (Mistral)</strong>
+                                    <p class="text-muted mt-1">Utilise le modèle Mistral hébergé localement sur http://127.0.0.1:8080/</p>
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ai-provider" id="gemini" value="gemini" {% if ai_provider == 'gemini' %}checked{% endif %}>
+                                <label class="form-check-label" for="gemini">
+                                    <strong>Google Gemini</strong>
+                                    <p class="text-muted mt-1">Utilise l'API Gemini de Google pour générer des exercices et évaluer le code</p>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                            <a href="/" class="btn btn-secondary">Retour</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Informations sur les modèles</h5>
+                </div>
+                <div class="card-body">
+                    <h3>LocalAI (Mistral)</h3>
+                    <p>Ce modèle utilise une instance locale de Mistral via LocalAI. Avantages :</p>
+                    <ul>
+                        <li>Confidentialité : les données ne quittent pas votre ordinateur</li>
+                        <li>Pas de coût d'API</li>
+                        <li>Fonctionne sans connexion internet</li>
+                    </ul>
+                    <p>Inconvénients :</p>
+                    <ul>
+                        <li>Nécessite une configuration locale de LocalAI</li>
+                        <li>Peut être plus lent selon votre matériel</li>
+                    </ul>
+                    
+                    <hr class="my-4">
+                    
+                    <h3>Google Gemini</h3>
+                    <p>Ce modèle utilise l'API Gemini de Google. Avantages :</p>
+                    <ul>
+                        <li>Modèle plus récent et potentiellement plus performant</li>
+                        <li>Pas besoin de configuration locale</li>
+                        <li>Généralement plus rapide</li>
+                    </ul>
+                    <p>Inconvénients :</p>
+                    <ul>
+                        <li>Nécessite une connexion internet</li>
+                        <li>Les données sont envoyées aux serveurs de Google</li>
+                        <li>Peut entraîner des coûts d'API (une clé API est fournie pour l'instant)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('provider-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const provider = document.querySelector('input[name="ai-provider"]:checked').value;
+        
+        fetch('/set-provider', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `provider=${provider}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Rediriger vers la page principale
+                window.location.href = '/';
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert('Une erreur est survenue lors de la modification des paramètres.');
+        });
+    });
+</script>
+{% endblock %}

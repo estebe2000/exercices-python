@@ -1,0 +1,15 @@
+# Framework web
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# Requêtes HTTP pour les API d'IA
+requests==2.31.0
+
+# Gestion des variables d'environnement
+python-dotenv==1.0.0
+
+# Pour le déploiement en production
+gunicorn==21.2.0
+
+# Sécurité
+Flask-Talisman==1.1.0  # Pour les en-têtes de sécurité HTTP
