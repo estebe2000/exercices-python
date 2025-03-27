@@ -24,7 +24,7 @@ Une application web interactive pour générer des exercices de programmation Py
 
 1. Clonez ce dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/generateur-exercices-python.git
+   git clone https://github.com/estebe2000/exercices-python.git
    cd generateur-exercices-python
    ```
 
