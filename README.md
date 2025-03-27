@@ -42,19 +42,38 @@ Une application web interactive pour générer des exercices de programmation Py
    pip install -r requirements.txt
    ```
 
-4. Configurez les variables d'environnement :
-   ```bash
-   cp .env.example .env
-   # Modifiez le fichier .env avec vos propres paramètres
-   ```
+## Configuration du Fournisseur d'IA
 
-## Configuration
+Au lieu d'utiliser un fichier `.env`, vous devez modifier le fichier `ai_provider.py` pour configurer votre fournisseur d'IA préféré.
 
-Modifiez le fichier `.env` pour configurer :
+Ouvrez `ai_provider.py` et modifiez les paramètres suivants :
 
-- L'URL de LocalAI (par défaut : http://127.0.0.1:8080)
-- Le modèle Mistral à utiliser (par défaut : mistral-7b-instruct-v0.3)
-- Votre clé API Gemini (si vous souhaitez utiliser ce service)
+```python
+# Configuration pour LocalAI
+LOCALAI_URL = "http://127.0.0.1:8080/v1/chat/completions"
+LOCALAI_MODEL = "mistral-7b-instruct-v0.3"
+
+# Configuration pour Gemini
+GEMINI_API_KEY = "YOUR_API_KEY"  # Remplacez par votre clé API Gemini
+GEMINI_MODEL = "gemini-2.0-flash"
+```
+
+### Recommandations de Configuration
+
+#### Pour LocalAI :
+- Assurez-vous que votre instance LocalAI est correctement configurée et accessible
+- Vérifiez que l'URL pointe vers le bon endpoint de votre serveur LocalAI
+- Utilisez le modèle Mistral approprié à votre installation
+
+#### Pour Gemini :
+- **IMPORTANT** : Remplacez `"YOUR_API_KEY"` par votre véritable clé API Gemini
+- La clé API doit être gardée confidentielle
+- Ne commitez jamais votre clé API dans le dépôt Git
+
+Options de configuration :
+- Sélectionnez le fournisseur d'IA en modifiant la variable `AI_PROVIDER` dans `ai_provider.py`
+  - `AI_PROVIDER = 'localai'` pour utiliser LocalAI
+  - `AI_PROVIDER = 'gemini'` pour utiliser Google Gemini
 
 ## Utilisation
 
@@ -78,12 +97,18 @@ Pour déployer cette application sur la Forge Éducation :
 1. Assurez-vous que tous les fichiers nécessaires sont présents :
    - Code source de l'application
    - Fichier `requirements.txt`
-   - Fichier `.env.example` (à renommer en `.env` lors du déploiement)
+   - Fichier `ai_provider.py` avec la configuration appropriée
    - Dossier `exercices` avec le fichier `data.json`
 
-2. Configurez les variables d'environnement selon l'environnement de la Forge Éducation
+2. Configurez les paramètres dans `ai_provider.py` selon l'environnement de la Forge Éducation
 
 3. Suivez les instructions spécifiques de déploiement de la Forge Éducation
+
+## Sécurité et Confidentialité
+
+- Ne partagez jamais vos clés API publiquement
+- Utilisez des variables d'environnement ou des mécanismes sécurisés pour stocker les clés sensibles
+- Rotez régulièrement vos clés API
 
 ## Structure des données
 
