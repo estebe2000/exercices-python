@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <h1 class="mb-4">Éditeur de données d'exercices</h1>
     
     {% if error %}
@@ -10,34 +10,77 @@
     </div>
     {% endif %}
     
-    <div class="row">
-        <!-- Panneau de gauche: Structure des données -->
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Structure des données</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addNiveauModal">
-                            <i class="bi bi-plus-circle"></i> Ajouter un niveau scolaire
-                        </button>
+    <!-- Panneau supérieur (sticky): Détails de l'exercice sélectionné -->
+    <div class="sticky-top mb-4" style="top: 10px; z-index: 100;">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0" id="exercice-title">Détails de l'exercice</h5>
+            </div>
+            <div class="card-body">
+                <div id="exercice-details">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle"></i> Sélectionnez un exercice pour voir ses détails.
                     </div>
-                    
-                    <div class="list-group" id="niveaux-list">
-                        {% for niveau, themes in data.items() %}
-                        <div class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
+                </div>
+                
+                <div id="exercice-edit-form" style="display: none;">
+                    <form id="edit-exercice-form">
+                        <input type="hidden" id="edit-niveau-scolaire">
+                        <input type="hidden" id="edit-theme">
+                        <input type="hidden" id="edit-niveau-difficulte">
+                        
+                        <div class="mb-3">
+                            <label for="edit-description" class="form-label">Description de l'exercice</label>
+                            <textarea class="form-control" id="edit-description" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="edit-debutant">
+                            <label class="form-check-label" for="edit-debutant">Exercice pour débutant (sans fonctions, classes, etc.)</label>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" onclick="cancelEdit()">
+                                <i class="bi bi-x-circle"></i> Annuler
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save"></i> Enregistrer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Panneau inférieur: Structure des données -->
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Structure des données</h5>
+                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addNiveauModal">
+                    <i class="bi bi-plus-circle"></i> Ajouter un niveau scolaire
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row" id="niveaux-list">
+                {% for niveau, themes in data.items() %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
                                 <h6 class="mb-0">{{ niveau }}</h6>
                                 <button type="button" class="btn btn-outline-success btn-sm" 
                                         onclick="showAddThemeModal('{{ niveau }}')">
                                     <i class="bi bi-plus-circle"></i> Thème
                                 </button>
                             </div>
-                            
+                        </div>
+                        <div class="card-body">
                             <div class="list-group">
                                 {% for theme in themes %}
-                                <div class="list-group-item">
+                                <div class="list-group-item mb-3">
                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                         <span>{{ theme.thème }}</span>
                                         <button type="button" class="btn btn-outline-success btn-sm" 
@@ -67,52 +110,9 @@
                                 {% endfor %}
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Panneau de droite: Détails de l'exercice sélectionné -->
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header bg-secondary text-white">
-                    <h5 class="mb-0" id="exercice-title">Détails de l'exercice</h5>
-                </div>
-                <div class="card-body">
-                    <div id="exercice-details">
-                        <div class="alert alert-info">
-                            <i class="bi bi-info-circle"></i> Sélectionnez un exercice pour voir ses détails.
-                        </div>
-                    </div>
-                    
-                    <div id="exercice-edit-form" style="display: none;">
-                        <form id="edit-exercice-form">
-                            <input type="hidden" id="edit-niveau-scolaire">
-                            <input type="hidden" id="edit-theme">
-                            <input type="hidden" id="edit-niveau-difficulte">
-                            
-                            <div class="mb-3">
-                                <label for="edit-description" class="form-label">Description de l'exercice</label>
-                                <textarea class="form-control" id="edit-description" rows="5" required></textarea>
-                            </div>
-                            
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="edit-debutant">
-                                <label class="form-check-label" for="edit-debutant">Exercice pour débutant (sans fonctions, classes, etc.)</label>
-                            </div>
-                            
-                            <div class="d-flex justify-content-between">
-                                <button type="button" class="btn btn-secondary" onclick="cancelEdit()">
-                                    <i class="bi bi-x-circle"></i> Annuler
-                                </button>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-save"></i> Enregistrer
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

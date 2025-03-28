@@ -70,7 +70,7 @@ Ouvrez `ai_provider.py` et modifiez les paramètres suivants :
 ```python
 # Configuration pour LocalAI
 LOCALAI_URL = "http://127.0.0.1:8080/v1/chat/completions"
-LOCALAI_MODEL = "mistral-7b-instruct-v0.3"
+LOCALAI_MODEL = "codestral-latest"  # Modèle par défaut recommandé
 
 # Configuration pour Gemini
 GEMINI_API_KEY = "YOUR_API_KEY"  # Remplacez par votre clé API Gemini
@@ -82,7 +82,7 @@ GEMINI_MODEL = "gemini-2.0-flash"
 #### Pour LocalAI :
 - Assurez-vous que votre instance LocalAI est correctement configurée et accessible
 - Vérifiez que l'URL pointe vers le bon endpoint de votre serveur LocalAI
-- Utilisez le modèle Mistral approprié à votre installation
+- Utilisez le modèle Codestral pour de meilleures performances avec le code Python
 
 #### Pour Gemini :
 - **IMPORTANT** : Remplacez `"YOUR_API_KEY"` par votre véritable clé API Gemini
@@ -91,7 +91,7 @@ GEMINI_MODEL = "gemini-2.0-flash"
 
 Options de configuration :
 - Sélectionnez le fournisseur d'IA en modifiant la variable `AI_PROVIDER` dans `ai_provider.py`
-  - `AI_PROVIDER = 'localai'` pour utiliser LocalAI
+  - `AI_PROVIDER = 'localai'` pour utiliser LocalAI (recommandé avec Codestral)
   - `AI_PROVIDER = 'gemini'` pour utiliser Google Gemini
 
 ## Utilisation
@@ -216,6 +216,34 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 3. Commit vos changements (`git commit -m 'Ajout d'une fonctionnalité'`)
 4. Push vers la branche (`git push origin feature/amelioration`)
 5. Ouvrir une Pull Request
+
+## Dépannage
+
+### Erreur "Internal Server Error" dans la GED
+
+Si vous rencontrez une erreur "Internal Server Error" lors de l'accès à la GED, cela peut être dû à une base de données non initialisée ou corrompue. Pour résoudre ce problème:
+
+1. Assurez-vous que la base de données a été initialisée:
+   ```bash
+   flask init-db
+   ```
+   Vous devriez voir le message "Base de données initialisée avec succès".
+
+2. Vérifiez que le dossier `uploads` existe:
+   ```bash
+   mkdir -p uploads
+   ```
+
+3. Si vous réinitialisez la base de données, notez que les métadonnées des documents précédemment téléchargés (noms, tags, descriptions) seront perdues. Les fichiers physiques resteront dans le dossier `uploads`, mais ils ne seront plus référencés dans la base de données.
+
+4. Pour éviter les problèmes de base de données:
+   - Effectuez des sauvegardes régulières du fichier `instance/ged.db`
+   - N'initialisez la base de données qu'une seule fois lors de l'installation initiale
+   - Si vous déployez l'application sur un nouveau serveur, n'oubliez pas d'initialiser la base de données
+
+### Limite de taille des fichiers
+
+Par défaut, la taille maximale des fichiers pouvant être téléchargés est limitée à 16 Mo. Si vous avez besoin de télécharger des fichiers plus volumineux, vous pouvez modifier la valeur de `MAX_CONTENT_LENGTH` dans le fichier `app.py`.
 
 ## Licence
 

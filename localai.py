@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 # Configuration de l'API LocalAI
 LOCALAI_URL = "http://127.0.0.1:8080/v1/chat/completions"
-MODEL = "mistral-7b-instruct-v0.3"
+MODEL = "codestral-latest"
 
 # Paramètres par défaut
 DEFAULT_MAX_TOKENS = 1500

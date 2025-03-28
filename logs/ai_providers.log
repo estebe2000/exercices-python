@@ -469,3 +469,1430 @@ TypeError: Incompatible collection type: str is not list-like
 2025-03-28 21:49:38,189 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:38] "[33mGET /static/logo.jpg HTTP/1.1[0m" 404 -
 2025-03-28 21:49:38,189 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:38] "GET /static/script.js HTTP/1.1" 200 -
 2025-03-28 21:49:42,773 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:42] "GET /data-editor/get-exercice-info?niveau=SNT&theme=Variable&niveau_difficulte=3 HTTP/1.1" 200 -
+2025-03-28 22:15:51,676 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:15:51,676 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:15:57,070 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:57] "GET / HTTP/1.1" 200 -
+2025-03-28 22:15:57,167 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:15:57,181 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:57] "GET /static/logo.jpg HTTP/1.1" 200 -
+2025-03-28 22:15:57,182 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:15:58,460 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:58] "GET / HTTP/1.1" 200 -
+2025-03-28 22:15:58,493 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:15:58,496 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:15:58,497 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:15:58] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:16:01,046 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:01] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:16:01,078 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:16:01,090 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:01] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:16:01,091 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:16:06,644 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:06] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:16:06,660 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:16:06,670 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:06] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:16:06,679 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:16:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:17:59,362 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:17:59] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:17:59,396 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:17:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:17:59,413 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:17:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:17:59,413 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:17:59] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:18:01,724 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:01] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:18:01,746 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:18:01,754 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:01] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:18:01,755 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:18:03,555 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:03] "GET / HTTP/1.1" 200 -
+2025-03-28 22:18:03,583 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:18:03,595 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:03] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:18:03,595 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:18:05,948 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:05] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:18:05,978 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:18:05,994 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:05] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:18:05,995 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:05] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:18:17,890 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:18:17,890 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:18:18,039 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:18] "GET /config HTTP/1.1" 200 -
+2025-03-28 22:18:18,094 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:18:18,126 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:18] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:18:18,126 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:18] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:18:20,201 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:20] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:18:20,230 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:18:20,240 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:20] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:18:20,242 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:18:22,664 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:22] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:18:22,689 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:18:22,697 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:22] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:18:22,697 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:18:22] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:19:10,293 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:19:10] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:19:10,334 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:19:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:19:10,336 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:19:10] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:19:10,336 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:19:10] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:10,740 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:10] "GET / HTTP/1.1" 200 -
+2025-03-28 22:21:10,789 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:10,804 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:10] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:10,805 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:10] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:12,388 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:12] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:12,433 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:12,434 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:12,435 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:12] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:14,212 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:14] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:14,237 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:14,245 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:14] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:14,247 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:15,035 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:15] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:15,052 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:15,062 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:15] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:15,069 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:21,059 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:21] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:21,083 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:21] "GET /static/script.js HTTP/1.1" 200 -
+2025-03-28 22:21:21,084 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:21] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-28 22:21:21,142 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:21] "GET /static/logo.jpg HTTP/1.1" 200 -
+2025-03-28 22:21:21,253 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-28 22:21:47,189 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:47] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:47,220 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:47,230 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:47] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:47,231 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:47] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:48,237 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:48] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:48,268 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:48,271 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:48] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:48,271 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:48] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:49,070 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:49,092 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:49,101 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:49,101 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:49,794 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:49,815 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:49,824 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:49,825 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:49] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:50,170 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:50,182 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:50,184 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:50,194 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:50,481 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:50,495 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:50,505 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:50,505 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:50] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:56,479 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:21:56,479 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:21:57,929 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:57] "GET / HTTP/1.1" 200 -
+2025-03-28 22:21:57,968 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:58,017 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:21:58,017 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:58] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:59,418 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:59] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:21:59,444 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:21:59,454 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:59] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:21:59,455 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:21:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:24:37,874 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:37] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:24:37,912 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:24:37,926 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:24:37,926 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:37] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:24:47,882 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:24:47,882 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:24:49,331 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:49] "GET / HTTP/1.1" 200 -
+2025-03-28 22:24:49,372 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:24:49,417 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:49] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:24:49,418 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:49] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:24:50,665 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:50] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:24:50,696 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:24:50,702 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:50] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:24:50,703 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:24:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:25:58,288 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:25:58] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:25:58,333 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:25:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:25:58,335 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:25:58] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:25:58,337 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:25:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:26:00,281 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:00] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:26:00,303 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:26:00,315 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:26:00,316 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:00] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:26:05,591 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:26:05,591 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:26:07,695 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:07] "GET / HTTP/1.1" 200 -
+2025-03-28 22:26:07,737 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:26:07,784 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:26:07,784 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:07] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:26:09,937 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:09] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:26:09,971 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:26:09,977 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:09] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:26:09,977 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:26:12,325 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:12] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:26:12,358 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:26:12,359 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:12] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:26:12,359 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:26:23,185 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:23] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:26:23,208 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:26:23,214 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:26:23,215 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:23] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:26:28,394 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:26:28,394 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:26:29,938 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:29] "GET / HTTP/1.1" 200 -
+2025-03-28 22:26:29,973 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:26:30,030 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:30] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:26:30,030 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:30] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:26:31,475 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:31] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:26:31,500 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:26:31,512 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:31] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:26:31,513 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:26:31] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:28:46,018 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:28:46,018 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:28:48,282 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:48] "GET / HTTP/1.1" 200 -
+2025-03-28 22:28:48,325 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:28:48,373 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:48] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:28:48,373 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:48] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:28:51,108 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:51] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:28:51,144 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:28:51,144 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:51] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:28:51,146 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:28:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:30:36,159 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:30:36] "GET / HTTP/1.1" 200 -
+2025-03-28 22:30:36,209 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:30:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:30:36,215 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:30:36] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:30:36,217 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:30:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:37:12,037 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:37:12,038 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:37:18,511 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:18] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-28 22:37:18,559 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:18] "GET /login?next=http://127.0.0.1:5000/ HTTP/1.1" 200 -
+2025-03-28 22:37:18,620 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:37:18,684 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:18] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:37:18,684 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:18] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:37:30,517 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:30] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-28 22:37:30,526 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:30] "GET / HTTP/1.1" 200 -
+2025-03-28 22:37:30,576 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:37:30,577 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:30] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:37:30,578 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:30] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:37:37,249 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:37] "[32mPOST /generate-exercise HTTP/1.1[0m" 302 -
+2025-03-28 22:37:37,252 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:37] "GET / HTTP/1.1" 200 -
+2025-03-28 22:37:46,211 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:46] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-28 22:37:46,214 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:46] "GET / HTTP/1.1" 200 -
+2025-03-28 22:37:46,265 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:37:46,266 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:46] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:37:46,266 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:37:49,677 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-28 22:37:49,681 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:49] "GET / HTTP/1.1" 200 -
+2025-03-28 22:37:49,730 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:37:49,732 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:49] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:37:49,733 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:49] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:37:55,705 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:55] "[32mPOST /generate-exercise HTTP/1.1[0m" 302 -
+2025-03-28 22:37:55,710 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:37:55] "GET / HTTP/1.1" 200 -
+2025-03-28 22:38:16,174 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 95, in decorated_function
+    return f(*args, **kwargs)
+  File "D:\exercices-python-v0\app.py", line 763, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:38:16,184 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:38:16] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:38:39,344 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 95, in decorated_function
+    et debutant est un booléen indiquant si l'exercice est pour débutant
+               ^^^^^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 763, in ged
+    if __name__ == '__main__':
+                    ^^^^^^^^^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:38:39,347 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:38:39] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:38:40,484 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 95, in decorated_function
+    et debutant est un booléen indiquant si l'exercice est pour débutant
+               ^^^^^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 763, in ged
+    if __name__ == '__main__':
+                    ^^^^^^^^^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:38:40,486 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:38:40] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:38:45,117 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:38:45,117 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:38:53,398 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:38:53] "GET / HTTP/1.1" 200 -
+2025-03-28 22:38:53,443 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:38:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:38:53,488 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:38:53] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:38:53,488 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:38:53] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:39:02,000 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:02] "POST /generate-exercise HTTP/1.1" 200 -
+2025-03-28 22:39:35,063 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:35] "GET /config HTTP/1.1" 200 -
+2025-03-28 22:39:35,114 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:39:35,116 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:35] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:39:35,120 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:39:35,661 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 628, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:39:35,666 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:35] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:39:37,846 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 628, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:39:37,851 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:37] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:39:38,849 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 628, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:39:38,851 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:38] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:39:39,576 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 628, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:39:39,579 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:39] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:39:39,989 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 628, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:39:39,991 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:39] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:39:40,210 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 628, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:39:40,212 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:40] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:39:45,169 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:45] "GET / HTTP/1.1" 200 -
+2025-03-28 22:39:45,213 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:39:45,217 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:39:45,217 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:39:45] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:40:00,112 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:40:00] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 22:40:00,149 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:40:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:40:00,155 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:40:00] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:40:00,155 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:40:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:40:11,826 - app - ERROR - Exception on /ged [GET]
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: document
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\exercices-python-v0\app.py", line 628, in ged
+    documents = Document.query.order_by(Document.date_upload.desc()).all()
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "d:\exercices-python-v0\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: document
+[SQL: SELECT document.id AS document_id, document.nom_fichier AS document_nom_fichier, document.nom_unique AS document_nom_unique, document.date_upload AS document_date_upload, document.taille_fichier AS document_taille_fichier, document.type_mime AS document_type_mime, document.description AS document_description, document.user_id AS document_user_id 
+FROM document ORDER BY document.date_upload DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-28 22:40:11,829 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:40:11] "[35m[1mGET /ged HTTP/1.1[0m" 500 -
+2025-03-28 22:41:35,446 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-28 22:41:35,446 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 22:41:35,464 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:35] "GET /ged HTTP/1.1" 200 -
+2025-03-28 22:41:35,521 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:41:35,552 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:41:35,553 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:35] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:41:48,753 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:48] "GET /ged HTTP/1.1" 200 -
+2025-03-28 22:41:48,766 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:41:48,769 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:48] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:41:48,779 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:41:48] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:42:15,331 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:15] "POST /ged/upload HTTP/1.1" 200 -
+2025-03-28 22:42:16,343 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:16] "GET /ged HTTP/1.1" 200 -
+2025-03-28 22:42:16,380 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:42:16,382 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:16] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:42:16,384 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:42:29,556 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:29] "POST /ged/upload HTTP/1.1" 200 -
+2025-03-28 22:42:30,569 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:30] "GET /ged HTTP/1.1" 200 -
+2025-03-28 22:42:30,602 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:42:30,604 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:30] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:42:30,605 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:30] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:42:42,433 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:42] "POST /ged/upload HTTP/1.1" 200 -
+2025-03-28 22:42:43,458 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:43] "GET /ged HTTP/1.1" 200 -
+2025-03-28 22:42:43,477 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:42:43,485 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:43] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:42:43,491 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:43] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-28 22:42:58,416 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:42:58] "[31m[1mPOST /ged/upload HTTP/1.1[0m" 413 -
+2025-03-28 22:43:11,601 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:43:11] "POST /ged/upload HTTP/1.1" 200 -
+2025-03-28 22:43:12,611 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:43:12] "GET /ged HTTP/1.1" 200 -
+2025-03-28 22:43:12,648 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:43:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-28 22:43:12,650 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:43:12] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-28 22:43:12,651 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 22:43:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
