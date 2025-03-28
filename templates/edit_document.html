@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Modifier un document</h1>
+    
+    <div class="card">
+        <div class="card-header bg-secondary text-white">
+            <h5 class="mb-0">Édition de "{{ document.nom_fichier }}"</h5>
+        </div>
+        <div class="card-body">
+            <form action="{{ url_for('edit_document', document_id=document.id) }}" method="post">
+                <div class="mb-3">
+                    <label for="nom_fichier" class="form-label">Nom du fichier</label>
+                    <input type="text" class="form-control" id="nom_fichier" name="nom_fichier" value="{{ document.nom_fichier }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description (optionnelle)</label>
+                    <textarea class="form-control" id="description" name="description" rows="3">{{ document.description }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="tags" class="form-label">Tags (séparés par des virgules)</label>
+                    <input type="text" class="form-control" id="tags" name="tags" value="{{ document.tags|map(attribute='nom')|join(', ') }}">
+                    <div class="form-text">
+                        Tags existants: 
+                        {% for tag in all_tags %}
+                        <span class="badge bg-info tag-suggestion" style="cursor: pointer;">{{ tag.nom }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Informations sur le fichier</label>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Date d'upload:</strong> {{ document.date_upload.strftime('%d/%m/%Y %H:%M') }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Taille:</strong> {{ (document.taille_fichier / 1024)|round(1) }} KB
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Type:</strong> {{ document.type_mime }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <a href="{{ url_for('ged') }}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Retour
+                    </a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save"></i> Enregistrer les modifications
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestion des suggestions de tags
+    const tagsInput = document.getElementById('tags');
+    const tagSuggestions = document.querySelectorAll('.tag-suggestion');
+    
+    tagSuggestions.forEach(tag => {
+        tag.addEventListener('click', function() {
+            const tagName = this.textContent;
+            const currentTags = tagsInput.value.split(',').map(t => t.trim()).filter(t => t);
+            
+            // Vérifier si le tag existe déjà
+            if (!currentTags.includes(tagName)) {
+                // Ajouter le tag
+                if (currentTags.length > 0) {
+                    tagsInput.value = currentTags.join(', ') + ', ' + tagName;
+                } else {
+                    tagsInput.value = tagName;
+                }
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

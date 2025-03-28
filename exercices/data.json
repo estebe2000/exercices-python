@@ -132,5 +132,27 @@
         }
       ]
     }
+  ],
+  "SNT": [
+    {
+      "thème": "Variable",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Addition de deux variables",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "comparaison de deux variables",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Addition de deux variables negative ou flottante",
+          "debutant": true
+        }
+      ]
+    }
   ]
 }

@@ -33,6 +33,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/ged" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Électronique de Documents">
+                        <i class="bi bi-file-earmark-text"></i> GED
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/data-editor" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Éditeur de données d'exercices">
+                        <i class="bi bi-pencil-square"></i> Éditeur d'exercices
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#helpModal">
                         <i class="bi bi-question-circle-fill"></i> Aide
                     </a>
@@ -52,6 +62,8 @@
                 Générateur d'Exercices Python avec 
                 {% if ai_provider == 'gemini' %}
                     <span class="badge bg-info">Google Gemini</span>
+                {% elif ai_provider == 'mistral' %}
+                    <span class="badge bg-warning">Mistral Codestral</span>
                 {% else %}
                     <span class="badge bg-primary">LocalAI (Mistral)</span>
                 {% endif %}
@@ -137,10 +149,11 @@
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#helpAccordion">
                                 <div class="accordion-body">
-                                    <p>Vous pouvez choisir entre deux modèles d'IA :</p>
+                                    <p>Vous pouvez choisir entre trois modèles d'IA :</p>
                                     <ul>
                                         <li><strong>LocalAI (Mistral)</strong> : Modèle hébergé localement sur votre machine</li>
                                         <li><strong>Google Gemini</strong> : Modèle en ligne de Google</li>
+                                        <li><strong>Mistral (Codestral)</strong> : Modèle spécialisé pour le code via l'API Mistral</li>
                                     </ul>
                                     <p>Pour changer de modèle :</p>
                                     <ol>

@@ -1,0 +1,500 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Éditeur de données d'exercices</h1>
+    
+    {% if error %}
+    <div class="alert alert-danger">
+        <i class="bi bi-exclamation-triangle"></i> Erreur: {{ error }}
+    </div>
+    {% endif %}
+    
+    <div class="row">
+        <!-- Panneau de gauche: Structure des données -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Structure des données</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addNiveauModal">
+                            <i class="bi bi-plus-circle"></i> Ajouter un niveau scolaire
+                        </button>
+                    </div>
+                    
+                    <div class="list-group" id="niveaux-list">
+                        {% for niveau, themes in data.items() %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="mb-0">{{ niveau }}</h6>
+                                <button type="button" class="btn btn-outline-success btn-sm" 
+                                        onclick="showAddThemeModal('{{ niveau }}')">
+                                    <i class="bi bi-plus-circle"></i> Thème
+                                </button>
+                            </div>
+                            
+                            <div class="list-group">
+                                {% for theme in themes %}
+                                <div class="list-group-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span>{{ theme.thème }}</span>
+                                        <button type="button" class="btn btn-outline-success btn-sm" 
+                                                onclick="showAddExerciceModal('{{ niveau }}', '{{ theme.thème }}')">
+                                            <i class="bi bi-plus-circle"></i> Exercice
+                                        </button>
+                                    </div>
+                                    
+                                    <ul class="list-group list-group-flush">
+                                        {% for niveau_diff in theme.niveaux %}
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-info">Niveau {{ niveau_diff.niveau }}</span>
+                                                <button type="button" class="btn btn-outline-primary btn-sm exercice-details-btn"
+                                                        data-niveau="{{ niveau }}" 
+                                                        data-theme="{{ theme.thème }}" 
+                                                        data-niveau-difficulte="{{ niveau_diff.niveau }}" 
+                                                        data-description="{{ niveau_diff.description|replace('\n', ' ')|replace('"', '&quot;') }}"
+                                                        data-debutant="{{ 'true' if niveau_diff.debutant else 'false' }}">
+                                                    <i class="bi bi-eye"></i> Voir
+                                                </button>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Panneau de droite: Détails de l'exercice sélectionné -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0" id="exercice-title">Détails de l'exercice</h5>
+                </div>
+                <div class="card-body">
+                    <div id="exercice-details">
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Sélectionnez un exercice pour voir ses détails.
+                        </div>
+                    </div>
+                    
+                    <div id="exercice-edit-form" style="display: none;">
+                        <form id="edit-exercice-form">
+                            <input type="hidden" id="edit-niveau-scolaire">
+                            <input type="hidden" id="edit-theme">
+                            <input type="hidden" id="edit-niveau-difficulte">
+                            
+                            <div class="mb-3">
+                                <label for="edit-description" class="form-label">Description de l'exercice</label>
+                                <textarea class="form-control" id="edit-description" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="edit-debutant">
+                                <label class="form-check-label" for="edit-debutant">Exercice pour débutant (sans fonctions, classes, etc.)</label>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary" onclick="cancelEdit()">
+                                    <i class="bi bi-x-circle"></i> Annuler
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-save"></i> Enregistrer
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal pour ajouter un niveau scolaire -->
+<div class="modal fade" id="addNiveauModal" tabindex="-1" aria-labelledby="addNiveauModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="addNiveauModalLabel">Ajouter un niveau scolaire</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-niveau-form">
+                    <div class="mb-3">
+                        <label for="niveau-name" class="form-label">Nom du niveau scolaire</label>
+                        <input type="text" class="form-control" id="niveau-name" placeholder="Ex: Première Générale" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-success" onclick="addNiveau()">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal pour ajouter un thème -->
+<div class="modal fade" id="addThemeModal" tabindex="-1" aria-labelledby="addThemeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="addThemeModalLabel">Ajouter un thème</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-theme-form">
+                    <input type="hidden" id="theme-niveau">
+                    <div class="mb-3">
+                        <label for="theme-name" class="form-label">Nom du thème</label>
+                        <input type="text" class="form-control" id="theme-name" placeholder="Ex: Conversion de bases numériques" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-success" onclick="addTheme()">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal pour ajouter un exercice -->
+<div class="modal fade" id="addExerciceModal" tabindex="-1" aria-labelledby="addExerciceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="addExerciceModalLabel">Ajouter un exercice</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-exercice-form">
+                    <input type="hidden" id="exercice-niveau-scolaire">
+                    <input type="hidden" id="exercice-theme">
+                    
+                    <div class="mb-3">
+                        <label for="exercice-niveau-difficulte" class="form-label">Niveau de difficulté</label>
+                        <input type="number" class="form-control" id="exercice-niveau-difficulte" min="1" value="1" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="exercice-description" class="form-label">Description de l'exercice</label>
+                        <textarea class="form-control" id="exercice-description" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exercice-debutant">
+                        <label class="form-check-label" for="exercice-debutant">Exercice pour débutant (sans fonctions, classes, etc.)</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-success" onclick="addExercice()">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialiser les modals
+    var modals = document.querySelectorAll('.modal');
+    modals.forEach(function(modal) {
+        new bootstrap.Modal(modal);
+    });
+    
+    // Initialiser le formulaire d'édition
+    document.getElementById('edit-exercice-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        updateExercice();
+    });
+    
+    // Ajouter les gestionnaires d'événements pour les boutons de détails d'exercice
+    document.querySelectorAll('.exercice-details-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var niveau = this.getAttribute('data-niveau');
+            var theme = this.getAttribute('data-theme');
+            var niveauDifficulte = parseInt(this.getAttribute('data-niveau-difficulte'));
+            var description = this.getAttribute('data-description');
+            var debutant = this.getAttribute('data-debutant') === 'true';
+            
+            showExerciceDetails(niveau, theme, niveauDifficulte, description, debutant);
+        });
+    });
+});
+
+// Fonction pour afficher le modal d'ajout de thème
+function showAddThemeModal(niveau) {
+    document.getElementById('theme-niveau').value = niveau;
+    var modal = new bootstrap.Modal(document.getElementById('addThemeModal'));
+    modal.show();
+}
+
+// Fonction pour afficher le modal d'ajout d'exercice
+function showAddExerciceModal(niveau, theme) {
+    document.getElementById('exercice-niveau-scolaire').value = niveau;
+    document.getElementById('exercice-theme').value = theme;
+    var modal = new bootstrap.Modal(document.getElementById('addExerciceModal'));
+    modal.show();
+}
+
+// Fonction pour afficher les détails d'un exercice
+function showExerciceDetails(niveau, theme, niveauDifficulte, description, debutant) {
+    document.getElementById('exercice-title').textContent = `${niveau} - ${theme} - Niveau ${niveauDifficulte}`;
+    
+    // Si debutant n'est pas défini, on considère que c'est false par défaut
+    if (typeof debutant === 'undefined') {
+        debutant = false;
+        
+        // Faire une requête AJAX pour obtenir la valeur de debutant
+        fetch(`/data-editor/get-exercice-info?niveau=${encodeURIComponent(niveau)}&theme=${encodeURIComponent(theme)}&niveau_difficulte=${niveauDifficulte}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.debutant !== undefined) {
+                // Mettre à jour l'affichage avec la valeur correcte de debutant
+                updateDebutantDisplay(data.debutant);
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des informations de l\'exercice:', error);
+        });
+    }
+    
+    function updateDebutantDisplay(isDebutant) {
+        var debutantElement = document.querySelector('#exercice-details .niveau-python-badge');
+        if (debutantElement) {
+            debutantElement.innerHTML = isDebutant ? 
+                '<span class="badge bg-success">Débutant</span>' : 
+                '<span class="badge bg-info">Avancé</span>';
+        }
+        
+        var editButton = document.querySelector('.edit-exercice-btn');
+        if (editButton) {
+            editButton.setAttribute('data-debutant', isDebutant ? 'true' : 'false');
+        }
+    }
+    
+    var debutantText = debutant ? '<span class="badge bg-success">Débutant</span>' : '<span class="badge bg-info">Avancé</span>';
+    
+    var detailsHtml = `
+        <div class="mb-4">
+            <h6>Description:</h6>
+            <p>${description}</p>
+        </div>
+        <div class="mb-3">
+            <h6>Niveau Python:</h6>
+            <p>${debutantText}</p>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary edit-exercice-btn"
+                    data-niveau="${niveau}" 
+                    data-theme="${theme}" 
+                    data-niveau-difficulte="${niveauDifficulte}" 
+                    data-description="${description.replace(/"/g, '&quot;')}"
+                    data-debutant="${debutant ? 'true' : 'false'}">
+                <i class="bi bi-pencil"></i> Modifier
+            </button>
+        </div>
+    `;
+    
+    document.getElementById('exercice-details').innerHTML = detailsHtml;
+    document.getElementById('exercice-details').style.display = 'block';
+    document.getElementById('exercice-edit-form').style.display = 'none';
+    
+    // Ajouter le gestionnaire d'événement pour le bouton de modification
+    document.querySelector('.edit-exercice-btn').addEventListener('click', function() {
+        var niveau = this.getAttribute('data-niveau');
+        var theme = this.getAttribute('data-theme');
+        var niveauDifficulte = parseInt(this.getAttribute('data-niveau-difficulte'));
+        var description = this.getAttribute('data-description');
+        var debutant = this.getAttribute('data-debutant') === 'true';
+        
+        editExercice(niveau, theme, niveauDifficulte, description, debutant);
+    });
+}
+
+// Fonction pour éditer un exercice
+function editExercice(niveau, theme, niveauDifficulte, description, debutant) {
+    document.getElementById('edit-niveau-scolaire').value = niveau;
+    document.getElementById('edit-theme').value = theme;
+    document.getElementById('edit-niveau-difficulte').value = niveauDifficulte;
+    document.getElementById('edit-description').value = description;
+    document.getElementById('edit-debutant').checked = debutant;
+    
+    document.getElementById('exercice-details').style.display = 'none';
+    document.getElementById('exercice-edit-form').style.display = 'block';
+}
+
+// Fonction pour annuler l'édition
+function cancelEdit() {
+    document.getElementById('exercice-details').style.display = 'block';
+    document.getElementById('exercice-edit-form').style.display = 'none';
+}
+
+// Fonction pour ajouter un niveau scolaire
+function addNiveau() {
+    var niveau = document.getElementById('niveau-name').value.trim();
+    
+    if (!niveau) {
+        alert('Veuillez entrer un nom de niveau scolaire');
+        return;
+    }
+    
+    fetch('/data-editor/add-niveau', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ niveau: niveau })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Erreur: ' + data.error);
+        } else {
+            // Fermer le modal
+            var modal = bootstrap.Modal.getInstance(document.getElementById('addNiveauModal'));
+            modal.hide();
+            
+            // Recharger la page
+            window.location.reload();
+        }
+    })
+    .catch(error => {
+        alert('Erreur: ' + error.message);
+    });
+}
+
+// Fonction pour ajouter un thème
+function addTheme() {
+    var niveau = document.getElementById('theme-niveau').value;
+    var theme = document.getElementById('theme-name').value.trim();
+    
+    if (!theme) {
+        alert('Veuillez entrer un nom de thème');
+        return;
+    }
+    
+    fetch('/data-editor/add-theme', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ niveau: niveau, theme: theme })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Erreur: ' + data.error);
+        } else {
+            // Fermer le modal
+            var modal = bootstrap.Modal.getInstance(document.getElementById('addThemeModal'));
+            modal.hide();
+            
+            // Recharger la page
+            window.location.reload();
+        }
+    })
+    .catch(error => {
+        alert('Erreur: ' + error.message);
+    });
+}
+
+// Fonction pour ajouter un exercice
+function addExercice() {
+    var niveauScolaire = document.getElementById('exercice-niveau-scolaire').value;
+    var theme = document.getElementById('exercice-theme').value;
+    var niveauDifficulte = document.getElementById('exercice-niveau-difficulte').value;
+    var description = document.getElementById('exercice-description').value.trim();
+    var debutant = document.getElementById('exercice-debutant').checked;
+    
+    if (!description) {
+        alert('Veuillez entrer une description');
+        return;
+    }
+    
+    fetch('/data-editor/add-exercice', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            niveau_scolaire: niveauScolaire,
+            theme: theme,
+            niveau_difficulte: niveauDifficulte,
+            description: description,
+            debutant: debutant
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Erreur: ' + data.error);
+        } else {
+            // Fermer le modal
+            var modal = bootstrap.Modal.getInstance(document.getElementById('addExerciceModal'));
+            modal.hide();
+            
+            // Recharger la page
+            window.location.reload();
+        }
+    })
+    .catch(error => {
+        alert('Erreur: ' + error.message);
+    });
+}
+
+// Fonction pour mettre à jour un exercice
+function updateExercice() {
+    var niveauScolaire = document.getElementById('edit-niveau-scolaire').value;
+    var theme = document.getElementById('edit-theme').value;
+    var niveauDifficulte = parseInt(document.getElementById('edit-niveau-difficulte').value);
+    var description = document.getElementById('edit-description').value.trim();
+    var debutant = document.getElementById('edit-debutant').checked;
+    
+    if (!description) {
+        alert('Veuillez entrer une description');
+        return;
+    }
+    
+    // Envoyer les données de mise à jour
+    fetch('/data-editor/update-exercice', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            niveau_scolaire: niveauScolaire,
+            theme: theme,
+            niveau_difficulte: niveauDifficulte,
+            description: description,
+            debutant: debutant
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Erreur: ' + data.error);
+        } else {
+            // Recharger la page
+            window.location.reload();
+        }
+    })
+    .catch(error => {
+        alert('Erreur: ' + error.message);
+    });
+}
+</script>
+{% endblock %}

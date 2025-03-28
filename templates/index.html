@@ -1,21 +1,23 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="row">
-    <!-- Panneau de sélection -->
-    <div class="col-md-4">
+<!-- Panneau de sélection (bandeau en haut sur toute la largeur) -->
+<div class="row mb-4">
+    <div class="col-12">
         <div class="card">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">Sélection de l'exercice</h5>
                 {% if ai_provider == 'gemini' %}
                     <span class="badge bg-info">Gemini</span>
+                {% elif ai_provider == 'mistral' %}
+                    <span class="badge bg-warning">Mistral</span>
                 {% else %}
                     <span class="badge bg-secondary">LocalAI</span>
                 {% endif %}
             </div>
             <div class="card-body">
-                <form id="exercise-form">
-                    <div class="mb-3">
+                <form id="exercise-form" class="row g-3">
+                    <div class="col-md-3">
                         <label for="niveau" class="form-label">Niveau</label>
                         <select class="form-select" id="niveau" required>
                             <option value="" selected disabled>Choisir un niveau</option>
@@ -25,35 +27,44 @@
                         </select>
                     </div>
                     
-                    <div class="mb-3">
+                    <div class="col-md-4">
                         <label for="theme" class="form-label">Thème</label>
                         <select class="form-select" id="theme" required disabled>
                             <option value="" selected disabled>Choisir un thème</option>
                         </select>
                     </div>
                     
-                    <div class="mb-3">
+                    <div class="col-md-3">
                         <label for="difficulte" class="form-label">Difficulté</label>
                         <select class="form-select" id="difficulte" required disabled>
                             <option value="" selected disabled>Choisir un niveau de difficulté</option>
                         </select>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-100" id="generate-btn" disabled>Générer l'exercice</button>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100" id="generate-btn" disabled>Générer l'exercice</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-    
-    <!-- Panneau d'énoncé -->
-    <div class="col-md-8">
-        <div class="card mb-4">
+</div>
+
+<!-- Panneau d'énoncé (sur toute la largeur) -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
             <div class="card-header bg-primary text-white">
                 <h5 class="mb-0">Énoncé de l'exercice</h5>
             </div>
             <div class="card-body">
                 <div id="exercise-content" class="d-none">
                     <div id="exercise-text" class="mb-4"></div>
+                    <div class="text-end">
+                        <button id="copy-skeleton-btn" class="btn btn-outline-primary">
+                            <i class="bi bi-clipboard"></i> Copier le squelette vers l'éditeur
+                        </button>
+                    </div>
                 </div>
                 <div id="loading-exercise" class="d-none text-center">
                     <div class="spinner-border text-primary" role="status">
@@ -66,14 +77,19 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Éditeur de code -->
+    </div>
+</div>
+
+<!-- Éditeur de code et évaluation sur deux colonnes -->
+<div class="row">
+    <!-- Éditeur de code (colonne gauche) -->
+    <div class="col-md-6">
         <div class="card mb-4 d-none" id="code-editor-card">
             <div class="card-header bg-primary text-white">
                 <h5 class="mb-0">Éditeur de code</h5>
             </div>
             <div class="card-body">
-                <textarea id="code-editor" class="form-control" rows="10"></textarea>
+                <textarea id="code-editor" class="form-control" rows="15"></textarea>
                 <div class="d-flex justify-content-between mt-3">
                     <button class="btn btn-primary" id="run-code-btn">Exécuter le code</button>
                     <button class="btn btn-success" id="evaluate-code-btn">Évaluer le code</button>
@@ -90,8 +106,10 @@
                 <pre id="execution-output" class="bg-dark text-light p-3 rounded"></pre>
             </div>
         </div>
-        
-        <!-- Évaluation du code -->
+    </div>
+    
+    <!-- Évaluation du code (colonne droite) -->
+    <div class="col-md-6">
         <div class="card mb-4 d-none" id="evaluation-card">
             <div class="card-header bg-info text-white">
                 <h5 class="mb-0">Évaluation du code</h5>
@@ -133,6 +151,7 @@
     const evaluationCard = document.getElementById('evaluation-card');
     const evaluationContent = document.getElementById('evaluation-content');
     const loadingEvaluation = document.getElementById('loading-evaluation');
+    const copySkeletonBtn = document.getElementById('copy-skeleton-btn');
     
     // Initialiser CodeMirror
     let codeEditor;
@@ -336,6 +355,25 @@
             loadingEvaluation.classList.add('d-none');
             alert('Une erreur est survenue lors de l\'évaluation du code.');
         });
+    });
+    
+    // Copier le squelette de code vers l'éditeur
+    copySkeletonBtn.addEventListener('click', function() {
+        // Trouver le bloc de code dans l'énoncé
+        const codeBlocks = exerciseText.querySelectorAll('pre code.language-python');
+        
+        if (codeBlocks.length > 0) {
+            // Prendre le premier bloc de code Python trouvé
+            const skeletonCode = codeBlocks[0].textContent;
+            
+            // Mettre le code dans l'éditeur
+            codeEditor.setValue(skeletonCode);
+            
+            // Notification de succès
+            alert('Le squelette de code a été copié dans l\'éditeur !');
+        } else {
+            alert('Aucun squelette de code n\'a été trouvé dans l\'énoncé.');
+        }
     });
     
     // Fonctions utilitaires

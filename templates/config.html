@@ -21,11 +21,19 @@
                                 </label>
                             </div>
                             
-                            <div class="form-check">
+                            <div class="form-check mb-3">
                                 <input class="form-check-input" type="radio" name="ai-provider" id="gemini" value="gemini" {% if ai_provider == 'gemini' %}checked{% endif %}>
                                 <label class="form-check-label" for="gemini">
                                     <strong>Google Gemini</strong>
                                     <p class="text-muted mt-1">Utilise l'API Gemini de Google pour générer des exercices et évaluer le code</p>
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ai-provider" id="mistral" value="mistral" {% if ai_provider == 'mistral' %}checked{% endif %}>
+                                <label class="form-check-label" for="mistral">
+                                    <strong>Mistral (Codestral)</strong>
+                                    <p class="text-muted mt-1">Utilise l'API Mistral Codestral pour générer des exercices et évaluer le code</p>
                                 </label>
                             </div>
                         </div>
@@ -69,6 +77,22 @@
                     <ul>
                         <li>Nécessite une connexion internet</li>
                         <li>Les données sont envoyées aux serveurs de Google</li>
+                        <li>Peut entraîner des coûts d'API (une clé API est fournie pour l'instant)</li>
+                    </ul>
+                    
+                    <hr class="my-4">
+                    
+                    <h3>Mistral (Codestral)</h3>
+                    <p>Ce modèle utilise l'API Mistral Codestral. Avantages :</p>
+                    <ul>
+                        <li>Modèle spécialisé pour le code et la programmation</li>
+                        <li>Excellente compréhension des concepts Python</li>
+                        <li>Génération de code de haute qualité</li>
+                    </ul>
+                    <p>Inconvénients :</p>
+                    <ul>
+                        <li>Nécessite une connexion internet</li>
+                        <li>Les données sont envoyées aux serveurs de Mistral</li>
                         <li>Peut entraîner des coûts d'API (une clé API est fournie pour l'instant)</li>
                     </ul>
                 </div>
