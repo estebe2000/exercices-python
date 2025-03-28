@@ -464,3 +464,8 @@ TypeError: Incompatible collection type: str is not list-like
 2025-03-28 21:31:04,750 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:31:04] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
 2025-03-28 21:31:04,752 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:31:04] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
 2025-03-28 21:31:07,233 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:31:07] "GET /data-editor/get-exercice-info?niveau=SNT&theme=Variable&niveau_difficulte=3 HTTP/1.1" 200 -
+2025-03-28 21:49:38,142 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:38] "GET /data-editor HTTP/1.1" 200 -
+2025-03-28 21:49:38,172 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:38] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-28 21:49:38,189 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:38] "[33mGET /static/logo.jpg HTTP/1.1[0m" 404 -
+2025-03-28 21:49:38,189 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:38] "GET /static/script.js HTTP/1.1" 200 -
+2025-03-28 21:49:42,773 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 21:49:42] "GET /data-editor/get-exercice-info?niveau=SNT&theme=Variable&niveau_difficulte=3 HTTP/1.1" 200 -
