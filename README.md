@@ -74,19 +74,29 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 
 ## Configuration du Fournisseur d'IA
 
-Au lieu d'utiliser un fichier `.env`, vous devez modifier le fichier `ai_provider.py` pour configurer votre fournisseur d'IA préféré.
+L'application utilise maintenant un fichier `.env` pour stocker les clés API. Créez/modifiez le fichier `.env` avec les variables suivantes :
 
-Ouvrez `ai_provider.py` et modifiez les paramètres suivants :
-
-```python
-# Configuration pour LocalAI
-LOCALAI_URL = "http://127.0.0.1:8080/v1/chat/completions"
-LOCALAI_MODEL = "codestral-latest"  # Modèle par défaut recommandé
-
-# Configuration pour Gemini
-GEMINI_API_KEY = "YOUR_API_KEY"  # Remplacez par votre clé API Gemini
-GEMINI_MODEL = "gemini-2.0-flash"
 ```
+GEMINI_API_KEY=votre_cle_gemini
+MISTRAL_API_KEY=votre_cle_mistral
+```
+
+### Améliorations des prompts
+
+**Pour la génération d'exercices :**
+- Toujours inclure 3-5 zones à compléter (# À COMPLÉTER ou # VOTRE CODE ICI)
+- Ne jamais fournir d'exercice déjà complet
+- Pour Première/Terminale : 2 tests maximum
+- Pour autres niveaux : pas de tests
+
+**Pour l'évaluation de code :**
+- Si le code ne fonctionne pas : 1 seule suggestion principale
+- Si le code fonctionne : 3 suggestions maximum
+- Structure HTML standardisée avec balises spécifiques :
+  - ✅ pour les succès
+  - ❌ pour les erreurs
+  - 💡 pour les suggestions
+  - 🚀 pour les améliorations
 
 ### Recommandations de Configuration
 

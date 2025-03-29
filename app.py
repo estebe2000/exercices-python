@@ -66,19 +66,34 @@ DEFAULT_PROVIDER = 'localai'
 
 
 # Fonctions utilitaires
-def load_exercise_data() -> Dict[str, Any]:
-    """
-    Charge les données des exercices depuis le fichier JSON.
-    
-    Returns:
-        Dictionnaire contenant les données des exercices
-    """
+from functools import lru_cache
+from datetime import datetime, timedelta
+
+# Cache pour les données d'exercice (expire après 5 minutes)
+@lru_cache(maxsize=1)
+def _cached_load_exercise_data() -> Dict[str, Any]:
+    """Version interne avec cache du chargement des données"""
     try:
         with open('exercices/data.json', 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
         app.logger.error(f"Erreur lors du chargement des données d'exercice: {str(e)}")
         return {}
+
+def load_exercise_data() -> Dict[str, Any]:
+    """
+    Charge les données des exercices depuis le fichier JSON avec cache.
+    
+    Returns:
+        Dictionnaire contenant les données des exercices
+    """
+    # Invalider le cache après 5 minutes
+    if hasattr(load_exercise_data, '_last_load'):
+        if datetime.now() - load_exercise_data._last_load > timedelta(minutes=5):
+            _cached_load_exercise_data.cache_clear()
+    
+    load_exercise_data._last_load = datetime.now()
+    return _cached_load_exercise_data()
 
 
 def find_exercise_description(niveau: str, theme: str, difficulte: int) -> tuple:
@@ -468,6 +483,9 @@ def save_data():
         # Sauvegarder les données
         with open('exercices/data.json', 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        # Invalider le cache après modification
+        _cached_load_exercise_data.cache_clear()
         
         return jsonify({'success': True})
     except Exception as e:

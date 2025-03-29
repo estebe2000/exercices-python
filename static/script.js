@@ -9,7 +9,7 @@
 function showNotification(message, type = 'info', duration = 5000) {
     // Créer l'élément de notification
     const notification = document.createElement('div');
-    notification.className = `alert alert-${type} alert-dismissible fade show notification-toast animate__animated animate__fadeInRight`;
+    notification.className = `alert alert-${type} alert-dismissible fade show notification-toast`;
     notification.role = 'alert';
     
     // Ajouter une icône en fonction du type
@@ -61,15 +61,11 @@ function showNotification(message, type = 'info', duration = 5000) {
     
     // Supprimer la notification après la durée spécifiée
     setTimeout(() => {
-        notification.classList.remove('animate__fadeInRight');
-        notification.classList.add('animate__fadeOutRight');
-        setTimeout(() => {
-            notification.remove();
-            // Supprimer le conteneur s'il est vide
-            if (notificationContainer.children.length === 0) {
-                notificationContainer.remove();
-            }
-        }, 500);
+        notification.remove();
+        // Supprimer le conteneur s'il est vide
+        if (notificationContainer.children.length === 0) {
+            notificationContainer.remove();
+        }
     }, duration);
 }
 
@@ -108,29 +104,6 @@ function downloadAsFile(text, filename) {
     
     // Afficher une notification
     showNotification(`Fichier "${filename}" téléchargé !`, 'success');
-}
-
-/**
- * Fonction pour animer les transitions entre les sections
- * @param {HTMLElement} element - L'élément à animer
- * @param {string} animation - Nom de l'animation (fadeIn, fadeOut, slideIn, etc.)
- * @param {Function} callback - Fonction à exécuter après l'animation
- */
-function animateElement(element, animation, callback = null) {
-    // Ajouter la classe d'animation
-    element.classList.add('animate__animated', `animate__${animation}`);
-    
-    // Écouter la fin de l'animation
-    const handleAnimationEnd = () => {
-        element.classList.remove('animate__animated', `animate__${animation}`);
-        element.removeEventListener('animationend', handleAnimationEnd);
-        
-        if (callback && typeof callback === 'function') {
-            callback();
-        }
-    };
-    
-    element.addEventListener('animationend', handleAnimationEnd);
 }
 
 /**
@@ -186,76 +159,8 @@ function setupKeyboardShortcuts() {
     });
 }
 
-/**
- * Fonction pour créer un effet de confetti lors d'un succès
- */
-function showConfetti() {
-    const confettiCount = 200;
-    const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#9b59b6'];
-    
-    const confettiContainer = document.createElement('div');
-    confettiContainer.style.position = 'fixed';
-    confettiContainer.style.top = '0';
-    confettiContainer.style.left = '0';
-    confettiContainer.style.width = '100%';
-    confettiContainer.style.height = '100%';
-    confettiContainer.style.pointerEvents = 'none';
-    confettiContainer.style.zIndex = '9999';
-    document.body.appendChild(confettiContainer);
-    
-    for (let i = 0; i < confettiCount; i++) {
-        const confetti = document.createElement('div');
-        confetti.style.position = 'absolute';
-        confetti.style.width = `${Math.random() * 10 + 5}px`;
-        confetti.style.height = `${Math.random() * 5 + 3}px`;
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.borderRadius = '50%';
-        confetti.style.top = '-10px';
-        confetti.style.left = `${Math.random() * 100}%`;
-        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-        confetti.style.opacity = Math.random();
-        
-        const animationDuration = Math.random() * 3 + 2;
-        confetti.style.animation = `fall ${animationDuration}s linear forwards`;
-        
-        confettiContainer.appendChild(confetti);
-        
-        // Supprimer le confetti après l'animation
-        setTimeout(() => {
-            confetti.remove();
-        }, animationDuration * 1000);
-    }
-    
-    // Supprimer le conteneur après que tous les confettis sont tombés
-    setTimeout(() => {
-        confettiContainer.remove();
-    }, 5000);
-    
-    // Ajouter l'animation CSS
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-}
-
 // Ajouter des boutons d'action aux éléments de code et initialiser les fonctionnalités
 document.addEventListener('DOMContentLoaded', function() {
-    // Ajouter la bibliothèque Animate.css pour les animations
-    const animateCss = document.createElement('link');
-    animateCss.rel = 'stylesheet';
-    animateCss.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
-    document.head.appendChild(animateCss);
-    
     // Ajouter des boutons pour copier le code
     document.querySelectorAll('pre code').forEach(codeBlock => {
         // Créer le conteneur de boutons
@@ -308,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
         downloadButton.innerHTML = '<i class="bi bi-download"></i> Télécharger';
         downloadButton.title = 'Télécharger le code (Ctrl+S)';
         downloadButton.addEventListener('click', () => {
-            // Accéder à l'éditeur CodeMirror via la variable globale
             const editor = document.querySelector('.CodeMirror').CodeMirror;
             if (editor) {
                 const code = editor.getValue();
@@ -336,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.innerHTML = '<i class="bi bi-trash"></i> Effacer';
         clearButton.title = 'Effacer le code';
         clearButton.addEventListener('click', () => {
-            // Accéder à l'éditeur CodeMirror via la variable globale
             const editor = document.querySelector('.CodeMirror').CodeMirror;
             if (editor && confirm('Êtes-vous sûr de vouloir effacer tout le code ?')) {
                 editor.setValue('# Écrivez votre code ici\n\n');
@@ -366,49 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
         codeEditorCard.querySelector('.card-body').appendChild(shortcutsInfo);
     }
     
-    // Ajouter des animations aux boutons d'exécution et d'évaluation
-    const runCodeBtn = document.getElementById('run-code-btn');
-    const evaluateCodeBtn = document.getElementById('evaluate-code-btn');
-    
-    if (runCodeBtn) {
-        runCodeBtn.addEventListener('click', function() {
-            animateElement(this, 'pulse');
-        });
-    }
-    
-    if (evaluateCodeBtn) {
-        evaluateCodeBtn.addEventListener('click', function() {
-            animateElement(this, 'pulse');
-        });
-    }
-    
     // Configurer les raccourcis clavier
     setupKeyboardShortcuts();
-    
-    // Ajouter des animations aux cartes
-    document.querySelectorAll('.card').forEach((card, index) => {
-        // Retarder l'animation pour chaque carte
-        setTimeout(() => {
-            animateElement(card, 'fadeInUp');
-        }, index * 100);
-    });
-    
-    // Ajouter un effet de confetti lorsque l'évaluation est positive
-    const evaluationContent = document.getElementById('evaluation-content');
-    if (evaluationContent) {
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                    // Vérifier si l'évaluation contient des messages de succès
-                    if (evaluationContent.innerHTML.includes('text-success') && 
-                        evaluationContent.innerHTML.includes('✅') && 
-                        !evaluationContent.innerHTML.includes('❌')) {
-                        showConfetti();
-                    }
-                }
-            });
-        });
-        
-        observer.observe(evaluationContent, { childList: true });
-    }
 });

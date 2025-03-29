@@ -10,13 +10,53 @@ import json
 import time
 import logging
 from typing import Dict, Any, Optional
+from dotenv import load_dotenv
+import os
 
 # Configuration du logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('logs/localai.log'),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
+# Charger les variables d'environnement
+try:
+    load_dotenv()
+    logger.info("Variables d'environnement chargées avec succès")
+except Exception as e:
+    logger.error(f"Erreur lors du chargement des variables d'environnement: {str(e)}")
+    raise
+
 # Configuration de l'API LocalAI
-LOCALAI_URL = "http://127.0.0.1:8080/v1/chat/completions"
-MODEL = "codestral-latest"
+LOCALAI_URL = os.getenv("LOCALAI_URL", "http://127.0.0.1:8080/v1/chat/completions")
+MODEL = os.getenv("LOCALAI_MODEL", "codestral-latest")
+
+if not LOCALAI_URL:
+    raise ValueError("URL LocalAI non configurée. Veuillez définir LOCALAI_URL dans .env")
+
+def check_localai_connection():
+    """Vérifie que le serveur LocalAI est accessible"""
+    try:
+        response = requests.get(f"{LOCALAI_URL.replace('/v1/chat/completions', '')}/health", timeout=5)
+        if response.status_code != 200:
+            raise ConnectionError(f"Le serveur LocalAI répond mais avec un statut {response.status_code}")
+    except Exception as e:
+        raise ConnectionError(
+            f"Impossible de se connecter au serveur LocalAI à {LOCALAI_URL}\n"
+            "Veuillez vérifier que:\n"
+            "1. Le serveur LocalAI est bien installé et démarré\n"
+            "2. L'URL dans .env est correcte\n"
+            "3. Le port n'est pas bloqué par un pare-feu\n"
+            f"Erreur détaillée: {str(e)}"
+        )
+
+# Vérifier la connexion au démarrage
+check_localai_connection()
 
 # Paramètres par défaut
 DEFAULT_MAX_TOKENS = 1500
@@ -24,97 +64,9 @@ DEFAULT_TEMPERATURE = 0.7
 DEFAULT_RETRY_COUNT = 2
 DEFAULT_RETRY_DELAY = 1
 
-# Message système pour guider le modèle
-SYSTEM_MESSAGE = """Tu es un expert en programmation Python et en pédagogie. 
-Tu aides à créer des exercices de programmation pour des élèves de lycée et à évaluer leur code.
-
-IMPORTANT: Tu dois formater tes réponses en HTML pur pour un affichage correct dans un navigateur.
-
-Quand tu crées des exercices:
-1. Utilise une structure claire avec des titres et sous-titres bien formatés (<h1>, <h2>, <h3>)
-2. Fournis un squelette de code à trous avec des commentaires "# À COMPLÉTER" ou "# VOTRE CODE ICI"
-3. Inclus des jeux de tests avec des messages de réussite (✅) ou d'échec (❌)
-4. Adapte la difficulté au niveau de l'élève (Première ou Terminale)
-5. Sois précis dans tes explications et tes attentes
-
-Quand tu évalues du code:
-1. Vérifie si le code répond correctement à l'énoncé
-2. Identifie les erreurs potentielles (syntaxe, logique, etc.)
-3. Suggère des améliorations (optimisation, lisibilité, etc.)
-4. Donne des conseils pour aller plus loin
-5. Sois encourageant et constructif dans tes retours
-
-Utilise uniquement des balises HTML standard pour le formatage:
-- <h1>, <h2>, <h3> pour les titres
-- <p> pour les paragraphes
-- <ul> et <li> pour les listes
-- <pre><code class="language-python">...</code></pre> pour les blocs de code
-- <strong> pour le texte en gras
-- <em> pour le texte en italique
-- <span class="text-success">✅ Texte</span> pour les messages de succès
-- <span class="text-danger">❌ Texte</span> pour les messages d'erreur
-- <span class="text-info">💡 Texte</span> pour les suggestions
-- <span class="text-primary">🚀 Texte</span> pour les conseils d'amélioration
-
-Ne mélange pas HTML et Markdown. Utilise uniquement du HTML pur.
-"""
+from prompts import SYSTEM_MESSAGE, get_evaluation_prompt, DEFAULT_MAX_TOKENS, DEFAULT_TEMPERATURE, DEFAULT_RETRY_COUNT, DEFAULT_RETRY_DELAY
 
 
-def get_evaluation_prompt(code: str, enonce: str) -> str:
-    """
-    Génère le prompt pour l'évaluation de code.
-    
-    Args:
-        code: Le code Python à évaluer
-        enonce: L'énoncé de l'exercice
-        
-    Returns:
-        Le prompt formaté pour l'évaluation
-    """
-    return f"""
-    Évalue le code Python suivant par rapport à l'énoncé donné:
-    
-    Énoncé:
-    {enonce}
-    
-    Code soumis:
-    ```python
-    {code}
-    ```
-    
-    IMPORTANT: Ton évaluation doit être formatée en HTML pur pour un affichage correct dans un navigateur.
-    
-    Ton évaluation doit toujours inclure:
-    1. Un titre principal avec <h1>Évaluation du code</h1>
-    2. Une section sur la conformité à l'énoncé avec <h2>Conformité à l'énoncé</h2>
-    3. Une section sur les erreurs potentielles avec <h2>Erreurs potentielles</h2>
-    4. Une section sur les suggestions d'amélioration avec <h2>Suggestions d'amélioration</h2>
-    
-    IMPORTANT: La section "Pour aller plus loin" avec <h2>Pour aller plus loin</h2> ne doit être incluse QUE si le code fonctionne correctement et répond à l'énoncé. Si le code contient des erreurs ou ne répond pas à l'énoncé, n'inclus PAS cette section.
-    
-    Utilise uniquement des balises HTML standard pour le formatage:
-    - <h1>, <h2>, <h3> pour les titres
-    - <p> pour les paragraphes
-    - <ul> et <li> pour les listes
-    - <pre><code class="language-python">...</code></pre> pour les blocs de code
-    - <strong> pour le texte en gras
-    - <em> pour le texte en italique
-    
-    Utilise des émojis et des classes pour rendre ton évaluation plus visuelle:
-    - <span class="text-success">✅ Texte</span> pour les points positifs
-    - <span class="text-danger">❌ Texte</span> pour les erreurs ou problèmes
-    - <span class="text-info">💡 Texte</span> pour les suggestions
-    - <span class="text-primary">🚀 Texte</span> pour les conseils d'amélioration
-    
-    TRÈS IMPORTANT:
-    - NE DONNE JAMAIS LA SOLUTION COMPLÈTE à l'exercice
-    - Fournis uniquement des notions de cours et des pistes de réflexion
-    - Si tu dois donner un exemple de code, utilise un exemple différent de l'exercice ou montre seulement une petite partie de la solution
-    - Guide l'élève vers la bonne direction sans faire le travail à sa place
-    - Sois encourageant et constructif dans tes retours
-    
-    Ne mélange pas HTML et Markdown. Utilise uniquement du HTML pur.
-    """
 
 
 def generate_text(prompt: str, max_tokens: int = DEFAULT_MAX_TOKENS, 
@@ -125,15 +77,32 @@ def generate_text(prompt: str, max_tokens: int = DEFAULT_MAX_TOKENS,
     Génère du texte en utilisant l'API LocalAI.
     
     Args:
-        prompt: Le prompt à envoyer à l'API
-        max_tokens: Nombre maximum de tokens à générer
-        temperature: Température pour la génération
-        retry_count: Nombre de tentatives en cas d'échec
-        retry_delay: Délai entre les tentatives en secondes
+        prompt: Le prompt à envoyer à l'API (doit contenir au moins 20 caractères)
+        max_tokens: Nombre maximum de tokens à générer (entre 100 et 4000)
+        temperature: Température pour la génération (entre 0.1 et 2.0)
+        retry_count: Nombre de tentatives en cas d'échec (entre 0 et 5)
+        retry_delay: Délai entre les tentatives en secondes (entre 1 et 10)
         
     Returns:
-        Le texte généré par l'API
+        str: Le texte généré par l'API au format HTML
+        
+    Raises:
+        ValueError: Si les paramètres sont invalides
+        requests.exceptions.RequestException: En cas d'échec de la requête API
     """
+    # Validation des paramètres
+    if not prompt or len(prompt.strip()) < 20:
+        raise ValueError("Le prompt doit contenir au moins 20 caractères")
+    if not 100 <= max_tokens <= 4000:
+        raise ValueError("max_tokens doit être entre 100 et 4000")
+    if not 0.1 <= temperature <= 2.0:
+        raise ValueError("temperature doit être entre 0.1 et 2.0")
+    if not 0 <= retry_count <= 5:
+        raise ValueError("retry_count doit être entre 0 et 5")
+    if not 1 <= retry_delay <= 10:
+        raise ValueError("retry_delay doit être entre 1 et 10")
+        
+    logger.info(f"Début de génération avec max_tokens={max_tokens}, temperature={temperature}")
     attempts = 0
     
     while attempts <= retry_count:
@@ -193,11 +162,16 @@ def evaluate_code(code: str, enonce: str, max_tokens: int = DEFAULT_MAX_TOKENS,
     Args:
         code: Le code Python à évaluer
         enonce: L'énoncé de l'exercice
-        max_tokens: Nombre maximum de tokens à générer
-        temperature: Température pour la génération
+        max_tokens: Nombre maximum de tokens à générer (entre 100 et 4000)
+        temperature: Température pour la génération (entre 0.1 et 2.0)
         
     Returns:
-        L'évaluation du code
+        str: L'évaluation du code au format HTML
+        
+    Raises:
+        ValueError: Si les paramètres sont invalides
+        requests.exceptions.RequestException: En cas d'échec de la requête API
     """
+    logger.info(f"Début d'évaluation de code (longueur: {len(code)} caractères)")
     prompt = get_evaluation_prompt(code, enonce)
     return generate_text(prompt, max_tokens, temperature)
