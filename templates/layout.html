@@ -71,6 +71,61 @@
         </div>
     </footer>
 
+    <!-- Modal de bienvenue -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="welcomeModalLabel">Bienvenue sur le Générateur d'Exercices Python</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="img-fluid mb-4" style="max-width: 150px; border-radius: 10px;">
+                    <h4 class="mb-3">Votre assistant pour l'apprentissage du Python</h4>
+                    <p class="lead">Cette application vous permet de :</p>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-primary mb-3">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-code-square text-primary" style="font-size: 2rem;"></i>
+                                    <h5 class="card-title mt-3">Générer des exercices</h5>
+                                    <p class="card-text">Créez des exercices Python personnalisés adaptés à votre niveau</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-success mb-3">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-play-circle text-success" style="font-size: 2rem;"></i>
+                                    <h5 class="card-title mt-3">Exécuter du code</h5>
+                                    <p class="card-text">Testez vos solutions directement dans l'application</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-info mb-3">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-check-circle text-info" style="font-size: 2rem;"></i>
+                                    <h5 class="card-title mt-3">Évaluer vos solutions</h5>
+                                    <p class="card-text">Recevez des commentaires détaillés sur votre code</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-check me-auto">
+                        <input class="form-check-input" type="checkbox" value="" id="dontShowAgain">
+                        <label class="form-check-label" for="dontShowAgain">
+                            Ne plus afficher ce message
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Commencer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal d'aide -->
     <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -178,7 +233,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     
-    <!-- Initialisation des tooltips -->
+    <!-- Initialisation des tooltips et du modal de bienvenue -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialiser tous les tooltips
@@ -186,6 +241,36 @@
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
+            
+            // Gestion du modal de bienvenue
+            const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+            const dontShowAgainCheckbox = document.getElementById('dontShowAgain');
+            
+            // Vérifier si l'utilisateur a déjà vu le modal
+            const hasSeenWelcome = localStorage.getItem('hasSeenWelcome') === 'true';
+            
+            // Si l'utilisateur n'a pas encore vu le modal, l'afficher
+            if (!hasSeenWelcome) {
+                welcomeModal.show();
+            }
+            
+            // Gérer le clic sur le bouton "Commencer"
+            document.querySelector('#welcomeModal .btn-primary').addEventListener('click', function() {
+                if (dontShowAgainCheckbox.checked) {
+                    localStorage.setItem('hasSeenWelcome', 'true');
+                }
+            });
+            
+            // Gérer la fermeture du modal par le bouton X
+            document.querySelector('#welcomeModal .btn-close').addEventListener('click', function() {
+                if (dontShowAgainCheckbox.checked) {
+                    localStorage.setItem('hasSeenWelcome', 'true');
+                }
+            });
+            
+            // Réinitialiser le modal (pour les tests)
+            // Décommentez la ligne suivante pour réinitialiser le modal
+            // localStorage.removeItem('hasSeenWelcome');
         });
     </script>
     

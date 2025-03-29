@@ -1,134 +1,666 @@
 {
-  "Première Générale": [
+  "Terminale Générale": [
     {
-      "thème": "Conversion de bases numériques",
+      "thème": "Algorithmes avancés",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Écrire une fonction qui convertit un nombre entier positif de la base 10 vers la base 2."
+          "description": "Implémenter la recherche par dichotomie et analyser sa complexité",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Écrire une fonction qui convertit un nombre entier positif de la base b1 vers la base b2 (où b1 et b2 sont comprises entre 2 et 16)."
+          "description": "Implémenter le tri par fusion et comparer ses performances avec d'autres algorithmes de tri",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Implémenter l'algorithme d'Euclide pour calculer le PGCD de deux nombres",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Écrire une fonction qui décompose un nombre en facteurs premiers",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Calculer la suite de Fibonacci par programmation dynamique (mémoïsation)",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Arithmétique binaire",
+      "thème": "Manipulation de chaînes de caractères avancée",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Écrire une fonction qui additionne deux nombres binaires représentés sous forme de chaînes de caractères."
+          "description": "Détecter les mots anagrammes dans une liste de mots",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Écrire une fonction qui effectue la multiplication de deux nombres binaires représentés sous forme de chaînes de caractères."
+          "description": "Implémenter un algorithme de compression simple d'une chaîne (exemple : aaabbc → a3b2c1)",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Détecter des motifs dans une chaîne sans utiliser d'expressions régulières",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Effectuer une rotation circulaire d'une chaîne de caractères",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Vérifier la validité d'une adresse email (version simplifiée)",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Représentation des entiers relatifs (complément à deux)",
+      "thème": "Structures de données complexes",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Écrire une fonction qui prend un entier relatif et le représente sur N bits en complément à deux (si possible)."
+          "description": "Implémenter une pile avec une classe (méthodes push, pop, is_empty)",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Écrire une fonction qui prend une représentation binaire en complément à deux sur N bits et renvoie l'entier relatif correspondant."
+          "description": "Implémenter une file (FIFO) avec une classe",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Créer et manipuler un graphe sous forme de dictionnaire d'adjacence",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Implémenter une liste chaînée avec une classe Noeud",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Manipuler une matrice : transposition, addition, multiplication",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Manipulation de chaînes de caractères (encodage)",
+      "thème": "Recherche dans un graphe",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Écrire une fonction qui prend une chaîne de caractères et affiche les codes ASCII de chaque caractère."
+          "description": "Implémenter un parcours en largeur (BFS) dans un graphe",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Écrire une fonction qui convertit une chaîne de caractères en une liste de sa représentation binaire (en utilisant l'encodage UTF-8 par exemple)."
+          "description": "Implémenter un parcours en profondeur (DFS) dans un graphe",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Détecter la présence de cycles dans un graphe",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Implémenter l'algorithme de Dijkstra pour trouver le plus court chemin",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Vérifier la connexité d'un graphe et implémenter un algorithme de coloration glouton",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Valeurs booléennes et expressions logiques",
+      "thème": "Programmation orientée objet (POO)",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Évaluer manuellement puis en Python des expressions booléennes simples utilisant and, or, not."
+          "description": "Créer une classe CompteBancaire avec méthodes de dépôt, retrait et consultation du solde",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Écrire une fonction qui prend une expression booléenne sous forme de chaîne de caractères (avec des variables) et un dictionnaire de valeurs pour les variables, et évalue l'expression."
+          "description": "Implémenter l'héritage avec une classe CompteEpargne dérivée de CompteBancaire",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Surcharger des opérateurs (__add__, __str__) dans une classe personnalisée",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Créer une classe Vecteur avec opérations d'addition, produit scalaire et calcul de norme",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Implémenter un jeu de cartes avec les classes Carte et Paquet",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Algorithmes gloutons et récursifs",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Résoudre le problème du sac à dos avec une approche gloutonne",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Implémenter l'algorithme du rendu de monnaie (version gloutonne)",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Parcourir un labyrinthe par backtracking",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Implémenter l'algorithme de Kruskal pour trouver l'arbre couvrant minimal",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Résoudre le problème des Tours de Hanoï avec une approche récursive",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Traitement de données",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Calculer le coefficient de corrélation de Pearson entre deux séries de données",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Implémenter une moyenne mobile pour lisser une série temporelle",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Trier une liste de dictionnaires selon la valeur d'un champ spécifique",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Fusionner deux listes triées en une seule liste triée",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Construire un histogramme à partir d'une liste de valeurs",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Cryptographie",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Implémenter le chiffrement de César avec une clé variable",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Créer une fonction de chiffrement et déchiffrement XOR",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Implémenter l'encodage et le décodage en Base64",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Calculer le hachage SHA256 d'une chaîne de caractères",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Implémenter un mini système de signature numérique (RSA simplifié)",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Problèmes combinatoires",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Générer toutes les permutations d'une liste",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Trouver la plus longue sous-séquence croissante dans une liste (programmation dynamique)",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Résoudre le problème du voyageur de commerce (TSP) avec une approche naïve",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Générer l'ensemble des sous-ensembles d'un ensemble donné",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Utiliser le backtracking pour résoudre un sudoku",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Simulation et modélisation",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Simuler la loi des grands nombres avec des lancers de dés",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Utiliser la méthode de Monte-Carlo pour approximer π",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Implémenter le jeu de la vie de Conway",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Créer un modèle de propagation d'épidémie (modèle SIR)",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Simuler une file d'attente et calculer le temps d'attente moyen",
+          "debutant": false
         }
       ]
     }
   ],
-  "Terminale Générale": [
+  "Première Générale": [
     {
-      "thème": "Listes (chaînées - simulation)",
+      "thème": "Algorithmes simples",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Simuler en Python une liste chaînée simple avec les opérations ajout_tete, suppression_tete, est_vide. Utiliser des dictionnaires ou des classes simples pour représenter les nœuds."
+          "description": "Calculer la somme des éléments d'une liste prédéfinie",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Ajouter à la simulation les opérations ajout_queue, suppression_queue, et la gestion d'une taille."
+          "description": "Calculer le produit des éléments d'une liste prédéfinie",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Trouver le maximum et le minimum dans une liste prédéfinie",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Vérifier si une liste prédéfinie est triée par ordre croissant",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Générer les n premiers termes de la suite de Fibonacci (version itérative)",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Piles",
+      "thème": "Manipulation de chaînes de caractères",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Implémenter une pile en Python en utilisant une liste Python sous-jacente, avec les opérations empiler, depiler, est_vide, sommet."
+          "description": "Compter le nombre de voyelles dans une chaîne prédéfinie",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Utiliser la pile pour vérifier si une chaîne de caractères contenant des parenthèses est correctement équilibrée."
+          "description": "Vérifier si une chaîne prédéfinie est un palindrome",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Inverser une chaîne de caractères sans utiliser la fonction reverse",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Supprimer les espaces inutiles (début, fin et doublons) dans une chaîne",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Rechercher un motif dans une chaîne et compter ses occurrences",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Files",
+      "thème": "Structures de données de base",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Implémenter une file en Python en utilisant une liste Python sous-jacente, avec les opérations enfiler, défiler, est_vide, tete."
+          "description": "Fusionner deux listes triées en une seule liste triée",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Utiliser la file pour simuler une file d'attente (par exemple, des tâches à traiter)."
+          "description": "Calculer la fréquence de chaque élément dans une liste",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Compter le nombre d'occurrences de chaque mot dans une phrase en utilisant un dictionnaire",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Échanger deux éléments dans une liste à des positions données",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Transposer une matrice représentée par une liste de listes",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Arbres binaires",
+      "thème": "Recherche et tri",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Implémenter une classe Noeud pour représenter un nœud d'arbre binaire (valeur, fils gauche, fils droit). Écrire une fonction récursive pour calculer la taille d'un arbre binaire."
+          "description": "Implémenter une recherche linéaire dans une liste",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Écrire des fonctions récursives pour effectuer les parcours infixe, préfixe et suffixe d'un arbre binaire."
+          "description": "Implémenter une recherche dichotomique dans une liste triée",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Implémenter le tri par sélection sur une liste",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Implémenter le tri à bulles sur une liste",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Implémenter le tri par insertion sur une liste",
+          "debutant": false
         }
       ]
     },
     {
-      "thème": "Arbres binaires de recherche (ABR)",
+      "thème": "Boucles et récursivité",
       "niveaux": [
         {
           "niveau": 1,
-          "description": "Implémenter une fonction pour rechercher une clé dans un ABR."
+          "description": "Calculer la somme des nombres de 1 à n (version itérative)",
+          "debutant": false
         },
         {
           "niveau": 2,
-          "description": "Implémenter une fonction pour insérer une clé dans un ABR en respectant la propriété."
+          "description": "Calculer la somme des nombres de 1 à n (version récursive)",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Calculer la factorielle d'un nombre (version itérative et récursive)",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Générer les n premiers termes de la suite de Fibonacci (version récursive)",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Compter le nombre de chiffres d'un nombre sans utiliser la conversion en chaîne",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Jeux et simulations simples",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Simuler plusieurs lancers de dés et afficher les résultats",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Effectuer un tirage aléatoire dans une liste prédéfinie",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Simuler un jeu de Pierre-Feuille-Ciseaux avec des choix prédéfinis",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Générer une grille de morpion aléatoire",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Simuler un jeu de cartes simple avec mélange et distribution",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Statistiques et traitement de données",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Calculer la moyenne, la médiane et l'écart-type d'une liste de nombres",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Compter le nombre de valeurs uniques dans une liste",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Filtrer les nombres pairs d'une liste",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Trier une liste de tuples (nom, note) par note décroissante",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Calculer des statistiques sur un ensemble de données (min, max, moyenne, médiane)",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Cryptographie simple",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Implémenter le chiffrement de César avec un décalage fixe",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Implémenter le déchiffrement de César avec un décalage fixe",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Créer une fonction de rotation des lettres dans une chaîne",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Implémenter un chiffrement par substitution simple",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Implémenter un chiffrement par transposition (permutation des caractères)",
+          "debutant": false
+        }
+      ]
+    }
+  ],
+  "Prépa NSI": [
+    {
+      "thème": "Algorithmes simples",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Calculer la somme des éléments d'une liste prédéfinie",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Calculer le produit des éléments d'une liste prédéfinie",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Générer les n premiers termes de la suite de Fibonacci avec une boucle",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Vérifier si un nombre prédéfini est premier",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Calculer le PGCD de deux nombres en utilisant l'algorithme d'Euclide",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Manipulation de chaînes de caractères",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Compter le nombre de lettres dans une chaîne prédéfinie",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Vérifier si une chaîne prédéfinie est un palindrome",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Remplacer un caractère par un autre dans une chaîne",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Inverser une chaîne de caractères",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Extraire les mots d'une phrase en utilisant la méthode split()",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Structures de données de base",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Créer une liste contenant les nombres pairs de 0 à 20",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Trier une liste de nombres dans l'ordre croissant",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Créer un dictionnaire associant des noms à des âges",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Supprimer les doublons dans une liste",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Compter la fréquence des éléments dans une liste (histogramme)",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Recherche et tri (bases)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Implémenter une recherche linéaire dans une liste",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Trouver le maximum et le minimum dans une liste",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Implémenter le tri par sélection sur une liste",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Vérifier si une liste est triée par ordre croissant",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Fusionner deux listes triées en une seule liste triée",
+          "debutant": true
         }
       ]
     }
@@ -144,12 +676,354 @@
         },
         {
           "niveau": 2,
-          "description": "comparaison de deux variables",
+          "description": "Comparaison de deux variables",
           "debutant": true
         },
         {
           "niveau": 3,
-          "description": "Addition de deux variables negative ou flottante",
+          "description": "Addition de deux variables négatives ou flottantes",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Calcul de la moyenne de trois nombres",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Conversion de température entre Celsius et Fahrenheit",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Boucle",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Afficher les nombres de 1 à 10 avec une boucle for",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Calculer la somme des nombres de 1 à n (où n est une variable prédéfinie)",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Afficher les nombres pairs entre 1 et 20",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Calculer la factorielle d'un nombre prédéfini",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Générer les n premiers termes de la suite de Fibonacci",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Condition",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Déterminer si un nombre prédéfini est positif, négatif ou nul",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Déterminer si un nombre prédéfini est pair ou impair",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Déterminer le plus grand de trois nombres prédéfinis",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Calculer le prix après remise (remise de 10% si le prix dépasse 100€, 20% s'il dépasse 200€)",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Déterminer si une année prédéfinie est bissextile",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Random",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Générer un nombre aléatoire entre 1 et 10 et l'afficher",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Simuler un lancer de dé (nombre aléatoire entre 1 et 6)",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Générer 10 nombres aléatoires entre 1 et 100 et calculer leur moyenne",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Simuler 100 lancers de pièce (pile ou face) et compter le nombre de piles",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Générer un mot de passe aléatoire de longueur n composé de lettres et de chiffres",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Jeux simples",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Simuler un jeu de pile ou face où l'ordinateur fait un tirage aléatoire et affiche le résultat",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Créer un jeu où l'ordinateur choisit un nombre entre 1 et 100, puis indique si un nombre prédéfini est plus grand, plus petit ou égal",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Simuler un jeu de pierre-papier-ciseaux où l'ordinateur fait un choix aléatoire et le compare à un choix prédéfini",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Créer un jeu de dés où l'ordinateur lance deux dés et détermine si le joueur gagne selon des règles simples",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Simuler un mini jeu de blackjack où l'ordinateur distribue des cartes aléatoires et détermine si le joueur dépasse 21",
+          "debutant": true
+        }
+      ]
+    }
+  ],
+  "Troisième": [
+    {
+      "thème": "Calculs simples",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Calculer la somme de deux nombres",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Multiplier deux nombres",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Vérifier si un nombre est pair ou impair",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Convertir une température de Celsius en Fahrenheit et vice-versa",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Calculer l'aire d'un rectangle, d'un cercle ou d'un triangle",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Manipulation de chaînes de caractères",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Compter le nombre de lettres dans une phrase",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Vérifier si une phrase contient un mot spécifique",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Inverser une chaîne de caractères",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Remplacer une lettre par une autre dans une chaîne",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Passer une phrase en majuscules ou en minuscules",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Boucles (for)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Afficher les nombres de 1 à 10",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Afficher la table de multiplication d'un nombre donné",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Afficher une suite de nombres pairs jusqu'à un certain nombre",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Afficher une pyramide de caractères",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Calculer la somme des nombres de 1 à n",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Conditions (if, else)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Vérifier si un nombre est positif, négatif ou nul",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Vérifier si une année est bissextile",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Déterminer le plus grand de trois nombres",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Afficher 'pair' ou 'impair' pour une liste de nombres",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Vérifier un mot de passe simple (exemple : 'python123')",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Listes",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Créer une liste de nombres pairs",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Trouver le plus grand élément d'une liste",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Calculer la somme des éléments d'une liste",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Trier une liste de nombres (avec sort() ou sorted())",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Supprimer les doublons dans une liste",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Fonctions simples",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Fonction qui retourne la somme de deux nombres",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Fonction qui retourne le carré d'un nombre",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Fonction qui vérifie si un nombre est pair",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Fonction qui retourne le plus grand de deux nombres",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Fonction qui retourne une chaîne inversée",
+          "debutant": true
+        }
+      ]
+    },
+    {
+      "thème": "Jeux simples",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Jeu du nombre mystère : l'ordinateur choisit un nombre entre 1 et 100, l'élève doit deviner",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Pierre-Papier-Ciseaux (utiliser random.choice() pour le choix de l'ordinateur)",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "FizzBuzz : afficher 'Fizz' pour les multiples de 3, 'Buzz' pour les multiples de 5, et 'FizzBuzz' pour les multiples de 3 et 5",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Compte à rebours jusqu'à 0 avec un message à la fin",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Lancer de dé : générer une valeur aléatoire entre 1 et 6",
           "debutant": true
         }
       ]

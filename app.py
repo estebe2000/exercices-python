@@ -150,22 +150,69 @@ def get_exercise_prompt(niveau: str, theme: str, difficulte: int, description: s
     4. Des contraintes ou indications si nécessaire
     
     IMPORTANT: Inclus également:
-    5. Un squelette de code à trous que l'élève devra compléter. Utilise des commentaires comme "# À COMPLÉTER" ou "# VOTRE CODE ICI" pour indiquer les parties à remplir.
-    6. Des jeux de tests avec des messages de réussite ou d'échec.
+    5. Un squelette de code à trous que l'élève devra compléter, SUIVI IMMÉDIATEMENT des tests dans le MÊME bloc de code.
     
-    Exemple de format pour le code et les tests:
+    RÈGLES IMPORTANTES POUR LE CODE:
+    - Le squelette de code et les tests DOIVENT être dans un SEUL bloc de code <pre><code class="language-python">...</code></pre>
+    - NE PAS séparer le squelette de code et les tests en plusieurs blocs
+    - Les exemples d'entrées/sorties doivent être en dehors du bloc de code principal
+    - Utilise des commentaires comme "# À COMPLÉTER" ou "# VOTRE CODE ICI" pour indiquer les parties à remplir
+    - NE PAS utiliser la fonction input() dans les exercices, car elle ne fonctionne pas correctement dans l'éditeur
+    - Si des données d'entrée sont nécessaires, les fournir directement dans le code (par exemple, sous forme de variables prédéfinies)
+    
+    RÈGLES CRUCIALES POUR LE SQUELETTE DE CODE:
+    - Le squelette de code DOIT TOUJOURS contenir des parties à compléter par l'élève
+    - NE JAMAIS fournir un code déjà complet ou fonctionnel
+    - Remplacer SYSTÉMATIQUEMENT les implémentations par des commentaires "# À COMPLÉTER" ou "# VOTRE CODE ICI"
+    - Pour les opérations simples (comme aire = longueur * largeur), remplacer par "# À COMPLÉTER: Calculer l'aire du rectangle"
+    - Pour les structures conditionnelles, laisser la structure mais vider le contenu des blocs
+    - Pour les boucles, laisser la structure mais vider le contenu des blocs
+    - Pour les fonctions, laisser la signature mais remplacer le corps par "# À COMPLÉTER" et "pass"
+    
+    Exemple de format CORRECT pour le code et les tests (dans un SEUL bloc):
     
     <pre><code class="language-python">
     def fonction(a, b):
         # À COMPLÉTER
         pass
         
-    # Tests
+    # Tests - NE PAS SÉPARER DU CODE CI-DESSUS
     try:
         assert fonction(1, 2) == 3
         print("✅ Test 1 réussi: fonction(1, 2) == 3")
     except AssertionError:
         print("❌ Test 1 échoué: fonction(1, 2) devrait retourner 3")
+    </code></pre>
+    
+    Exemple de squelette de code INCORRECT (car déjà complet):
+    
+    <pre><code class="language-python">
+    # Calcul de l'aire en fonction de la forme choisie
+    if forme == "rectangle":
+        aire = longueur * largeur
+    elif forme == "cercle":
+        aire = pi * (rayon ** 2)
+    elif forme == "triangle":
+        aire = (base * hauteur) / 2
+    else:
+        print("Forme non reconnue")
+    </code></pre>
+    
+    Exemple de squelette de code CORRECT (avec parties à compléter):
+    
+    <pre><code class="language-python">
+    # Calcul de l'aire en fonction de la forme choisie
+    if forme == "rectangle":
+        # À COMPLÉTER: Calculer l'aire du rectangle
+        pass
+    elif forme == "cercle":
+        # À COMPLÉTER: Calculer l'aire du cercle
+        pass
+    elif forme == "triangle":
+        # À COMPLÉTER: Calculer l'aire du triangle
+        pass
+    else:
+        print("Forme non reconnue")
     </code></pre>
     
     Utilise uniquement des balises HTML standard pour le formatage:
@@ -181,6 +228,20 @@ def get_exercise_prompt(niveau: str, theme: str, difficulte: int, description: s
     Ne mélange pas HTML et Markdown. Utilise uniquement du HTML pur.
     """
 
+
+def safe_input(prompt=""):
+    """
+    Version sécurisée de input() qui affiche un message d'erreur au lieu de bloquer l'exécution.
+    
+    Args:
+        prompt: Le message à afficher (ignoré dans cette implémentation)
+        
+    Returns:
+        Une chaîne vide et affiche un message d'erreur
+    """
+    print("⚠️ ERREUR: La fonction input() n'est pas supportée dans cet environnement.")
+    print("⚠️ Veuillez utiliser des variables prédéfinies au lieu de demander des entrées utilisateur.")
+    return ""
 
 def execute_python_code(code: str) -> Dict[str, str]:
     """
@@ -203,15 +264,24 @@ def execute_python_code(code: str) -> Dict[str, str]:
         'error': ''
     }
     
-    # Créer un environnement d'exécution local
-    local_vars = {}
+    # Créer un environnement d'exécution local avec input() remplacé
+    local_vars = {
+        'input': safe_input  # Remplacer input() par notre version sécurisée
+    }
     
     try:
+        # Vérifier si le code contient des appels à input()
+        if 'input(' in code:
+            print("⚠️ ATTENTION: Votre code utilise la fonction input() qui n'est pas supportée dans cet environnement.")
+            print("⚠️ Les appels à input() seront remplacés par une version qui retourne une chaîne vide.")
+            print("⚠️ Veuillez utiliser des variables prédéfinies au lieu de demander des entrées utilisateur.")
+            print("")
+        
         # Compiler le code en mode 'exec' pour exécuter les instructions
         compiled_code = compile(code, '<string>', 'exec')
         
-        # Exécuter le code compilé
-        exec(compiled_code, globals(), local_vars)
+        # Exécuter le code compilé avec notre version sécurisée de input()
+        exec(compiled_code, {'input': safe_input}, local_vars)
         
         # Récupérer la sortie standard
         output = redirected_output.getvalue()
