@@ -4,6 +4,10 @@ Une application web interactive pour générer des exercices de programmation Py
 
 ![Logo du projet](static/logo.jpg)
 
+## Démonstration en ligne
+
+Une version de démonstration de l'application est disponible ici : [https://exercices-python.onrender.com/](https://exercices-python.onrender.com/)
+
 ## Fonctionnalités
 
 ### Interface utilisateur
@@ -40,8 +44,8 @@ Une application web interactive pour générer des exercices de programmation Py
 
 1. Clonez ce dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/generateur-exercices-python.git
-   cd generateur-exercices-python
+   git clone https://github.com/estebe2000/exercices-python.git
+   cd exercices-python
    ```
 
 2. Créez et activez un environnement virtuel :
