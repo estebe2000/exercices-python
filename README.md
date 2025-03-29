@@ -298,6 +298,36 @@ Si vous rencontrez une erreur "Internal Server Error" lors de l'accès à la GED
 
 Par défaut, la taille maximale des fichiers pouvant être téléchargés est limitée à 16 Mo. Si vous avez besoin de télécharger des fichiers plus volumineux, vous pouvez modifier la valeur de `MAX_CONTENT_LENGTH` dans le fichier `app.py`.
 
+## Roadmap et TODO
+
+### Fonctionnalités déjà implémentées ✅
+- Interface utilisateur avec fenêtre de bienvenue
+- Générateur d'exercices Python avec différents niveaux de difficulté
+- Éditeur de code intégré avec coloration syntaxique
+- Exécution de code en temps réel
+- Évaluation automatique par IA
+- Gestion Électronique de Documents (GED)
+- Support pour trois moteurs d'IA (LocalAI, Gemini, Mistral)
+- Squelettes de code à compléter avec tests
+
+### Fonctionnalités à venir 🚀
+- **Authentification et autorisations**
+  - Protection par login
+  - Gestion des rôles (élève ou professeur)
+  - Différents niveaux d'accès selon le rôle
+
+- **Amélioration de l'IA**
+  - RAG (Retrieval Augmented Generation) pour la génération de cours basés sur les documents fournis par l'enseignant
+  - Système de scoring basé sur la qualité du code
+
+- **Fonctionnalités pédagogiques avancées**
+  - Support de la fonction `input()` pour les exercices interactifs
+  - Intégration de p5.js pour les exercices graphiques
+  - Support de Turtle pour l'apprentissage visuel
+  - Envoi et récupération de fichiers
+  - Profils élèves pour le suivi des progressions
+  - Intégration avec les ENT (Environnements Numériques de Travail)
+
 ## Licence
 
 Ce projet est sous licence [MIT](LICENSE).
