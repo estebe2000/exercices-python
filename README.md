@@ -304,6 +304,7 @@ Ce projet est sous licence [MIT](LICENSE).
 
 ## Crédits
 
+- D'après une idée originale de [David Roche](https://www.linkedin.com/in/david-roche-34b9a024a/)
 - Développé pour l'Éducation Nationale
-- Utilise [LocalAI](https://github.com/go-skynet/LocalAI) et [Gemini API](https://ai.google.dev/)
+- Utilise [LocalAI](https://localai.io/) ([GitHub](https://github.com/mudler/LocalAI)) et [Gemini API](https://ai.google.dev/)
 - Interface basée sur Bootstrap et CodeMirror
