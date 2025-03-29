@@ -169,6 +169,13 @@ def get_exercise_prompt(niveau: str, theme: str, difficulte: int, description: s
     - Pour les boucles, laisser la structure mais vider le contenu des blocs
     - Pour les fonctions, laisser la signature mais remplacer le corps par "# À COMPLÉTER" et "pass"
     
+    RÈGLES CRUCIALES POUR LES TESTS:
+    - Les tests NE DOIVENT PAS contenir la solution complète
+    - Les tests doivent utiliser des assertions ou des vérifications indirectes
+    - NE JAMAIS inclure le code de la solution dans les tests
+    - Utiliser des variables pour stocker les résultats attendus plutôt que de montrer comment les calculer
+    - Pour les exercices avec affichage (print), vérifier le résultat avec des assertions sur des variables, pas en répétant le code de la solution
+    
     Exemple de format CORRECT pour le code et les tests (dans un SEUL bloc):
     
     <pre><code class="language-python">
