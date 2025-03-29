@@ -1,20 +1,27 @@
 # Générateur d'Exercices Python avec IA et GED
 
-Une application web interactive pour générer des exercices de programmation Python personnalisés pour les élèves de lycée (Première et Terminale), avec évaluation automatique du code par intelligence artificielle et gestion électronique de documents (GED).
+Une application web interactive pour générer des exercices de programmation Python personnalisés pour les élèves de collège et lycée (Troisième, SNT, Prépa NSI, Première et Terminale), avec évaluation automatique du code par intelligence artificielle et gestion électronique de documents (GED).
 
 ![Logo du projet](static/logo.jpg)
 
 ## Fonctionnalités
 
+### Interface utilisateur
+- **Fenêtre de bienvenue** : Popup d'accueil présentant les fonctionnalités de l'application aux nouveaux utilisateurs
+- **Interface intuitive** : Navigation simple et claire avec barre de menu et tooltips
+- **Aide contextuelle** : Guide d'utilisation accessible à tout moment via le menu d'aide
+- **Expérience personnalisée** : Option "Ne plus afficher" pour la fenêtre de bienvenue
+
 ### Générateur d'exercices
-- **Génération d'exercices personnalisés** : Création d'énoncés adaptés au niveau des élèves (Première, Terminale ou SNT)
+- **Génération d'exercices personnalisés** : Création d'énoncés adaptés au niveau des élèves (Troisième, SNT, Prépa NSI, Première, Terminale)
 - **Thèmes variés** : Couvre différents concepts de programmation Python selon le programme scolaire
 - **Niveaux de difficulté** : Exercices adaptables selon les compétences des élèves
 - **Mode débutant** : Option pour générer des exercices sans fonctions ni classes, adaptés aux débutants
+- **Squelettes de code à compléter** : Structure de code avec parties à remplir par l'élève, garantissant une approche pédagogique progressive
 - **Éditeur de code intégré** : Interface conviviale avec coloration syntaxique
 - **Exécution de code en temps réel** : Test immédiat des solutions proposées
 - **Évaluation automatique** : Analyse du code et suggestions d'amélioration par IA
-- **Double moteur d'IA** : Compatible avec LocalAI (Mistral) et Google Gemini
+- **Triple moteur d'IA** : Compatible avec LocalAI (Mistral), Google Gemini et Mistral Codestral
 
 ### Gestion Électronique de Documents (GED)
 - **Upload de fichiers** : Possibilité d'uploader des documents de différents formats
@@ -170,14 +177,14 @@ Les exercices sont définis dans le fichier `exercices/data.json` avec la struct
 
 ```json
 {
-  "Niveau": [
+  "Niveau Scolaire": [
     {
       "thème": "Nom du thème",
       "niveaux": [
         {
           "niveau": 1,
           "description": "Description de l'exercice",
-          "debutant": true  // Optionnel, true pour les exercices sans fonctions/classes
+          "debutant": true  // true pour les exercices sans fonctions/classes
         }
       ]
     }
@@ -185,7 +192,49 @@ Les exercices sont définis dans le fichier `exercices/data.json` avec la struct
 }
 ```
 
-Vous pouvez enrichir ce fichier avec de nouveaux thèmes et exercices en respectant cette structure.
+L'application prend en charge les niveaux scolaires suivants, organisés du plus avancé au plus débutant:
+
+1. **Terminale Générale** (`"debutant": false`) - Exercices avancés pour les élèves de Terminale
+2. **Première Générale** (`"debutant": false`) - Exercices intermédiaires pour les élèves de Première
+3. **Prépa NSI** (`"debutant": true`) - Exercices de préparation à la NSI
+4. **SNT** (`"debutant": true`) - Exercices de Sciences Numériques et Technologie
+5. **Troisième** (`"debutant": true`) - Exercices d'initiation pour les élèves de Troisième
+
+Chaque niveau scolaire contient plusieurs thèmes, et chaque thème contient plusieurs exercices avec différents niveaux de difficulté (de 1 à 5).
+
+### Génération de squelettes de code
+
+L'application génère automatiquement des squelettes de code à compléter pour chaque exercice. Ces squelettes sont conçus pour:
+
+- Fournir une structure de base que l'élève doit compléter
+- Inclure des commentaires explicatifs indiquant les parties à remplir
+- Contenir des tests pour vérifier la solution
+
+Exemple de squelette de code généré:
+
+```python
+# Calcul de l'aire en fonction de la forme choisie
+if forme == "rectangle":
+    # À COMPLÉTER: Calculer l'aire du rectangle
+    pass
+elif forme == "cercle":
+    # À COMPLÉTER: Calculer l'aire du cercle
+    pass
+elif forme == "triangle":
+    # À COMPLÉTER: Calculer l'aire du triangle
+    pass
+else:
+    print("Forme non reconnue")
+
+# Tests - NE PAS SÉPARER DU CODE CI-DESSUS
+try:
+    assert aire == 15  # Test pour le rectangle
+    print('✅ Test 1 réussi: aire du rectangle == 15')
+except AssertionError:
+    print('❌ Test 1 échoué: aire du rectangle devrait être 15')
+```
+
+Vous pouvez enrichir le fichier `data.json` avec de nouveaux thèmes et exercices en respectant la structure existante.
 
 ### Structure de la base de données GED
 
