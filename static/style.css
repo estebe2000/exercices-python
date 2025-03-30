@@ -1,24 +1,74 @@
-/* Variables */
+/* Variables pour le thème clair (par défaut) */
 :root {
+    /* Couleurs principales */
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
     --accent-color: #e74c3c;
     --success-color: #2ecc71;
     --warning-color: #f39c12;
     --info-color: #3498db;
+    
+    /* Couleurs de thème */
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-text: #212529;
+    --border-color: #dee2e6;
+    --code-bg: #282c34;
+    --code-color: #f8f8f2;
+    --footer-bg: #ecf0f1;
+    --modal-bg: #ffffff;
+    --modal-text: #212529;
+    --nav-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --nav-text: #ffffff;
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
+    
+    /* Effets */
     --transition-speed: 0.3s;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Variables pour le thème sombre */
+[data-theme="dark"] {
+    /* Couleurs principales (légèrement ajustées pour le thème sombre) */
+    --primary-color: #4fa3e0;
+    --secondary-color: #375a7f;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    
+    /* Couleurs de thème */
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --input-bg: #2c2c2c;
+    --input-text: #e0e0e0;
+    --border-color: #444;
+    --code-bg: #1a1a1a;
+    --code-color: #f8f8f2;
+    --footer-bg: #1e1e1e;
+    --modal-bg: #2c2c2c;
+    --modal-text: #e0e0e0;
+    --nav-bg: linear-gradient(135deg, var(--secondary-color), #1a1a2e);
+    --nav-text: #ffffff;
+    --light-color: #2c3e50;
+    --dark-color: #ecf0f1;
+    
+    /* Effets (ajustés pour le thème sombre) */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
 /* Styles généraux */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    transition: background-color var(--transition-speed);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* Navbar */
@@ -28,7 +78,7 @@ body {
 }
 
 .navbar.bg-gradient {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    background: var(--nav-bg) !important;
 }
 
 .navbar-brand {
@@ -82,8 +132,9 @@ body {
 .footer {
     margin-top: 2rem;
     padding: 1rem 0;
-    background-color: var(--light-color);
-    border-top: 1px solid #e9ecef;
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color);
     transition: all var(--transition-speed);
 }
 
@@ -103,6 +154,8 @@ body {
     transition: all var(--transition-speed);
     border-radius: 0.5rem;
     overflow: hidden;
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 .card:hover {
@@ -113,6 +166,12 @@ body {
 .card-header {
     font-weight: 600;
     padding: 1rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-body {
+    background-color: var(--card-bg);
 }
 
 /* Animations pour les cartes */
@@ -129,19 +188,35 @@ body {
 .form-label {
     font-weight: 500;
     transition: all var(--transition-speed);
+    color: var(--text-color);
 }
 
 .form-select, .form-control {
     transition: all var(--transition-speed);
     border-radius: 0.375rem;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--border-color);
 }
 
 .form-select:focus, .form-control:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb, 52, 152, 219), 0.25);
+    background-color: var(--input-bg);
+    color: var(--input-text);
 }
 
 .form-select:hover, .form-control:hover {
+    border-color: var(--primary-color);
+}
+
+.form-check-input {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
@@ -202,30 +277,52 @@ body {
 .modal-content {
     border-radius: 0.5rem;
     box-shadow: var(--hover-shadow);
+    background-color: var(--modal-bg);
+    color: var(--modal-text);
+    border-color: var(--border-color);
 }
 
 .modal-header {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
+    border-bottom-color: var(--border-color);
 }
 
 .modal-footer {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    border-top-color: var(--border-color);
+}
+
+.modal-backdrop.show {
+    opacity: 0.7;
 }
 
 /* Accordion */
 .accordion-button {
     transition: all var(--transition-speed);
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: rgba(52, 152, 219, 0.1);
+    background-color: rgba(var(--primary-color-rgb, 52, 152, 219), 0.1);
     color: var(--primary-color);
 }
 
 .accordion-button:focus {
-    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb, 52, 152, 219), 0.25);
+    border-color: var(--primary-color);
+}
+
+.accordion-item {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.accordion-body {
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 /* Styles pour l'énoncé et l'évaluation */
@@ -443,6 +540,86 @@ body.role-teacher .teacher-only.nav-item,
 body.role-teacher .student-only.nav-item,
 body.role-student .student-only.nav-item {
     display: list-item !important;
+}
+
+/* Styles pour le sélecteur de thème */
+.theme-switch-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 26px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: rgba(255, 255, 255, 0.2);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 3px;
+    content: "";
+    height: 18px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 18px;
+}
+
+input:checked + .slider {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.slider .bi-sun-fill {
+    color: #fff;
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.slider .bi-moon-fill {
+    color: #fff;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+/* Styles pour le sélecteur de thème mobile */
+.form-switch .form-check-input {
+    width: 3em;
+    height: 1.5em;
+    margin-top: 0;
 }
 
 /* Responsive */

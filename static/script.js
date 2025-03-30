@@ -229,10 +229,71 @@ function setupRoleSelector() {
     });
 }
 
+/**
+ * Gestion du thème clair/sombre
+ */
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Vérifier la préférence stockée ou utiliser la préférence système
+    const currentTheme = localStorage.getItem('theme') || 
+                         (prefersDarkScheme.matches ? 'dark' : 'light');
+    
+    // Appliquer le thème initial
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (themeToggle) themeToggle.checked = true;
+        if (themeToggleMobile) themeToggleMobile.checked = true;
+    }
+    
+    // Gérer le changement de thème (version desktop)
+    if (themeToggle) {
+        themeToggle.addEventListener('change', function() {
+            toggleTheme(this.checked);
+        });
+    }
+    
+    // Gérer le changement de thème (version mobile)
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('change', function() {
+            toggleTheme(this.checked);
+            // Synchroniser avec le toggle desktop
+            if (themeToggle) themeToggle.checked = this.checked;
+        });
+    }
+    
+    // Écouter les changements de préférence système
+    prefersDarkScheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const isDark = e.matches;
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            if (themeToggle) themeToggle.checked = isDark;
+            if (themeToggleMobile) themeToggleMobile.checked = isDark;
+        }
+    });
+}
+
+function toggleTheme(isDark) {
+    if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        showNotification('Thème sombre activé', 'info');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        showNotification('Thème clair activé', 'info');
+    }
+}
+
 // Ajouter des boutons d'action aux éléments de code et initialiser les fonctionnalités
 document.addEventListener('DOMContentLoaded', function() {
     // Initialiser le sélecteur de rôle
     setupRoleSelector();
+    
+    // Initialiser le sélecteur de thème
+    setupThemeToggle();
     
     // Ajouter des boutons pour copier le code
     document.querySelectorAll('pre code').forEach(codeBlock => {

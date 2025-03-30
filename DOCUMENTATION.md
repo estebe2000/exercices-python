@@ -24,6 +24,7 @@ Ce document fournit une documentation technique détaillée du projet "Générat
 - **Design responsive** : Interface adaptée à différentes tailles d'écran
 - **Bac à sable Python** : Environnement d'expérimentation libre avec éditeur de code et console de sortie
 - **Sélecteur de rôle** : Possibilité de basculer entre les vues Admin, Professeur et Étudiant pour tester différentes interfaces
+- **Thème clair/sombre** : Option de basculement entre thème clair et sombre avec détection automatique des préférences système
 
 ### Système de rôles
 - **Vue Admin** : Accès complet à toutes les fonctionnalités, y compris la GED, l'éditeur d'exercices et la configuration

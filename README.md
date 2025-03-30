@@ -121,6 +121,7 @@ Si vous rencontrez une erreur lors de l'accès à la GED :
 - [x] Gestion Électronique de Documents (GED)
 - [x] Bibliothèque de cours en style visuel
 - [x] Bac à sable Python avec modules scientifiques préchargés
+- [x] Thème clair/sombre avec détection automatique des préférences système
 
 ### Prochaines fonctionnalités 🚀
 - [ ] Authentification et gestion des utilisateurs

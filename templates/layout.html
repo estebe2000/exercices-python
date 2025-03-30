@@ -31,6 +31,17 @@
                 <label class="btn btn-outline-light" for="role-student">Étudiant</label>
             </div>
         </div>
+        
+        <!-- Sélecteur de thème -->
+        <div class="theme-switch-wrapper ms-3 d-none d-md-flex align-items-center">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" />
+                <div class="slider round">
+                    <i class="bi bi-sun-fill"></i>
+                    <i class="bi bi-moon-fill"></i>
+                </div>
+            </label>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,6 +57,18 @@
                     
                     <input type="radio" class="btn-check" name="role-mobile" id="role-student-mobile" autocomplete="off" value="student">
                     <label class="btn btn-outline-primary" for="role-student-mobile">Étudiant</label>
+                </div>
+            </div>
+            
+            <!-- Sélecteur de thème pour mobile -->
+            <div class="d-md-none mb-3">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="me-2 text-light"><i class="bi bi-sun-fill"></i></span>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="theme-toggle-mobile">
+                        <label class="form-check-label text-light" for="theme-toggle-mobile">Thème sombre</label>
+                    </div>
+                    <span class="ms-2 text-light"><i class="bi bi-moon-fill"></i></span>
                 </div>
             </div>
             <ul class="navbar-nav ms-auto">
@@ -492,6 +515,65 @@ plt.plot(x, y)
                                         <li>Ctrl+S : Télécharger le code</li>
                                         <li>Ctrl+O : Ouvrir un fichier</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTheme">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTheme" aria-expanded="false" aria-controls="collapseTheme">
+                                    <i class="bi bi-palette me-2"></i> Thème clair/sombre
+                                </button>
+                            </h2>
+                            <div id="collapseTheme" class="accordion-collapse collapse" aria-labelledby="headingTheme" data-bs-parent="#helpAccordion">
+                                <div class="accordion-body">
+                                    <p>L'application propose un sélecteur de thème qui vous permet de basculer entre les modes clair et sombre :</p>
+                                    
+                                    <div class="row mb-4">
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-header bg-light">
+                                                    <i class="bi bi-sun-fill me-2"></i> Thème clair
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Le thème par défaut avec :</p>
+                                                    <ul>
+                                                        <li>Fond clair</li>
+                                                        <li>Texte foncé</li>
+                                                        <li>Contraste standard</li>
+                                                        <li>Idéal pour une utilisation en journée</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100 bg-dark text-light">
+                                                <div class="card-header bg-dark text-light border-secondary">
+                                                    <i class="bi bi-moon-fill me-2"></i> Thème sombre
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Un thème alternatif avec :</p>
+                                                    <ul>
+                                                        <li>Fond sombre</li>
+                                                        <li>Texte clair</li>
+                                                        <li>Réduction de la fatigue oculaire</li>
+                                                        <li>Idéal pour une utilisation en soirée</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p>Pour changer de thème :</p>
+                                    <ol>
+                                        <li>Cliquez sur le bouton de basculement de thème dans la barre de navigation</li>
+                                        <li>L'interface s'adapte automatiquement au thème sélectionné</li>
+                                        <li>Votre préférence est mémorisée entre les sessions</li>
+                                    </ol>
+                                    
+                                    <p><strong>Détection automatique :</strong> Si vous n'avez pas explicitement choisi de thème, l'application utilisera automatiquement le thème correspondant aux préférences de votre système d'exploitation.</p>
+                                    
+                                    <p><strong>Note :</strong> Le sélecteur de thème est disponible en haut de l'interface sur les grands écrans, et dans le menu déroulant sur les appareils mobiles.</p>
                                 </div>
                             </div>
                         </div>
