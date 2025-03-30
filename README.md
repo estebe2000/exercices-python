@@ -52,6 +52,45 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 
 ## Installation
 
+### Installation automatique (recommandée)
+
+#### Windows
+1. Clonez ce dépôt :
+   ```bash
+   git clone https://github.com/estebe2000/exercices-python.git
+   cd exercices-python
+   ```
+
+2. Exécutez le script d'installation :
+   ```bash
+   install_windows.bat
+   ```
+
+3. Suivez les instructions à l'écran.
+
+#### Linux/macOS
+1. Clonez ce dépôt :
+   ```bash
+   git clone https://github.com/estebe2000/exercices-python.git
+   cd exercices-python
+   ```
+
+2. Rendez le script d'installation exécutable :
+   ```bash
+   chmod +x install_linux.sh
+   ```
+
+3. Exécutez le script d'installation :
+   ```bash
+   ./install_linux.sh
+   ```
+
+4. Suivez les instructions à l'écran.
+
+### Installation manuelle
+
+Si vous préférez installer l'application manuellement, suivez ces étapes :
+
 1. Clonez ce dépôt :
    ```bash
    git clone https://github.com/estebe2000/exercices-python.git
@@ -72,12 +111,19 @@ Une version de démonstration de l'application est disponible ici : [https://exe
    pip install -r requirements.txt
    ```
 
-4. Initialisez la base de données pour la GED :
+4. Créez un fichier `.env` avec les variables suivantes :
+   ```
+   FLASK_SECRET_KEY=dev_key_123
+   GEMINI_API_KEY=votre_cle_gemini
+   MISTRAL_API_KEY=votre_cle_mistral
+   ```
+
+5. Initialisez la base de données pour la GED :
    ```bash
    flask init-db
    ```
 
-5. Créez le dossier pour les uploads s'il n'existe pas :
+6. Créez le dossier pour les uploads s'il n'existe pas :
    ```bash
    mkdir -p uploads
    ```
