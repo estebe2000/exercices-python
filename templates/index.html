@@ -115,7 +115,7 @@
         </div>
     </div>
     
-    <!-- Évaluation du code (colonne droite) -->
+<!-- Évaluation du code (colonne droite) -->
     <div class="col-md-6">
         <div class="card mb-4 d-none" id="evaluation-card">
             <div class="card-header bg-info text-white">
@@ -132,6 +132,26 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Boîte de dialogue pour input() -->
+<div class="modal fade" id="inputModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="inputModalLabel">Entrée requise</h5>
+      </div>
+      <div class="modal-body">
+        <p id="input-prompt">Veuillez entrer une valeur :</p>
+        <div class="input-group">
+          <input type="text" class="form-control" id="input-value" placeholder="Votre réponse">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="submit-input">Soumettre</button>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
@@ -152,6 +172,7 @@
     const noExercise = document.getElementById('no-exercise');
     const codeEditorCard = document.getElementById('code-editor-card');
     const runCodeBtn = document.getElementById('run-code-btn');
+    const runWithInputBtn = document.getElementById('run-with-input-btn');
     const evaluateCodeBtn = document.getElementById('evaluate-code-btn');
     const executionResultCard = document.getElementById('execution-result-card');
     const executionOutput = document.getElementById('execution-output');
@@ -159,6 +180,10 @@
     const evaluationContent = document.getElementById('evaluation-content');
     const loadingEvaluation = document.getElementById('loading-evaluation');
     const copySkeletonBtn = document.getElementById('copy-skeleton-btn');
+    const inputModal = new bootstrap.Modal(document.getElementById('inputModal'));
+    const inputPrompt = document.getElementById('input-prompt');
+    const inputValue = document.getElementById('input-value');
+    const submitInputBtn = document.getElementById('submit-input');
     
     // Initialiser CodeMirror
     let codeEditor;
@@ -286,7 +311,29 @@
         });
     });
     
-    // Exécution du code
+    // Variables pour l'exécution asynchrone
+    let currentExecutionId = null;
+    let executionInterval = null;
+
+    // Fonction pour détecter si le code contient des appels à input()
+    function containsInputCall(code) {
+        // Recherche de "input(" dans le code, en ignorant les commentaires
+        const lines = code.split('\n');
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            // Ignorer les lignes vides et les commentaires
+            if (trimmedLine === '' || trimmedLine.startsWith('#')) {
+                continue;
+            }
+            // Vérifier si la ligne contient un appel à input()
+            if (trimmedLine.includes('input(')) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Exécution du code (détecte automatiquement si input() est utilisé)
     runCodeBtn.addEventListener('click', function() {
         const code = codeEditor.getValue();
         
@@ -295,32 +342,142 @@
             return;
         }
         
-        // Appel à l'API pour exécuter le code
-        fetch('/execute-code', {
+        // Afficher le résultat
+        executionResultCard.classList.remove('d-none');
+        executionOutput.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div><p class="mt-2">Exécution en cours...</p></div>';
+        
+        // Détecter si le code contient des appels à input()
+        if (containsInputCall(code)) {
+            // Mode asynchrone avec support de input()
+            fetch('/start-execution', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    code: code
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                currentExecutionId = data.execution_id;
+                
+                // Démarrer la vérification périodique de l'état
+                executionInterval = setInterval(checkExecutionStatus, 500);
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                executionOutput.innerHTML = '<span class="text-danger">Erreur lors du démarrage de l\'exécution.</span>';
+            });
+        } else {
+            // Mode synchrone standard (sans support de input())
+            fetch('/execute-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    code: code
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Afficher le résultat
+                if (data.error) {
+                    executionOutput.innerHTML = `<span class="text-danger">${escapeHtml(data.error)}</span>`;
+                } else {
+                    executionOutput.innerHTML = escapeHtml(data.output) || '<span class="text-muted">Aucune sortie</span>';
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                executionOutput.innerHTML = '<span class="text-danger">Une erreur est survenue lors de l\'exécution du code.</span>';
+            });
+        }
+    });
+    
+    // Fonction pour vérifier l'état de l'exécution
+    function checkExecutionStatus() {
+        if (!currentExecutionId) return;
+        
+        fetch(`/execution-status/${currentExecutionId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Si l'exécution attend une entrée
+                if (data.input_required) {
+                    clearInterval(executionInterval);
+                    
+                    // Afficher la boîte de dialogue d'entrée
+                    inputPrompt.textContent = data.input_prompt || 'Veuillez entrer une valeur :';
+                    inputValue.value = '';
+                    inputModal.show();
+                    
+                    // Focus sur le champ d'entrée
+                    setTimeout(() => {
+                        inputValue.focus();
+                    }, 500);
+                }
+                // Si l'exécution est terminée
+                else if (data.status === 'completed' || data.status === 'error') {
+                    clearInterval(executionInterval);
+                    currentExecutionId = null;
+                    
+                    // Afficher le résultat
+                    if (data.result.error) {
+                        executionOutput.innerHTML = `<span class="text-danger">${escapeHtml(data.result.error)}</span>`;
+                    } else {
+                        executionOutput.innerHTML = escapeHtml(data.result.output) || '<span class="text-muted">Aucune sortie</span>';
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                clearInterval(executionInterval);
+                currentExecutionId = null;
+                executionOutput.innerHTML = '<span class="text-danger">Erreur lors de la vérification de l\'état de l\'exécution.</span>';
+            });
+    }
+    
+    // Gestionnaire d'événement pour la soumission d'entrée
+    submitInputBtn.addEventListener('click', function() {
+        submitInput();
+    });
+    
+    // Gestionnaire d'événement pour la touche Entrée dans le champ d'entrée
+    inputValue.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            submitInput();
+        }
+    });
+    
+    // Fonction pour soumettre l'entrée
+    function submitInput() {
+        const value = inputValue.value;
+        
+        // Cacher la boîte de dialogue
+        inputModal.hide();
+        
+        // Envoyer la valeur au serveur
+        fetch(`/provide-input/${currentExecutionId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                code: code
+                input: value
             })
         })
         .then(response => response.json())
         .then(data => {
-            // Afficher le résultat
-            executionResultCard.classList.remove('d-none');
-            
-            if (data.error) {
-                executionOutput.innerHTML = `<span class="text-danger">${escapeHtml(data.error)}</span>`;
-            } else {
-                executionOutput.innerHTML = escapeHtml(data.output) || '<span class="text-muted">Aucune sortie</span>';
-            }
+            // Reprendre la vérification périodique
+            executionInterval = setInterval(checkExecutionStatus, 500);
         })
         .catch(error => {
             console.error('Erreur:', error);
-            alert('Une erreur est survenue lors de l\'exécution du code.');
+            executionOutput.innerHTML = '<span class="text-danger">Erreur lors de la soumission de l\'entrée.</span>';
         });
-    });
+    }
     
     // Évaluation du code
     evaluateCodeBtn.addEventListener('click', function() {

@@ -8,6 +8,9 @@ et d'évaluer les solutions soumises par les élèves.
 import json
 import os
 import sys
+import time
+import uuid
+import threading
 import traceback
 from io import StringIO
 from typing import Dict, Any, List, Optional, Tuple
@@ -125,6 +128,153 @@ def find_exercise_description(niveau: str, theme: str, difficulte: int) -> tuple
 
 
 
+# Gestionnaire d'exécution asynchrone pour le support de input()
+class AsyncCodeExecutor:
+    def __init__(self):
+        self.execution_queue = {}  # Stocke les exécutions en cours par ID
+        
+    def start_execution(self, code):
+        # Générer un ID unique pour cette exécution
+        execution_id = str(uuid.uuid4())
+        
+        # Initialiser l'état d'exécution
+        self.execution_queue[execution_id] = {
+            'code': code,
+            'status': 'pending',
+            'input_required': False,
+            'input_prompt': '',
+            'result': None,
+            'locals': {},
+            'output_buffer': StringIO(),
+            'error_buffer': StringIO(),
+            'start_time': time.time()
+        }
+        
+        # Lancer l'exécution dans un thread séparé
+        threading.Thread(target=self._execute_code, args=(execution_id,)).start()
+        
+        return execution_id
+    
+    def _execute_code(self, execution_id):
+        # Récupérer l'état d'exécution
+        execution = self.execution_queue[execution_id]
+        code = execution['code']
+        
+        # Rediriger stdout et stderr
+        old_stdout = sys.stdout
+        old_stderr = sys.stderr
+        sys.stdout = execution['output_buffer']
+        sys.stderr = execution['error_buffer']
+        
+        try:
+            # Vérifier si le code contient des appels à input()
+            if 'input(' in code:
+                print("ℹ️ INFO: Votre code utilise la fonction input(). L'exécution s'arrêtera pour attendre votre saisie.")
+                print("")
+            
+            # Compiler le code en mode 'exec' pour exécuter les instructions
+            compiled_code = compile(code, '<string>', 'exec')
+            
+            # Créer un environnement d'exécution avec notre version de input()
+            exec_globals = {
+                'input': lambda prompt='': self._handle_input(execution_id, prompt),
+                '__builtins__': __builtins__
+            }
+            
+            # Exécuter le code
+            exec(compiled_code, exec_globals, execution['locals'])
+            
+            # Récupérer la sortie standard
+            output = execution['output_buffer'].getvalue()
+            
+            # Si aucune sortie n'a été produite, essayer d'évaluer la dernière expression
+            if not output.strip():
+                output = try_evaluate_last_expression(code, execution['locals'])
+                if output:
+                    print(output)
+                    output = execution['output_buffer'].getvalue()
+            
+            # Marquer l'exécution comme terminée
+            execution['status'] = 'completed'
+            execution['result'] = {
+                'output': output,
+                'error': ''
+            }
+        except Exception as e:
+            # Gérer les erreurs
+            execution['status'] = 'error'
+            execution['result'] = {
+                'output': execution['output_buffer'].getvalue(),
+                'error': str(e) + '\n' + traceback.format_exc()
+            }
+        finally:
+            # Restaurer stdout et stderr
+            sys.stdout = old_stdout
+            sys.stderr = old_stderr
+    
+    def _handle_input(self, execution_id, prompt):
+        execution = self.execution_queue[execution_id]
+        
+        # Afficher le prompt
+        print(prompt, end='')
+        
+        # Marquer que l'exécution attend une entrée
+        execution['status'] = 'waiting_for_input'
+        execution['input_required'] = True
+        execution['input_prompt'] = prompt
+        
+        # Attendre que l'entrée soit fournie (avec un timeout)
+        start_time = time.time()
+        while execution['input_required'] and time.time() - start_time < 300:  # 5 minutes timeout
+            time.sleep(0.1)
+        
+        # Si le timeout est atteint, lever une exception
+        if execution['input_required']:
+            execution['input_required'] = False
+            raise TimeoutError("L'attente d'entrée utilisateur a expiré")
+        
+        # Afficher la valeur saisie
+        input_value = execution.get('input_value', '')
+        print(input_value)
+        
+        # Retourner la valeur fournie
+        return input_value
+    
+    def provide_input(self, execution_id, value):
+        if execution_id not in self.execution_queue:
+            return False
+            
+        execution = self.execution_queue[execution_id]
+        if not execution['input_required']:
+            return False
+            
+        # Fournir la valeur et marquer que l'entrée n'est plus requise
+        execution['input_value'] = value
+        execution['input_required'] = False
+        return True
+    
+    def get_execution_status(self, execution_id):
+        if execution_id not in self.execution_queue:
+            return None
+            
+        execution = self.execution_queue[execution_id]
+        return {
+            'status': execution['status'],
+            'input_required': execution['input_required'],
+            'input_prompt': execution['input_prompt'],
+            'result': execution['result']
+        }
+    
+    def cleanup_old_executions(self, max_age=3600):  # 1 heure
+        current_time = time.time()
+        for execution_id in list(self.execution_queue.keys()):
+            execution = self.execution_queue[execution_id]
+            if 'start_time' in execution and current_time - execution['start_time'] > max_age:
+                del self.execution_queue[execution_id]
+
+# Initialiser le gestionnaire d'exécution
+code_executor = AsyncCodeExecutor()
+
 def safe_input(prompt=""):
     """
     Version sécurisée de input() qui affiche un message d'erreur au lieu de bloquer l'exécution.
@@ -168,9 +318,9 @@ def execute_python_code(code: str) -> Dict[str, str]:
     try:
         # Vérifier si le code contient des appels à input()
         if 'input(' in code:
-            print("⚠️ ATTENTION: Votre code utilise la fonction input() qui n'est pas supportée dans cet environnement.")
+            print("⚠️ ATTENTION: Votre code utilise la fonction input() qui n'est pas supportée dans ce mode d'exécution.")
             print("⚠️ Les appels à input() seront remplacés par une version qui retourne une chaîne vide.")
-            print("⚠️ Veuillez utiliser des variables prédéfinies au lieu de demander des entrées utilisateur.")
+            print("⚠️ Pour utiliser input(), cliquez sur 'Exécuter avec input()' au lieu de 'Exécuter le code'.")
             print("")
         
         # Compiler le code en mode 'exec' pour exécuter les instructions
@@ -345,12 +495,54 @@ def evaluate_code():
 
 @app.route('/execute-code', methods=['POST'])
 def execute_code():
-    """Route pour exécuter le code Python."""
+    """Route pour exécuter le code Python (sans support de input())."""
     data = request.json
     code = data.get('code')
     
     result = execute_python_code(code)
     return jsonify(result)
+
+@app.route('/start-execution', methods=['POST'])
+def start_execution():
+    """Route pour démarrer l'exécution asynchrone (avec support de input())."""
+    data = request.json
+    code = data.get('code')
+    
+    if not code:
+        return jsonify({'error': 'Aucun code fourni'}), 400
+    
+    # Démarrer l'exécution
+    execution_id = code_executor.start_execution(code)
+    
+    return jsonify({
+        'execution_id': execution_id
+    })
+
+@app.route('/execution-status/<execution_id>')
+def execution_status(execution_id):
+    """Route pour vérifier l'état d'une exécution."""
+    status = code_executor.get_execution_status(execution_id)
+    
+    if status is None:
+        return jsonify({'error': 'Exécution non trouvée'}), 404
+    
+    return jsonify(status)
+
+@app.route('/provide-input/<execution_id>', methods=['POST'])
+def provide_input(execution_id):
+    """Route pour fournir une entrée à une exécution en attente."""
+    data = request.json
+    input_value = data.get('input')
+    
+    if input_value is None:
+        return jsonify({'error': 'Aucune entrée fournie'}), 400
+    
+    success = code_executor.provide_input(execution_id, input_value)
+    
+    if not success:
+        return jsonify({'error': 'Impossible de fournir l\'entrée'}), 400
+    
+    return jsonify({'success': True})
 
 
 # Routes pour l'éditeur de data.json

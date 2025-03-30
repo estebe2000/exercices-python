@@ -25,6 +25,7 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 - **Squelettes de code à compléter** : Structure de code avec parties à remplir par l'élève (zones "# À COMPLÉTER"), garantissant une approche pédagogique progressive
 - **Éditeur de code intégré** : Interface conviviale avec coloration syntaxique et indentation automatique
 - **Exécution de code en temps réel** : Test immédiat des solutions proposées
+- **Support de la fonction input()** : Possibilité d'exécuter du code interactif avec saisie utilisateur
 - **Évaluation automatique** : Analyse du code et suggestions d'amélioration par IA
 - **Triple moteur d'IA** : Compatible avec LocalAI (Mistral), Google Gemini et Mistral Codestral
 - **Export en notebook Jupyter** : Téléchargement des exercices au format .ipynb pour une utilisation hors ligne
@@ -208,9 +209,46 @@ Options de configuration :
 
 3. Écrivez votre code dans l'éditeur intégré
 
-4. Exécutez et évaluez votre code directement dans l'interface
+4. Exécutez et évaluez votre code directement dans l'interface :
+   - Utilisez le bouton "Exécuter le code" pour exécuter votre code
+   - L'application détecte automatiquement si votre code utilise la fonction `input()`
+   - Si votre code utilise `input()`, une boîte de dialogue s'affichera pour vous permettre de saisir une valeur
 
 5. Téléchargez l'exercice au format notebook Jupyter si vous souhaitez y travailler hors ligne
+
+### Utilisation de la fonction input()
+
+L'application prend en charge la fonction `input()` pour créer des exercices interactifs :
+
+1. Écrivez du code qui utilise la fonction `input()` pour demander des entrées à l'utilisateur
+2. Cliquez sur le bouton "Exécuter le code"
+3. L'application détecte automatiquement l'utilisation de `input()` et affiche une boîte de dialogue
+4. Saisissez votre réponse et cliquez sur "Soumettre"
+5. L'exécution du code reprend avec la valeur que vous avez fournie
+
+Exemple de code utilisant `input()` :
+```python
+# Demander le nom de l'utilisateur
+nom = input("Entrez votre nom : ")
+
+# Saluer l'utilisateur
+print(f"Bonjour, {nom} !")
+
+# Demander l'âge de l'utilisateur
+age_str = input("Entrez votre âge : ")
+
+# Convertir l'âge en entier
+try:
+    age = int(age_str)
+    
+    # Afficher un message différent selon l'âge
+    if age < 18:
+        print("Vous êtes mineur.")
+    else:
+        print("Vous êtes majeur.")
+except ValueError:
+    print("L'âge que vous avez entré n'est pas un nombre valide.")
+```
 
 ### Éditeur de données d'exercices
 
@@ -435,6 +473,7 @@ Par défaut, la taille maximale des fichiers pouvant être téléchargés est li
 - Support pour trois moteurs d'IA (LocalAI, Gemini, Mistral)
 - Squelettes de code à compléter avec tests
 - Export des exercices au format notebook Jupyter
+- Support de la fonction `input()` pour les exercices interactifs
 
 ### Fonctionnalités à venir 🚀
 - **Authentification et autorisations**
@@ -447,7 +486,6 @@ Par défaut, la taille maximale des fichiers pouvant être téléchargés est li
   - Système de scoring basé sur la qualité du code
 
 - **Fonctionnalités pédagogiques avancées**
-  - Support de la fonction `input()` pour les exercices interactifs
   - Intégration de p5.js pour les exercices graphiques
   - Support de Turtle pour l'apprentissage visuel
   - Envoi et récupération de fichiers
