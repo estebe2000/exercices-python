@@ -3319,3 +3319,51 @@ FROM document ORDER BY document.date_upload DESC]
 2025-03-30 04:44:15,975 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:44:15] "GET /execution-status/47114771-820d-49b9-ba0a-7cea9089d487 HTTP/1.1" 200 -
 2025-03-30 04:44:18,968 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:44:18] "POST /provide-input/47114771-820d-49b9-ba0a-7cea9089d487 HTTP/1.1" 200 -
 2025-03-30 04:44:19,473 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:44:19] "GET /execution-status/47114771-820d-49b9-ba0a-7cea9089d487 HTTP/1.1" 200 -
+2025-03-30 04:51:17,619 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\app.py', reloading
+2025-03-30 04:51:17,678 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 04:51:18,237 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 04:51:18,239 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 04:54:21,977 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 04:54:21,977 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 04:54:21,978 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 04:54:22,595 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 04:54:22,597 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 04:54:26,964 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:26] "GET /exercices HTTP/1.1" 200 -
+2025-03-30 04:54:27,051 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 04:54:27,051 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:27] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 04:54:27,062 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:27] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 04:54:29,199 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:29] "GET /sandbox HTTP/1.1" 200 -
+2025-03-30 04:54:29,242 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 04:54:29,243 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:29] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 04:54:29,244 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:29] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 04:54:35,556 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:35] "POST /start-execution HTTP/1.1" 200 -
+2025-03-30 04:54:36,062 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:36] "GET /execution-status/26527277-c643-41cb-be54-eea0a885e43e HTTP/1.1" 200 -
+2025-03-30 04:54:40,700 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:40] "POST /provide-input/26527277-c643-41cb-be54-eea0a885e43e HTTP/1.1" 200 -
+2025-03-30 04:54:41,206 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:54:41] "GET /execution-status/26527277-c643-41cb-be54-eea0a885e43e HTTP/1.1" 200 -
+2025-03-30 04:57:45,168 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 04:57:45,168 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 04:57:45,169 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 04:57:45,617 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 04:57:45,619 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 04:57:56,410 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:56] "GET / HTTP/1.1" 200 -
+2025-03-30 04:57:56,451 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 04:57:56,451 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:56] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 04:57:56,458 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:56] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 04:57:58,934 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:58] "GET / HTTP/1.1" 200 -
+2025-03-30 04:57:58,968 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 04:57:58,971 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:58] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 04:57:58,972 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:57:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 04:58:00,061 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:00] "GET /sandbox HTTP/1.1" 200 -
+2025-03-30 04:58:00,085 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 04:58:00,095 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:00] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 04:58:00,098 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 04:58:08,549 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:08] "POST /start-execution HTTP/1.1" 200 -
+2025-03-30 04:58:09,057 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:09] "GET /execution-status/74d013aa-34f4-4e89-826c-e22ff9b921bc HTTP/1.1" 200 -
+2025-03-30 04:58:16,156 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:16] "POST /start-execution HTTP/1.1" 200 -
+2025-03-30 04:58:16,662 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:16] "GET /execution-status/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -
+2025-03-30 04:58:19,567 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:19] "POST /provide-input/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -
+2025-03-30 04:58:20,074 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:20] "GET /execution-status/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -
+2025-03-30 04:58:21,864 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:21] "POST /provide-input/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -
+2025-03-30 04:58:22,372 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:22] "GET /execution-status/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -

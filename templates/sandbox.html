@@ -1,0 +1,389 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Bac à sable Python</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">
+                    Utilisez cet espace pour expérimenter librement avec du code Python. 
+                    Écrivez votre code dans l'éditeur à gauche et voyez le résultat à droite.
+                    La fonction <code>input()</code> est prise en charge automatiquement.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Éditeur de code (colonne gauche) -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Éditeur de code</h5>
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-light" id="open-file-btn" title="Ouvrir un fichier">
+                        <i class="bi bi-folder2-open"></i> Ouvrir
+                    </button>
+                    <button class="btn btn-sm btn-light" id="download-code-btn" title="Télécharger le code">
+                        <i class="bi bi-download"></i> Télécharger
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <textarea id="code-editor" class="form-control" rows="20">
+# Bienvenue dans le bac à sable Python !
+# Écrivez votre code ici et cliquez sur "Exécuter le code" pour le tester.
+
+# Exemple d'utilisation de input()
+nom = input("Comment vous appelez-vous ? ")
+print(f"Bonjour, {nom} !")
+
+# Exemple de calcul
+a = 10
+b = 20
+somme = a + b
+print(f"La somme de {a} et {b} est {somme}")
+
+# Exemple de boucle
+print("\nVoici les 5 premiers nombres :")
+for i in range(1, 6):
+    print(i)
+
+# Exemple de condition
+age = 25
+if age >= 18:
+    print("\nVous êtes majeur.")
+else:
+    print("\nVous êtes mineur.")
+</textarea>
+                <div class="d-flex justify-content-between mt-3">
+                    <button class="btn btn-primary" id="run-code-btn">Exécuter le code</button>
+                    <button class="btn btn-danger" id="clear-code-btn">Effacer la sortie</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Résultat de l'exécution (colonne droite) -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">Résultat de l'exécution</h5>
+            </div>
+            <div class="card-body">
+                <pre id="execution-output" class="bg-dark text-light p-3 rounded" style="min-height: 400px; max-height: 600px; overflow-y: auto;">
+# La sortie de votre code s'affichera ici
+# Cliquez sur "Exécuter le code" pour voir le résultat
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Boîte de dialogue pour input() -->
+<div class="modal fade" id="inputModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="inputModalLabel">Entrée requise</h5>
+      </div>
+      <div class="modal-body">
+        <p id="input-prompt">Veuillez entrer une valeur :</p>
+        <div class="input-group">
+          <input type="text" class="form-control" id="input-value" placeholder="Votre réponse">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="submit-input">Soumettre</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Input pour ouvrir un fichier (caché) -->
+<input type="file" id="file-input" accept=".py,.txt" style="display: none;">
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Initialiser CodeMirror
+    let codeEditor;
+    document.addEventListener('DOMContentLoaded', function() {
+        codeEditor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            mode: 'python',
+            theme: 'monokai',
+            lineNumbers: true,
+            indentUnit: 4,
+            tabSize: 4,
+            indentWithTabs: false,
+            lineWrapping: true,
+            autofocus: true
+        });
+    });
+    
+    // Éléments du DOM
+    const runCodeBtn = document.getElementById('run-code-btn');
+    const clearCodeBtn = document.getElementById('clear-code-btn');
+    const executionOutput = document.getElementById('execution-output');
+    const openFileBtn = document.getElementById('open-file-btn');
+    const downloadCodeBtn = document.getElementById('download-code-btn');
+    const fileInput = document.getElementById('file-input');
+    const inputModal = new bootstrap.Modal(document.getElementById('inputModal'));
+    const inputPrompt = document.getElementById('input-prompt');
+    const inputValue = document.getElementById('input-value');
+    const submitInputBtn = document.getElementById('submit-input');
+    
+    // Variables pour l'exécution asynchrone
+    let currentExecutionId = null;
+    let executionInterval = null;
+    
+    // Fonction pour détecter si le code contient des appels à input()
+    function containsInputCall(code) {
+        // Recherche de "input(" dans le code, en ignorant les commentaires
+        const lines = code.split('\n');
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            // Ignorer les lignes vides et les commentaires
+            if (trimmedLine === '' || trimmedLine.startsWith('#')) {
+                continue;
+            }
+            // Vérifier si la ligne contient un appel à input()
+            if (trimmedLine.includes('input(')) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    // Exécution du code (détecte automatiquement si input() est utilisé)
+    runCodeBtn.addEventListener('click', function() {
+        const code = codeEditor.getValue();
+        
+        if (!code.trim()) {
+            alert('Veuillez écrire du code avant de l\'exécuter');
+            return;
+        }
+        
+        // Afficher le résultat
+        executionOutput.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div><p class="mt-2">Exécution en cours...</p></div>';
+        
+        // Détecter si le code contient des appels à input()
+        if (containsInputCall(code)) {
+            // Mode asynchrone avec support de input()
+            fetch('/start-execution', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    code: code
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                currentExecutionId = data.execution_id;
+                
+                // Démarrer la vérification périodique de l'état
+                executionInterval = setInterval(checkExecutionStatus, 500);
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                executionOutput.innerHTML = '<span class="text-danger">Erreur lors du démarrage de l\'exécution.</span>';
+            });
+        } else {
+            // Mode synchrone standard (sans support de input())
+            fetch('/execute-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    code: code
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Afficher le résultat
+                if (data.error) {
+                    executionOutput.innerHTML = `<span class="text-danger">${escapeHtml(data.error)}</span>`;
+                } else {
+                    executionOutput.innerHTML = escapeHtml(data.output) || '<span class="text-muted">Aucune sortie</span>';
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                executionOutput.innerHTML = '<span class="text-danger">Une erreur est survenue lors de l\'exécution du code.</span>';
+            });
+        }
+    });
+    
+    // Fonction pour vérifier l'état de l'exécution
+    function checkExecutionStatus() {
+        if (!currentExecutionId) return;
+        
+        fetch(`/execution-status/${currentExecutionId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Si l'exécution attend une entrée
+                if (data.input_required) {
+                    clearInterval(executionInterval);
+                    
+                    // Afficher la boîte de dialogue d'entrée
+                    inputPrompt.textContent = data.input_prompt || 'Veuillez entrer une valeur :';
+                    inputValue.value = '';
+                    inputModal.show();
+                    
+                    // Focus sur le champ d'entrée
+                    setTimeout(() => {
+                        inputValue.focus();
+                    }, 500);
+                }
+                // Si l'exécution est terminée
+                else if (data.status === 'completed' || data.status === 'error') {
+                    clearInterval(executionInterval);
+                    currentExecutionId = null;
+                    
+                    // Afficher le résultat
+                    if (data.result.error) {
+                        executionOutput.innerHTML = `<span class="text-danger">${escapeHtml(data.result.error)}</span>`;
+                    } else {
+                        executionOutput.innerHTML = escapeHtml(data.result.output) || '<span class="text-muted">Aucune sortie</span>';
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                clearInterval(executionInterval);
+                currentExecutionId = null;
+                executionOutput.innerHTML = '<span class="text-danger">Erreur lors de la vérification de l\'état de l\'exécution.</span>';
+            });
+    }
+    
+    // Gestionnaire d'événement pour la soumission d'entrée
+    submitInputBtn.addEventListener('click', function() {
+        submitInput();
+    });
+    
+    // Gestionnaire d'événement pour la touche Entrée dans le champ d'entrée
+    inputValue.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            submitInput();
+        }
+    });
+    
+    // Fonction pour soumettre l'entrée
+    function submitInput() {
+        const value = inputValue.value;
+        
+        // Cacher la boîte de dialogue
+        inputModal.hide();
+        
+        // Envoyer la valeur au serveur
+        fetch(`/provide-input/${currentExecutionId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                input: value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Reprendre la vérification périodique
+            executionInterval = setInterval(checkExecutionStatus, 500);
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            executionOutput.innerHTML = '<span class="text-danger">Erreur lors de la soumission de l\'entrée.</span>';
+        });
+    }
+    
+    // Effacer la sortie
+    clearCodeBtn.addEventListener('click', function() {
+        executionOutput.innerHTML = '# La sortie a été effacée';
+    });
+    
+    // Ouvrir un fichier
+    openFileBtn.addEventListener('click', function() {
+        fileInput.click();
+    });
+    
+    // Gérer la sélection de fichier
+    fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            // Mettre à jour l'éditeur CodeMirror avec le contenu du fichier
+            if (codeEditor) {
+                codeEditor.setValue(e.target.result);
+            } else {
+                // Fallback si CodeMirror n'est pas encore initialisé
+                document.getElementById('code-editor').value = e.target.result;
+                // Réinitialiser CodeMirror avec la nouvelle valeur
+                setTimeout(() => {
+                    if (codeEditor) {
+                        codeEditor.refresh();
+                    }
+                }, 100);
+            }
+            console.log("Fichier chargé:", file.name);
+        };
+        reader.readAsText(file);
+    });
+    
+    // Télécharger le code
+    downloadCodeBtn.addEventListener('click', function() {
+        const code = codeEditor.getValue();
+        if (!code.trim()) {
+            alert('L\'éditeur est vide. Rien à télécharger.');
+            return;
+        }
+        
+        const blob = new Blob([code], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'code_python.py';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+    
+    // Fonction utilitaire pour échapper le HTML
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+    
+    // Raccourcis clavier
+    document.addEventListener('keydown', function(e) {
+        // Ctrl+Enter pour exécuter le code
+        if (e.ctrlKey && e.key === 'Enter') {
+            e.preventDefault();
+            runCodeBtn.click();
+        }
+        
+        // Ctrl+S pour télécharger le code
+        if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+            downloadCodeBtn.click();
+        }
+        
+        // Ctrl+O pour ouvrir un fichier
+        if (e.ctrlKey && e.key === 'o') {
+            e.preventDefault();
+            openFileBtn.click();
+        }
+    });
+</script>
+{% endblock %}

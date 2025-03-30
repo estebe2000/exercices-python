@@ -421,6 +421,15 @@ def exercices():
     data = load_exercise_data()
     return render_template('index.html', data=data, ai_provider=session['ai_provider'])
 
+@app.route('/sandbox')
+def sandbox():
+    """Route affichant le bac à sable Python."""
+    # Définir le fournisseur d'IA par défaut si ce n'est pas déjà fait
+    if 'ai_provider' not in session:
+        session['ai_provider'] = DEFAULT_PROVIDER
+    
+    return render_template('sandbox.html', ai_provider=session['ai_provider'])
+
 
 @app.route('/config')
 def config():

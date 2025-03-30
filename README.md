@@ -16,6 +16,7 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 - **Aide contextuelle** : Guide d'utilisation détaillé accessible à tout moment via le menu d'aide
 - **Expérience personnalisée** : Option "Ne plus afficher" pour la fenêtre de bienvenue
 - **Design responsive** : Interface adaptée à différentes tailles d'écran
+- **Bac à sable Python** : Environnement d'expérimentation libre avec éditeur de code et console de sortie
 
 ### Générateur d'exercices
 - **Génération d'exercices personnalisés** : Création d'énoncés adaptés au niveau des élèves (Troisième, SNT, Prépa NSI, Première, Terminale)
@@ -215,6 +216,26 @@ Options de configuration :
    - Si votre code utilise `input()`, une boîte de dialogue s'affichera pour vous permettre de saisir une valeur
 
 5. Téléchargez l'exercice au format notebook Jupyter si vous souhaitez y travailler hors ligne
+
+### Bac à sable Python
+
+1. Accédez à l'onglet "Bac à sable" dans la barre de navigation
+
+2. Utilisez cet environnement pour expérimenter librement avec du code Python :
+   - Écrivez votre code dans l'éditeur à gauche
+   - Exécutez-le avec le bouton "Exécuter le code"
+   - Visualisez les résultats dans la console à droite
+   - La fonction `input()` est prise en charge automatiquement
+
+3. Fonctionnalités supplémentaires :
+   - Ouvrir un fichier Python existant
+   - Télécharger votre code en fichier .py
+   - Effacer la sortie pour plus de clarté
+
+4. Raccourcis clavier :
+   - Ctrl+Enter : Exécuter le code
+   - Ctrl+S : Télécharger le code
+   - Ctrl+O : Ouvrir un fichier
 
 ### Utilisation de la fonction input()
 
@@ -474,6 +495,7 @@ Par défaut, la taille maximale des fichiers pouvant être téléchargés est li
 - Squelettes de code à compléter avec tests
 - Export des exercices au format notebook Jupyter
 - Support de la fonction `input()` pour les exercices interactifs
+- Bac à sable Python pour l'expérimentation libre
 
 ### Fonctionnalités à venir 🚀
 - **Authentification et autorisations**
