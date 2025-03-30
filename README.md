@@ -108,7 +108,21 @@ Si vous rencontrez une erreur lors de l'accès à la GED :
 
 ## TODO
 
-### Prochaines fonctionnalités
+### Fonctionnalités implémentées ✅
+- [x] Interface utilisateur avec fenêtre de bienvenue et aide contextuelle
+- [x] Générateur d'exercices Python avec différents niveaux de difficulté
+- [x] Mode débutant pour les niveaux Troisième, SNT et Prépa NSI
+- [x] Éditeur de code intégré avec coloration syntaxique
+- [x] Exécution de code en temps réel avec sandbox sécurisé
+- [x] Support de la fonction `input()` pour les exercices interactifs
+- [x] Évaluation automatique du code par IA
+- [x] Triple moteur d'IA (LocalAI, Gemini, Mistral)
+- [x] Export des exercices au format notebook Jupyter
+- [x] Gestion Électronique de Documents (GED)
+- [x] Bibliothèque de cours en style visuel
+- [x] Bac à sable Python avec modules scientifiques préchargés
+
+### Prochaines fonctionnalités 🚀
 - [ ] Authentification et gestion des utilisateurs
 - [ ] Système de suivi de progression pour les élèves
 - [ ] Intégration avec les ENT (Environnements Numériques de Travail)
@@ -116,7 +130,7 @@ Si vous rencontrez une erreur lors de l'accès à la GED :
 - [ ] Support de Turtle pour l'apprentissage visuel
 - [ ] RAG (Retrieval Augmented Generation) pour la génération de cours
 
-### Améliorations techniques
+### Améliorations techniques 🔧
 - [ ] Optimisation des performances pour les grands fichiers
 - [ ] Tests unitaires et d'intégration
 - [ ] Documentation API pour les développeurs
