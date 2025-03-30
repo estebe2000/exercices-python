@@ -287,6 +287,78 @@ function toggleTheme(isDark) {
     }
 }
 
+/**
+ * Animation de code qui tombe (Matrix-like) - version temporaire
+ */
+function setupCodeRain() {
+    const codeRainContainer = document.getElementById('code-rain');
+    if (!codeRainContainer) return;
+    
+    const pythonSymbols = [
+        'def', 'class', 'import', 'from', 'if', 'else', 'elif', 'for', 'while', 
+        'return', 'yield', 'try', 'except', 'finally', 'with', 'as', 'lambda',
+        'print', 'input', 'range', 'len', 'str', 'int', 'float', 'list', 'dict',
+        'set', 'tuple', 'True', 'False', 'None', '0', '1', ':', '=', '+', '-',
+        '*', '/', '%', '**', '//', '==', '!=', '>', '<', '>=', '<=', 'and', 'or',
+        'not', 'in', 'is', '()', '[]', '{}', '#', 'self', '__init__', '__main__'
+    ];
+    
+    // Nombre de gouttes de code basé sur la largeur de l'écran
+    const dropCount = Math.floor(window.innerWidth / 30);
+    
+    // Créer les gouttes de code
+    for (let i = 0; i < dropCount; i++) {
+        createCodeDrop(codeRainContainer, pythonSymbols);
+    }
+    
+    // Arrêter l'animation après 8 secondes
+    setTimeout(() => {
+        // Supprimer toutes les gouttes existantes
+        while (codeRainContainer.firstChild) {
+            codeRainContainer.removeChild(codeRainContainer.firstChild);
+        }
+        
+        // Ajouter une classe pour masquer le conteneur
+        codeRainContainer.classList.add('hidden');
+    }, 8000);
+}
+
+function createCodeDrop(container, symbols) {
+    const drop = document.createElement('div');
+    drop.className = 'code-drop';
+    
+    // Position aléatoire horizontale
+    const left = Math.random() * 100;
+    drop.style.left = `${left}%`;
+    
+    // Vitesse et délai aléatoires (plus courts)
+    const speed = 2 + Math.random() * 4; // entre 2 et 6 secondes
+    const delay = Math.random() * 3; // délai jusqu'à 3 secondes
+    
+    drop.style.animationDuration = `${speed}s`;
+    drop.style.animationDelay = `${delay}s`;
+    
+    // Contenu aléatoire
+    const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+    drop.textContent = symbol;
+    
+    // Taille et opacité aléatoires
+    const size = 12 + Math.floor(Math.random() * 8); // entre 12 et 20px
+    const opacity = 0.3 + Math.random() * 0.4; // entre 0.3 et 0.7
+    
+    drop.style.fontSize = `${size}px`;
+    drop.style.opacity = opacity;
+    
+    container.appendChild(drop);
+    
+    // Ne pas recréer la goutte après son animation
+    drop.addEventListener('animationend', () => {
+        if (container.contains(drop)) {
+            container.removeChild(drop);
+        }
+    });
+}
+
 // Ajouter des boutons d'action aux éléments de code et initialiser les fonctionnalités
 document.addEventListener('DOMContentLoaded', function() {
     // Initialiser le sélecteur de rôle
@@ -294,6 +366,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialiser le sélecteur de thème
     setupThemeToggle();
+    
+    // Initialiser l'animation de code rain si on est sur la page d'accueil
+    if (document.getElementById('code-rain')) {
+        setupCodeRain();
+    }
     
     // Ajouter des boutons pour copier le code
     document.querySelectorAll('pre code').forEach(codeBlock => {

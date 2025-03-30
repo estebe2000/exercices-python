@@ -1,12 +1,30 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<div class="code-rain" id="code-rain"></div>
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-10 text-center">
-            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="img-fluid mb-4" style="max-width: 200px; border-radius: 10px;">
-            <h1 class="display-4 mb-4">Bienvenue sur le Générateur d'Exercices Python</h1>
-            <p class="lead mb-5">Votre assistant pour l'apprentissage et l'enseignement du Python</p>
+            <div class="code-animation-container mb-4">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="img-fluid logo-animated" style="max-width: 200px; border-radius: 10px;">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-button"></div>
+                        <div class="terminal-button"></div>
+                        <div class="terminal-button"></div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-text">
+                            <span class="terminal-prompt">>>> </span>
+                            <span class="typing-text">print("Bienvenue dans l'univers Python !")</span>
+                            <span class="cursor"></span>
+                        </div>
+                        <div class="terminal-output">Bienvenue dans l'univers Python !</div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="display-4 mb-4">Explorez, Codez, Apprenez</h1>
+            <p class="lead mb-5">Votre plateforme interactive pour maîtriser Python à travers des exercices personnalisés</p>
         </div>
     </div>
 
@@ -57,28 +75,10 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title mb-4">À propos de cette application</h3>
-                    <p>Cette application a été conçue pour faciliter l'apprentissage et l'enseignement du Python dans un contexte scolaire. Elle offre plusieurs fonctionnalités :</p>
-                    <ul class="list-group list-group-flush mb-4">
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Génération d'exercices Python personnalisés pour tous les niveaux (Troisième, SNT, Prépa NSI, Première, Terminale)</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Mode débutant avec exercices sans fonctions ni classes pour les niveaux Troisième, SNT et Prépa NSI</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Exécution et évaluation de code Python directement dans l'application</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Téléchargement des exercices au format notebook Jupyter (.ipynb)</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Gestion électronique de documents (GED) pour organiser vos ressources</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Bibliothèque de cours en style visuel pour faciliter l'accès aux documents</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Triple moteur d'IA : LocalAI (Mistral), Google Gemini et Mistral Codestral</li>
-                    </ul>
-                    <p>Pour commencer, cliquez sur l'un des boutons ci-dessus ou utilisez la barre de navigation en haut de la page.</p>
-                    <div class="text-center mt-4">
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#helpModal">
-                            <i class="bi bi-question-circle"></i> Consulter l'aide
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-12 text-center mt-4">
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#helpModal">
+                <i class="bi bi-question-circle"></i> Consulter l'aide
+            </button>
         </div>
     </div>
 </div>
