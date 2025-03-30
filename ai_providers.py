@@ -106,7 +106,7 @@ class AIProvider:
         Returns:
             L'évaluation du code
         """
-        prompt = Config.get_evaluation_prompt(code, enonce)
+        prompt = get_evaluation_prompt(code, enonce)
         return self.generate_text(prompt, max_tokens, temperature)
     
     def _handle_api_error(self, e: Exception, provider_name: str, attempts: int, 

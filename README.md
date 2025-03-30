@@ -33,6 +33,13 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 - **Recherche avancée** : Recherche de documents par nom ou par tag
 - **Modification des métadonnées** : Édition du nom et des tags des documents
 - **Visualisation intégrée** : Affichage des documents directement dans le navigateur
+- **Marquage de cours** : Possibilité de marquer des documents comme cours pour les afficher dans l'onglet Cours
+
+### Bibliothèque de Cours
+- **Affichage en style bibliothèque** : Présentation visuelle des documents marqués comme cours
+- **Mode lecture** : Consultation facile des documents de cours
+- **Filtrage par tags** : Organisation des cours par thématiques
+- **Recherche de cours** : Recherche par nom dans la bibliothèque de cours
 
 ## Prérequis
 
@@ -165,6 +172,27 @@ Options de configuration :
    - Cliquez sur "Supprimer" à côté du document
    - Confirmez la suppression
 
+6. Pour marquer un document comme cours :
+   - Cliquez sur le bouton avec l'icône de livre à côté du document
+   - Le bouton devient vert plein lorsque le document est marqué comme cours
+   - Cliquez à nouveau pour retirer le document des cours
+
+### Bibliothèque de Cours
+
+1. Accédez à l'onglet "Cours"
+
+2. Consultez les documents marqués comme cours, présentés en style bibliothèque
+   - Les documents sont affichés sous forme de cartes avec leur nom, description et tags
+   - Seuls les documents marqués comme cours dans l'onglet GED sont visibles ici
+
+3. Pour rechercher des cours :
+   - Utilisez la barre de recherche pour filtrer par nom
+   - Utilisez le sélecteur de tags pour filtrer par tag
+
+4. Pour consulter un cours :
+   - Cliquez sur le bouton "Consulter" de la carte du document
+   - Le document s'ouvrira dans un nouvel onglet du navigateur
+
 ## Déploiement sur la Forge Éducation
 
 Pour déployer cette application sur la Forge Éducation :
@@ -256,13 +284,18 @@ La GED utilise une base de données SQLite avec les tables suivantes :
 
 1. **documents** : Stocke les métadonnées des documents
    - `id` : Identifiant unique du document (UUID)
-   - `name` : Nom du document
-   - `upload_date` : Date d'upload du document
-   - `file_path` : Chemin vers le fichier physique
+   - `nom_fichier` : Nom du document
+   - `nom_unique` : Identifiant unique pour le fichier physique
+   - `date_upload` : Date d'upload du document
+   - `taille_fichier` : Taille du fichier en octets
+   - `type_mime` : Type MIME du fichier
+   - `description` : Description optionnelle du document
+   - `user_id` : Identifiant de l'utilisateur (pour usage futur)
+   - `est_cours` : Booléen indiquant si le document est un cours
 
 2. **tags** : Stocke les tags disponibles
    - `id` : Identifiant unique du tag
-   - `name` : Nom du tag
+   - `nom` : Nom du tag
 
 3. **document_tags** : Table de relation many-to-many entre documents et tags
    - `document_id` : Référence à un document

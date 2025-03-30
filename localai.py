@@ -58,14 +58,7 @@ def check_localai_connection():
 # Vérifier la connexion au démarrage
 check_localai_connection()
 
-# Paramètres par défaut
-DEFAULT_MAX_TOKENS = 1500
-DEFAULT_TEMPERATURE = 0.7
-DEFAULT_RETRY_COUNT = 2
-DEFAULT_RETRY_DELAY = 1
-
 from prompts import SYSTEM_MESSAGE, get_evaluation_prompt, DEFAULT_MAX_TOKENS, DEFAULT_TEMPERATURE, DEFAULT_RETRY_COUNT, DEFAULT_RETRY_DELAY
-
 
 
 

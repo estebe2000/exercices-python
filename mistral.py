@@ -27,12 +27,6 @@ if not MISTRAL_API_KEY:
 MISTRAL_URL = "https://codestral.mistral.ai/v1/chat/completions"
 MISTRAL_MODEL = "codestral-latest"
 
-# Paramètres par défaut
-DEFAULT_MAX_TOKENS = 1500
-DEFAULT_TEMPERATURE = 0.7
-DEFAULT_RETRY_COUNT = 2
-DEFAULT_RETRY_DELAY = 1
-
 from prompts import SYSTEM_MESSAGE, get_evaluation_prompt, DEFAULT_MAX_TOKENS, DEFAULT_TEMPERATURE, DEFAULT_RETRY_COUNT, DEFAULT_RETRY_DELAY
 
 

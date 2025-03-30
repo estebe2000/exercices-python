@@ -16,6 +16,7 @@ from flask import Flask, render_template, request, jsonify, session, redirect, u
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 from ai_providers import get_ai_provider
+from prompts import get_exercise_prompt
 import uuid
 
 # Configuration base de données
@@ -46,6 +47,7 @@ class Document(db.Model):
     type_mime = db.Column(db.String(100))  # Type MIME du fichier
     description = db.Column(db.Text)  # Description optionnelle
     user_id = db.Column(db.Integer)
+    est_cours = db.Column(db.Boolean, default=False)  # Indique si le document est un cours
     tags = db.relationship('Tag', secondary='document_tags', backref='documents')
 
 # Modèle Tag
@@ -120,135 +122,6 @@ def find_exercise_description(niveau: str, theme: str, difficulte: int) -> tuple
     return "", False
 
 
-def get_exercise_prompt(niveau: str, theme: str, difficulte: int, description: str, debutant: bool = False) -> str:
-    """
-    Génère le prompt pour la création d'un énoncé d'exercice.
-    
-    Args:
-        niveau: Niveau scolaire
-        theme: Thème de l'exercice
-        difficulte: Niveau de difficulté
-        description: Description de l'exercice
-        debutant: Si True, l'exercice est pour débutant (sans fonctions, classes, etc.)
-        
-    Returns:
-        Prompt formaté pour l'IA
-    """
-    # Ajouter des instructions spécifiques pour les exercices débutants
-    niveau_python = ""
-    if debutant:
-        niveau_python = """
-        IMPORTANT: Cet exercice est destiné à des débutants en Python. 
-        N'utilise PAS de fonctions, de classes, d'objets ou d'autres concepts avancés dans le squelette de code.
-        Utilise uniquement des variables, des opérations de base, des conditions (if/else) et des boucles (for/while).
-        Le code doit être simple et direct, sans abstractions avancées.
-        """
-    else:
-        niveau_python = """
-        Cet exercice peut utiliser des fonctions, des classes et d'autres concepts avancés de Python si nécessaire.
-        """
-    
-    return f"""
-    Génère un énoncé d'exercice Python pour un élève de {niveau} avec les caractéristiques suivantes:
-    - Thème: {theme}
-    - Niveau de difficulté: {difficulte}
-    - Description: {description}
-    
-    {niveau_python}
-    
-    IMPORTANT: Ton énoncé doit être formaté en HTML pur pour un affichage correct dans un navigateur.
-    
-    L'énoncé doit inclure:
-    1. Un titre principal avec <h1>Titre de l'exercice</h1>
-    2. Une description détaillée du problème avec des sous-titres <h2>Section</h2>
-    3. Des exemples d'entrées/sorties si nécessaire
-    4. Des contraintes ou indications si nécessaire
-    
-    IMPORTANT: Inclus également:
-    5. Un squelette de code à trous que l'élève devra compléter, SUIVI IMMÉDIATEMENT des tests dans le MÊME bloc de code.
-    
-    RÈGLES IMPORTANTES POUR LE CODE:
-    - Le squelette de code et les tests DOIVENT être dans un SEUL bloc de code <pre><code class="language-python">...</code></pre>
-    - NE PAS séparer le squelette de code et les tests en plusieurs blocs
-    - Les exemples d'entrées/sorties doivent être en dehors du bloc de code principal
-    - Utilise des commentaires comme "# À COMPLÉTER" ou "# VOTRE CODE ICI" pour indiquer les parties à remplir
-    - NE PAS utiliser la fonction input() dans les exercices, car elle ne fonctionne pas correctement dans l'éditeur
-    - Si des données d'entrée sont nécessaires, les fournir directement dans le code (par exemple, sous forme de variables prédéfinies)
-    
-    RÈGLES CRUCIALES POUR LE SQUELETTE DE CODE:
-    - Le squelette de code DOIT TOUJOURS contenir des parties à compléter par l'élève
-    - NE JAMAIS fournir un code déjà complet ou fonctionnel
-    - Remplacer SYSTÉMATIQUEMENT les implémentations par des commentaires "# À COMPLÉTER" ou "# VOTRE CODE ICI"
-    - Pour les opérations simples (comme aire = longueur * largeur), remplacer par "# À COMPLÉTER: Calculer l'aire du rectangle"
-    - Pour les structures conditionnelles, laisser la structure mais vider le contenu des blocs
-    - Pour les boucles, laisser la structure mais vider le contenu des blocs
-    - Pour les fonctions, laisser la signature mais remplacer le corps par "# À COMPLÉTER" et "pass"
-    
-    RÈGLES CRUCIALES POUR LES TESTS:
-    - Les tests NE DOIVENT PAS contenir la solution complète
-    - Les tests doivent utiliser des assertions ou des vérifications indirectes
-    - NE JAMAIS inclure le code de la solution dans les tests
-    - Utiliser des variables pour stocker les résultats attendus plutôt que de montrer comment les calculer
-    - Pour les exercices avec affichage (print), vérifier le résultat avec des assertions sur des variables, pas en répétant le code de la solution
-    
-    Exemple de format CORRECT pour le code et les tests (dans un SEUL bloc):
-    
-    <pre><code class="language-python">
-    def fonction(a, b):
-        # À COMPLÉTER
-        pass
-        
-    # Tests - NE PAS SÉPARER DU CODE CI-DESSUS
-    try:
-        assert fonction(1, 2) == 3
-        print("✅ Test 1 réussi: fonction(1, 2) == 3")
-    except AssertionError:
-        print("❌ Test 1 échoué: fonction(1, 2) devrait retourner 3")
-    </code></pre>
-    
-    Exemple de squelette de code INCORRECT (car déjà complet):
-    
-    <pre><code class="language-python">
-    # Calcul de l'aire en fonction de la forme choisie
-    if forme == "rectangle":
-        aire = longueur * largeur
-    elif forme == "cercle":
-        aire = pi * (rayon ** 2)
-    elif forme == "triangle":
-        aire = (base * hauteur) / 2
-    else:
-        print("Forme non reconnue")
-    </code></pre>
-    
-    Exemple de squelette de code CORRECT (avec parties à compléter):
-    
-    <pre><code class="language-python">
-    # Calcul de l'aire en fonction de la forme choisie
-    if forme == "rectangle":
-        # À COMPLÉTER: Calculer l'aire du rectangle
-        pass
-    elif forme == "cercle":
-        # À COMPLÉTER: Calculer l'aire du cercle
-        pass
-    elif forme == "triangle":
-        # À COMPLÉTER: Calculer l'aire du triangle
-        pass
-    else:
-        print("Forme non reconnue")
-    </code></pre>
-    
-    Utilise uniquement des balises HTML standard pour le formatage:
-    - <h1>, <h2>, <h3> pour les titres
-    - <p> pour les paragraphes
-    - <ul> et <li> pour les listes
-    - <pre><code class="language-python">...</code></pre> pour les blocs de code
-    - <strong> pour le texte en gras
-    - <em> pour le texte en italique
-    - <span class="text-success">✅ Texte</span> pour les messages de succès
-    - <span class="text-danger">❌ Texte</span> pour les messages d'erreur
-    
-    Ne mélange pas HTML et Markdown. Utilise uniquement du HTML pur.
-    """
 
 
 def safe_input(prompt=""):
@@ -381,6 +254,15 @@ def try_evaluate_last_expression(code: str, local_vars: Dict[str, Any]) -> str:
 @app.route('/')
 def index():
     """Route principale affichant la page d'accueil."""
+    # Définir le fournisseur d'IA par défaut si ce n'est pas déjà fait
+    if 'ai_provider' not in session:
+        session['ai_provider'] = DEFAULT_PROVIDER
+    
+    return render_template('accueil.html', ai_provider=session['ai_provider'])
+
+@app.route('/exercices')
+def exercices():
+    """Route affichant le générateur d'exercices."""
     # Définir le fournisseur d'IA par défaut si ce n'est pas déjà fait
     if 'ai_provider' not in session:
         session['ai_provider'] = DEFAULT_PROVIDER
@@ -828,6 +710,46 @@ def delete_document(document_id):
     db.session.commit()
     
     return redirect(url_for('ged'))
+
+@app.route('/ged/toggle-cours/<int:document_id>', methods=['POST'])
+def toggle_cours(document_id):
+    """Route pour marquer/démarquer un document comme cours."""
+    document = Document.query.get_or_404(document_id)
+    
+    # Inverser la valeur du champ est_cours
+    document.est_cours = not document.est_cours
+    
+    db.session.commit()
+    
+    return jsonify({
+        'success': True,
+        'est_cours': document.est_cours
+    })
+
+@app.route('/cours')
+def cours():
+    """Route pour afficher la page des cours (documents en mode lecture avec style bibliothèque)."""
+    query = request.args.get('q', '')
+    tag = request.args.get('tag', '')
+    
+    # Base de la requête - ne récupérer que les documents marqués comme cours
+    documents_query = Document.query.filter_by(est_cours=True)
+    
+    # Filtrer par texte de recherche
+    if query:
+        documents_query = documents_query.filter(Document.nom_fichier.ilike(f'%{query}%'))
+    
+    # Filtrer par tag
+    if tag:
+        documents_query = documents_query.join(Document.tags).filter(Tag.nom == tag)
+    
+    # Exécuter la requête
+    documents = documents_query.order_by(Document.date_upload.desc()).all()
+    
+    # Récupérer tous les tags pour les filtres
+    tags = Tag.query.order_by(Tag.nom).all()
+    
+    return render_template('cours.html', documents=documents, tags=tags, query=query, selected_tag=tag)
 
 @app.route('/ged/search')
 def search_documents():
