@@ -1,0 +1,110 @@
+RÉSULTATS DES TESTS DE SÉCURITÉ DU SANDBOX
+==================================================
+
+=== Test: Code normal ===
+Code à exécuter:
+
+def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n-1)
+
+result = factorial(5)
+print(f"Factorielle de 5 = {result}")
+
+
+SORTIE: Factorielle de 5 = 120
+
+==================================================
+
+=== Test: Boucle infinie (while True) ===
+Code à exécuter:
+
+while True:
+    print("Ceci est une boucle infinie")
+
+
+ERREUR: Problèmes détectés dans le code:
+- Boucle 'while True' sans instruction 'break' détectée.
+==================================================
+
+=== Test: Boucle avec grand nombre d'itérations ===
+Code à exécuter:
+
+for i in range(100000000):
+    print(i)
+
+
+ERREUR: Problèmes détectés dans le code:
+- Boucle 'for' avec un très grand nombre d'itérations (100000000).
+==================================================
+
+=== Test: Appel à eval() ===
+Code à exécuter:
+
+code = "print('Ceci est exécuté via eval()')"
+eval(code)
+
+
+ERREUR: Problèmes détectés dans le code:
+- Appel de fonction dangereuse: eval
+==================================================
+
+=== Test: Accès au système de fichiers ===
+Code à exécuter:
+
+with open('test.txt', 'w') as f:
+    f.write('Ceci est un test')
+
+
+ERREUR: Problèmes détectés dans le code:
+- Appel de fonction dangereuse: open
+==================================================
+
+=== Test: Import non autorisé ===
+Code à exécuter:
+
+import os
+os.system('echo "Commande système exécutée"')
+
+
+ERREUR: Problèmes détectés dans le code:
+- Import non autorisé: os
+- Appel de méthode dangereuse: system
+==================================================
+
+=== Test: Utilisation excessive de mémoire ===
+Code à exécuter:
+
+# Tenter de créer une liste très grande
+big_list = [i for i in range(50000000)]
+print(len(big_list))
+
+
+ERREUR: Le code a exécuté plus de 1000000 instructions. Il s'agit probablement d'une boucle infinie ou d'un code très inefficace.
+==================================================
+
+=== Test: Syntaxe invalide ===
+Code à exécuter:
+
+if True
+    print("Syntaxe incorrecte")
+
+
+ERREUR: Problèmes détectés dans le code:
+- Erreur de syntaxe: expected ':' (<unknown>, line 2)
+==================================================
+
+=== Test: Utilisation de numpy ===
+Code à exécuter:
+
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(f"Moyenne: {np.mean(arr)}")
+print(f"Écart-type: {np.std(arr)}")
+
+
+SORTIE: Moyenne: 3.0
+Écart-type: 1.4142135623730951
+
+==================================================
