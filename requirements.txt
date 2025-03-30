@@ -27,3 +27,14 @@ soupsieve==2.6
 
 # Génération de notebooks Jupyter
 nbformat==5.9.2
+
+# Bibliothèques scientifiques (comme dans Basthon)
+numpy
+pandas
+scipy
+sympy
+matplotlib
+
+# Bibliothèques de traitement de texte
+nltk
+textblob

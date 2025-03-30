@@ -3367,3 +3367,62 @@ FROM document ORDER BY document.date_upload DESC]
 2025-03-30 04:58:20,074 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:20] "GET /execution-status/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -
 2025-03-30 04:58:21,864 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:21] "POST /provide-input/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -
 2025-03-30 04:58:22,372 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 04:58:22] "GET /execution-status/dace6986-6527-4ea4-969c-af99a5663326 HTTP/1.1" 200 -
+2025-03-30 05:05:19,732 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\app.py', reloading
+2025-03-30 05:05:19,795 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 05:05:20,251 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 05:05:20,253 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 05:05:20,431 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\app.py', reloading
+2025-03-30 05:05:20,500 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 05:05:20,965 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 05:05:20,967 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 05:07:10,235 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\app.py', reloading
+2025-03-30 05:07:10,287 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 05:07:10,347 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\app.py', reloading
+2025-03-30 05:07:10,410 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 05:11:15,826 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 05:11:15,826 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 05:11:15,826 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 05:11:16,408 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 05:11:16,410 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 05:11:57,354 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:57] "GET /sandbox HTTP/1.1" 200 -
+2025-03-30 05:11:57,489 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:57] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 05:11:57,491 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 05:11:57,493 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 05:11:58,714 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:58] "GET / HTTP/1.1" 200 -
+2025-03-30 05:11:58,731 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 05:11:58,739 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:58] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 05:11:58,739 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 05:11:59,823 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:59] "GET / HTTP/1.1" 200 -
+2025-03-30 05:11:59,846 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 05:11:59,855 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:59] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 05:11:59,855 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:11:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 05:12:13,357 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:12:13] "GET /sandbox HTTP/1.1" 200 -
+2025-03-30 05:12:13,389 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:12:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 05:12:13,400 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:12:13] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 05:12:13,400 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:12:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 05:12:52,250 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:12:52] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:12:54,938 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:12:54] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:12:56,200 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:12:56] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:13:06,732 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:06] "GET /exercices HTTP/1.1" 200 -
+2025-03-30 05:13:06,774 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 05:13:06,780 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:06] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 05:13:06,780 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 05:13:15,467 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:15] "POST /generate-exercise HTTP/1.1" 200 -
+2025-03-30 05:13:19,567 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:19] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:13:22,009 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:22] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:13:22,515 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:22] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:13:22,935 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:22] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:13:23,127 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:23] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:13:23,299 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:13:23] "POST /execute-code HTTP/1.1" 200 -
+2025-03-30 05:16:36,680 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:16:36] "GET /exercices HTTP/1.1" 200 -
+2025-03-30 05:16:36,727 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:16:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 05:16:36,730 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:16:36] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 05:16:36,735 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:16:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 05:16:57,257 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:16:57] "POST /generate-exercise HTTP/1.1" 200 -
+2025-03-30 05:17:53,303 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:17:53] "POST /generate-exercise HTTP/1.1" 200 -
+2025-03-30 05:18:43,014 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:18:43] "POST /generate-exercise HTTP/1.1" 200 -
+2025-03-30 05:19:11,779 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:19:11] "GET /sandbox HTTP/1.1" 200 -
+2025-03-30 05:19:11,831 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:19:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 05:19:11,833 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:19:11] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 05:19:11,837 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 05:19:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -

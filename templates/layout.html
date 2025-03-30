@@ -367,6 +367,89 @@
                         </div>
                         
                         <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSandbox">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSandbox" aria-expanded="false" aria-controls="collapseSandbox">
+                                    <i class="bi bi-terminal me-2"></i> Bac à sable et modules scientifiques
+                                </button>
+                            </h2>
+                            <div id="collapseSandbox" class="accordion-collapse collapse" aria-labelledby="headingSandbox" data-bs-parent="#helpAccordion">
+                                <div class="accordion-body">
+                                    <p>Le bac à sable Python vous permet d'expérimenter librement avec du code Python :</p>
+                                    <ol>
+                                        <li>Accédez à l'onglet <strong>Bac à sable</strong> dans la barre de navigation</li>
+                                        <li>Écrivez votre code dans l'éditeur à gauche</li>
+                                        <li>Exécutez-le avec le bouton <strong>Exécuter le code</strong></li>
+                                        <li>Visualisez les résultats dans la console à droite</li>
+                                    </ol>
+                                    
+                                    <p><strong>Modules scientifiques et de traitement de texte préchargés :</strong></p>
+                                    <p>Le bac à sable inclut plusieurs bibliothèques préchargées que vous pouvez utiliser sans avoir à les importer explicitement :</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>Calcul scientifique :</h6>
+                                            <ul>
+                                                <li><code>numpy</code> (alias <code>np</code>) - Calcul numérique</li>
+                                                <li><code>pandas</code> (alias <code>pd</code>) - Analyse de données</li>
+                                                <li><code>scipy</code> - Calcul scientifique avancé</li>
+                                                <li><code>sympy</code> (alias <code>sp</code>) - Calcul symbolique</li>
+                                                <li><code>matplotlib.pyplot</code> (alias <code>plt</code>) - Visualisation</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Traitement de texte :</h6>
+                                            <ul>
+                                                <li><code>re</code> - Expressions régulières</li>
+                                                <li><code>string</code> - Manipulation de chaînes</li>
+                                                <li><code>nltk</code> - Traitement du langage naturel</li>
+                                                <li><code>textblob</code> - Analyse de texte simplifiée</li>
+                                            </ul>
+                                            <h6>Bibliothèque standard :</h6>
+                                            <ul>
+                                                <li><code>math</code>, <code>random</code>, <code>statistics</code></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <p><strong>Exemple d'utilisation :</strong></p>
+                                    <pre><code>
+# Utilisation de numpy sans import
+arr = np.array([1, 2, 3, 4, 5])
+print(f"Moyenne : {np.mean(arr)}")
+print(f"Écart-type : {np.std(arr)}")
+
+# Utilisation de pandas sans import
+df = pd.DataFrame({
+    'A': [1, 2, 3],
+    'B': [4, 5, 6]
+})
+print(df)
+
+# Utilisation de matplotlib sans import
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+plt.plot(x, y)
+                                    </code></pre>
+                                    
+                                    <p><strong>Fonctionnalités supplémentaires :</strong></p>
+                                    <ul>
+                                        <li>Support de la fonction <code>input()</code> pour les exercices interactifs</li>
+                                        <li>Ouvrir un fichier Python existant avec le bouton <strong>Ouvrir</strong></li>
+                                        <li>Télécharger votre code en fichier .py avec le bouton <strong>Télécharger</strong></li>
+                                        <li>Effacer la sortie pour plus de clarté avec le bouton <strong>Effacer la sortie</strong></li>
+                                    </ul>
+                                    
+                                    <p><strong>Raccourcis clavier :</strong></p>
+                                    <ul>
+                                        <li>Ctrl+Enter : Exécuter le code</li>
+                                        <li>Ctrl+S : Télécharger le code</li>
+                                        <li>Ctrl+O : Ouvrir un fichier</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
                             <h2 class="accordion-header" id="headingAdmin">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
                                     <i class="bi bi-shield-lock me-2"></i> Fonctions d'administration

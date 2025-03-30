@@ -227,12 +227,19 @@ Options de configuration :
    - Visualisez les résultats dans la console à droite
    - La fonction `input()` est prise en charge automatiquement
 
-3. Fonctionnalités supplémentaires :
+3. Modules scientifiques et de traitement de texte préchargés :
+   - **Calcul scientifique** : numpy (np), pandas (pd), scipy, sympy (sp), matplotlib (plt)
+   - **Traitement de texte** : re, string, nltk, textblob
+   - **Bibliothèque standard** : math, random, statistics
+   - Ces modules sont disponibles sans avoir à les importer explicitement
+   - Exemple : `np.array([1, 2, 3])` au lieu de `import numpy as np`
+
+4. Fonctionnalités supplémentaires :
    - Ouvrir un fichier Python existant
    - Télécharger votre code en fichier .py
    - Effacer la sortie pour plus de clarté
 
-4. Raccourcis clavier :
+5. Raccourcis clavier :
    - Ctrl+Enter : Exécuter le code
    - Ctrl+S : Télécharger le code
    - Ctrl+O : Ouvrir un fichier
@@ -496,6 +503,8 @@ Par défaut, la taille maximale des fichiers pouvant être téléchargés est li
 - Export des exercices au format notebook Jupyter
 - Support de la fonction `input()` pour les exercices interactifs
 - Bac à sable Python pour l'expérimentation libre
+- Modules scientifiques et de traitement de texte préchargés (numpy, pandas, scipy, sympy, matplotlib, nltk, textblob)
+- Exercices utilisant les bibliothèques scientifiques et de traitement de texte (adaptés au niveau des élèves)
 
 ### Fonctionnalités à venir 🚀
 - **Authentification et autorisations**

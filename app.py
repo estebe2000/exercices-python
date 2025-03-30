@@ -15,6 +15,13 @@ import traceback
 from io import StringIO
 from typing import Dict, Any, List, Optional, Tuple
 
+# Configuration de matplotlib pour le mode non-interactif
+try:
+    import matplotlib
+    matplotlib.use('Agg')  # Mode non-interactif
+except ImportError:
+    pass  # Matplotlib n'est pas installé
+
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for, send_file
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
@@ -126,6 +133,21 @@ def find_exercise_description(niveau: str, theme: str, difficulte: int) -> tuple
     return "", False
 
 
+def safe_import(module_name):
+    """
+    Importe un module de manière sécurisée, en retournant None si le module n'est pas disponible.
+    
+    Args:
+        module_name: Nom du module à importer
+        
+    Returns:
+        Le module importé ou None si le module n'est pas disponible
+    """
+    try:
+        return __import__(module_name)
+    except ImportError:
+        print(f"⚠️ Module {module_name} non disponible. Certaines fonctionnalités peuvent ne pas fonctionner.")
+        return None
 
 
 # Gestionnaire d'exécution asynchrone pour le support de input()
@@ -175,9 +197,28 @@ class AsyncCodeExecutor:
             # Compiler le code en mode 'exec' pour exécuter les instructions
             compiled_code = compile(code, '<string>', 'exec')
             
-            # Créer un environnement d'exécution avec notre version de input()
+            # Créer un environnement d'exécution avec notre version de input() et les modules préchargés
             exec_globals = {
                 'input': lambda prompt='': self._handle_input(execution_id, prompt),
+                # Modules scientifiques
+                'np': safe_import('numpy'),
+                'numpy': safe_import('numpy'),
+                'pd': safe_import('pandas'),
+                'pandas': safe_import('pandas'),
+                'scipy': safe_import('scipy'),
+                'sp': safe_import('sympy'),
+                'sympy': safe_import('sympy'),
+                'plt': safe_import('matplotlib.pyplot'),
+                'matplotlib': safe_import('matplotlib'),
+                # Modules de traitement de texte
+                're': safe_import('re'),
+                'string': safe_import('string'),
+                'nltk': safe_import('nltk'),
+                'textblob': safe_import('textblob'),
+                # Modules standards
+                'math': safe_import('math'),
+                'random': safe_import('random'),
+                'statistics': safe_import('statistics'),
                 '__builtins__': __builtins__
             }
             
@@ -310,10 +351,33 @@ def execute_python_code(code: str) -> Dict[str, str]:
         'error': ''
     }
     
-    # Créer un environnement d'exécution local avec input() remplacé
-    local_vars = {
-        'input': safe_input  # Remplacer input() par notre version sécurisée
+    # Créer un environnement d'exécution avec les modules préchargés
+    exec_globals = {
+        'input': safe_input,  # Version sécurisée de input()
+        # Modules scientifiques
+        'np': safe_import('numpy'),
+        'numpy': safe_import('numpy'),
+        'pd': safe_import('pandas'),
+        'pandas': safe_import('pandas'),
+        'scipy': safe_import('scipy'),
+        'sp': safe_import('sympy'),
+        'sympy': safe_import('sympy'),
+        'plt': safe_import('matplotlib.pyplot'),
+        'matplotlib': safe_import('matplotlib'),
+        # Modules de traitement de texte
+        're': safe_import('re'),
+        'string': safe_import('string'),
+        'nltk': safe_import('nltk'),
+        'textblob': safe_import('textblob'),
+        # Modules standards
+        'math': safe_import('math'),
+        'random': safe_import('random'),
+        'statistics': safe_import('statistics'),
+        '__builtins__': __builtins__
     }
+    
+    # Variables locales pour l'exécution
+    local_vars = {}
     
     try:
         # Vérifier si le code contient des appels à input()
@@ -327,7 +391,7 @@ def execute_python_code(code: str) -> Dict[str, str]:
         compiled_code = compile(code, '<string>', 'exec')
         
         # Exécuter le code compilé avec notre version sécurisée de input()
-        exec(compiled_code, {'input': safe_input}, local_vars)
+        exec(compiled_code, exec_globals, local_vars)
         
         # Récupérer la sortie standard
         output = redirected_output.getvalue()

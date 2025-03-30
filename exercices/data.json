@@ -1,6 +1,96 @@
 {
   "Terminale Générale": [
     {
+      "thème": "Analyse de données avec Pandas",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Créer et manipuler un DataFrame à partir d'un dictionnaire",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Filtrer et trier des données dans un DataFrame",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Calculer des statistiques descriptives sur un DataFrame",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Fusionner deux DataFrames avec différentes méthodes de jointure",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Analyser une série temporelle avec pandas et créer des visualisations",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Calcul scientifique avec NumPy",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Créer et manipuler des tableaux NumPy",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Effectuer des opérations mathématiques sur des tableaux NumPy",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Résoudre un système d'équations linéaires avec NumPy",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Calculer des valeurs propres et vecteurs propres d'une matrice",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Implémenter une régression linéaire avec NumPy",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Calcul symbolique avec SymPy",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Manipuler des expressions symboliques avec SymPy",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Résoudre des équations symboliques",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Calculer des dérivées et intégrales symboliques",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Développer et factoriser des expressions algébriques",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Résoudre des équations différentielles avec SymPy",
+          "debutant": false
+        }
+      ]
+    },
+    {
       "thème": "Algorithmes avancés",
       "niveaux": [
         {
@@ -303,6 +393,66 @@
   ],
   "Première Générale": [
     {
+      "thème": "Traitement de texte avancé",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Utiliser les expressions régulières pour extraire des motifs dans un texte",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Analyser la fréquence des mots dans un texte",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Créer un correcteur orthographique simple avec TextBlob",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Analyser le sentiment d'un texte avec TextBlob",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Tokeniser et analyser un texte avec NLTK",
+          "debutant": false
+        }
+      ]
+    },
+    {
+      "thème": "Statistiques avec NumPy",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Calculer des statistiques descriptives sur un tableau NumPy",
+          "debutant": false
+        },
+        {
+          "niveau": 2,
+          "description": "Générer des nombres aléatoires avec différentes distributions",
+          "debutant": false
+        },
+        {
+          "niveau": 3,
+          "description": "Calculer la corrélation entre deux séries de données",
+          "debutant": false
+        },
+        {
+          "niveau": 4,
+          "description": "Créer et manipuler des histogrammes avec NumPy",
+          "debutant": false
+        },
+        {
+          "niveau": 5,
+          "description": "Effectuer des tests statistiques simples avec SciPy",
+          "debutant": false
+        }
+      ]
+    },
+    {
       "thème": "Algorithmes simples",
       "niveaux": [
         {
@@ -545,6 +695,36 @@
   ],
   "Prépa NSI": [
     {
+      "thème": "Traitement de texte",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Utiliser les expressions régulières pour valider un format (email, téléphone)",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Extraire des informations d'un texte avec le module re",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Compter les occurrences de mots dans un texte",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Remplacer des motifs dans un texte avec les expressions régulières",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Analyser et formater des données textuelles structurées",
+          "debutant": true
+        }
+      ]
+    },
+    {
       "thème": "Algorithmes simples",
       "niveaux": [
         {
@@ -666,6 +846,36 @@
     }
   ],
   "SNT": [
+    {
+      "thème": "Statistiques simples",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Calculer la moyenne d'une liste de nombres avec le module statistics",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Calculer la médiane d'une liste de nombres avec le module statistics",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Calculer l'écart-type d'une liste de nombres avec le module statistics",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Analyser des données simples avec le module statistics",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Créer un histogramme simple à partir de données",
+          "debutant": true
+        }
+      ]
+    },
     {
       "thème": "Variable",
       "niveaux": [
@@ -818,6 +1028,36 @@
     }
   ],
   "Troisième": [
+    {
+      "thème": "Mathématiques avec le module math",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "description": "Utiliser les fonctions mathématiques de base (sqrt, pow, abs)",
+          "debutant": true
+        },
+        {
+          "niveau": 2,
+          "description": "Calculer l'aire et le périmètre de formes géométriques avec math",
+          "debutant": true
+        },
+        {
+          "niveau": 3,
+          "description": "Utiliser les fonctions trigonométriques (sin, cos, tan)",
+          "debutant": true
+        },
+        {
+          "niveau": 4,
+          "description": "Convertir des angles entre degrés et radians",
+          "debutant": true
+        },
+        {
+          "niveau": 5,
+          "description": "Résoudre des problèmes mathématiques simples avec le module math",
+          "debutant": true
+        }
+      ]
+    },
     {
       "thème": "Calculs simples",
       "niveaux": [
