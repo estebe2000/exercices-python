@@ -159,8 +159,81 @@ function setupKeyboardShortcuts() {
     });
 }
 
+/**
+ * Gestion du sélecteur de rôle
+ */
+function setupRoleSelector() {
+    // Récupérer le rôle stocké dans localStorage ou utiliser 'admin' par défaut
+    const currentRole = localStorage.getItem('userRole') || 'admin';
+    
+    // Appliquer le rôle au chargement de la page
+    document.body.className = document.body.className.replace(/role-\w+/g, '');
+    document.body.classList.add('role-' + currentRole);
+    
+    // Sélectionner les bons boutons radio (desktop et mobile)
+    const roleRadio = document.getElementById('role-' + currentRole);
+    const roleMobileRadio = document.getElementById('role-' + currentRole + '-mobile');
+    
+    if (roleRadio) {
+        roleRadio.checked = true;
+    }
+    
+    if (roleMobileRadio) {
+        roleMobileRadio.checked = true;
+    }
+    
+    // Fonction pour changer le rôle
+    const changeRole = function(value) {
+        // Mettre à jour la classe du body
+        document.body.className = document.body.className.replace(/role-\w+/g, '');
+        document.body.classList.add('role-' + value);
+        
+        // Sauvegarder le rôle dans localStorage
+        localStorage.setItem('userRole', value);
+        
+        // Mettre à jour les deux sélecteurs
+        const desktopRadio = document.getElementById('role-' + value);
+        const mobileRadio = document.getElementById('role-' + value + '-mobile');
+        
+        if (desktopRadio) {
+            desktopRadio.checked = true;
+        }
+        
+        if (mobileRadio) {
+            mobileRadio.checked = true;
+        }
+        
+        // Afficher une notification
+        const roleNames = {
+            'admin': 'Administrateur',
+            'teacher': 'Professeur',
+            'student': 'Étudiant'
+        };
+        showNotification(`Vue changée : ${roleNames[value]}`, 'info');
+    };
+    
+    // Ajouter des écouteurs d'événements pour les boutons radio desktop
+    const roleRadios = document.querySelectorAll('input[name="role"]');
+    roleRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            changeRole(this.value);
+        });
+    });
+    
+    // Ajouter des écouteurs d'événements pour les boutons radio mobile
+    const roleMobileRadios = document.querySelectorAll('input[name="role-mobile"]');
+    roleMobileRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            changeRole(this.value);
+        });
+    });
+}
+
 // Ajouter des boutons d'action aux éléments de code et initialiser les fonctionnalités
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialiser le sélecteur de rôle
+    setupRoleSelector();
+    
     // Ajouter des boutons pour copier le code
     document.querySelectorAll('pre code').forEach(codeBlock => {
         // Créer le conteneur de boutons

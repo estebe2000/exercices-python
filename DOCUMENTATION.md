@@ -23,6 +23,14 @@ Ce document fournit une documentation technique détaillée du projet "Générat
 - **Expérience personnalisée** : Option "Ne plus afficher" pour la fenêtre de bienvenue
 - **Design responsive** : Interface adaptée à différentes tailles d'écran
 - **Bac à sable Python** : Environnement d'expérimentation libre avec éditeur de code et console de sortie
+- **Sélecteur de rôle** : Possibilité de basculer entre les vues Admin, Professeur et Étudiant pour tester différentes interfaces
+
+### Système de rôles
+- **Vue Admin** : Accès complet à toutes les fonctionnalités, y compris la GED, l'éditeur d'exercices et la configuration
+- **Vue Professeur** : Accès à la GED et aux fonctionnalités d'enseignement, sans les options d'administration
+- **Vue Étudiant** : Accès uniquement aux fonctionnalités d'apprentissage (exercices, cours, bac à sable)
+- **Persistance des préférences** : Mémorisation du rôle sélectionné entre les sessions grâce au stockage local
+- **Interface adaptative** : Affichage des éléments de menu et des fonctionnalités selon le rôle sélectionné
 
 ### Générateur d'exercices
 - **Génération d'exercices personnalisés** : Création d'énoncés adaptés au niveau des élèves (Troisième, SNT, Prépa NSI, Première, Terminale)

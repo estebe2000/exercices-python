@@ -10,17 +10,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
 </head>
-<body>
+<body class="role-admin">
 <nav class="navbar navbar-expand-lg navbar-dark bg-gradient shadow-sm">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="/">
             <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2 rounded-circle">
             <span class="fw-bold">Générateur d'Exercices Python</span>
         </a>
+        
+        <!-- Sélecteur de rôle -->
+        <div class="role-selector d-none d-md-block">
+            <div class="btn-group" role="group" aria-label="Sélecteur de rôle">
+                <input type="radio" class="btn-check" name="role" id="role-admin" autocomplete="off" value="admin" checked>
+                <label class="btn btn-outline-light" for="role-admin">Admin</label>
+                
+                <input type="radio" class="btn-check" name="role" id="role-teacher" autocomplete="off" value="teacher">
+                <label class="btn btn-outline-light" for="role-teacher">Professeur</label>
+                
+                <input type="radio" class="btn-check" name="role" id="role-student" autocomplete="off" value="student">
+                <label class="btn btn-outline-light" for="role-student">Étudiant</label>
+            </div>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Sélecteur de rôle pour mobile -->
+            <div class="role-selector d-md-none mb-3 mt-2">
+                <div class="btn-group w-100" role="group" aria-label="Sélecteur de rôle mobile">
+                    <input type="radio" class="btn-check" name="role-mobile" id="role-admin-mobile" autocomplete="off" value="admin" checked>
+                    <label class="btn btn-outline-primary" for="role-admin-mobile">Admin</label>
+                    
+                    <input type="radio" class="btn-check" name="role-mobile" id="role-teacher-mobile" autocomplete="off" value="teacher">
+                    <label class="btn btn-outline-primary" for="role-teacher-mobile">Professeur</label>
+                    
+                    <input type="radio" class="btn-check" name="role-mobile" id="role-student-mobile" autocomplete="off" value="student">
+                    <label class="btn btn-outline-primary" for="role-student-mobile">Étudiant</label>
+                </div>
+            </div>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Page d'accueil">
@@ -42,7 +69,8 @@
                         <i class="bi bi-terminal"></i> Bac à sable
                     </a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- Menu Admin - visible uniquement pour les administrateurs -->
+                <li class="nav-item dropdown admin-only">
                     <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Fonctions d'administration">
                         <i class="bi bi-shield-lock"></i> Admin
                     </a>
@@ -60,6 +88,25 @@
                         <li>
                             <a class="dropdown-item" href="/config">
                                 <i class="bi bi-gear-fill"></i> Configuration
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Professeur - visible uniquement pour les professeurs -->
+                <li class="nav-item dropdown teacher-only">
+                    <a class="nav-link dropdown-toggle" href="#" id="teacherDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Fonctions enseignant">
+                        <i class="bi bi-person-workspace"></i> Professeur
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="teacherDropdown">
+                        <li>
+                            <a class="dropdown-item" href="/ged">
+                                <i class="bi bi-file-earmark-text"></i> GED
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/exercices">
+                                <i class="bi bi-list-check"></i> Créer des exercices
                             </a>
                         </li>
                     </ul>
@@ -445,6 +492,76 @@ plt.plot(x, y)
                                         <li>Ctrl+S : Télécharger le code</li>
                                         <li>Ctrl+O : Ouvrir un fichier</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingRoles">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRoles" aria-expanded="false" aria-controls="collapseRoles">
+                                    <i class="bi bi-people-fill me-2"></i> Sélecteur de rôle
+                                </button>
+                            </h2>
+                            <div id="collapseRoles" class="accordion-collapse collapse" aria-labelledby="headingRoles" data-bs-parent="#helpAccordion">
+                                <div class="accordion-body">
+                                    <p>L'application propose un sélecteur de rôle qui vous permet de basculer entre différentes vues :</p>
+                                    <div class="row mb-4">
+                                        <div class="col-md-4">
+                                            <div class="card h-100 border-danger">
+                                                <div class="card-header bg-danger text-white">
+                                                    <i class="bi bi-shield-lock me-2"></i> Vue Admin
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Accès complet à toutes les fonctionnalités :</p>
+                                                    <ul>
+                                                        <li>Toutes les fonctionnalités d'apprentissage</li>
+                                                        <li>Gestion Électronique de Documents (GED)</li>
+                                                        <li>Éditeur d'exercices</li>
+                                                        <li>Configuration du système</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card h-100 border-primary">
+                                                <div class="card-header bg-primary text-white">
+                                                    <i class="bi bi-person-workspace me-2"></i> Vue Professeur
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Accès aux fonctionnalités d'enseignement :</p>
+                                                    <ul>
+                                                        <li>Toutes les fonctionnalités d'apprentissage</li>
+                                                        <li>Gestion Électronique de Documents (GED)</li>
+                                                        <li>Création d'exercices</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card h-100 border-success">
+                                                <div class="card-header bg-success text-white">
+                                                    <i class="bi bi-mortarboard-fill me-2"></i> Vue Étudiant
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Accès aux fonctionnalités d'apprentissage :</p>
+                                                    <ul>
+                                                        <li>Exercices</li>
+                                                        <li>Cours</li>
+                                                        <li>Bac à sable Python</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p>Pour changer de rôle :</p>
+                                    <ol>
+                                        <li>Cliquez sur l'un des boutons du sélecteur de rôle dans la barre de navigation</li>
+                                        <li>L'interface s'adapte automatiquement pour afficher les fonctionnalités correspondant au rôle sélectionné</li>
+                                        <li>Votre choix est mémorisé entre les sessions grâce au stockage local</li>
+                                    </ol>
+                                    
+                                    <p><strong>Note :</strong> Le sélecteur de rôle est disponible en haut de l'interface sur les grands écrans, et dans le menu déroulant sur les appareils mobiles.</p>
                                 </div>
                             </div>
                         </div>

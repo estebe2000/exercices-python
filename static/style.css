@@ -386,9 +386,75 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Styles pour le sélecteur de rôle */
+.role-selector {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    margin-left: 1rem;
+}
+
+.role-selector .btn {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.role-selector .btn-check:checked + .btn {
+    transform: scale(1.05);
+    font-weight: 500;
+}
+
+/* Styles pour la gestion des rôles */
+.admin-only, .teacher-only, .student-only {
+    display: none;
+}
+
+body.role-admin .admin-only {
+    display: block;
+}
+
+body.role-teacher .teacher-only,
+body.role-teacher .student-only {
+    display: block;
+}
+
+body.role-student .student-only {
+    display: block;
+}
+
+/* Pour les éléments inline ou flex */
+body.role-admin .admin-only.d-inline,
+body.role-teacher .teacher-only.d-inline,
+body.role-teacher .student-only.d-inline,
+body.role-student .student-only.d-inline {
+    display: inline !important;
+}
+
+body.role-admin .admin-only.d-flex,
+body.role-teacher .teacher-only.d-flex,
+body.role-teacher .student-only.d-flex,
+body.role-student .student-only.d-flex {
+    display: flex !important;
+}
+
+body.role-admin .admin-only.nav-item,
+body.role-teacher .teacher-only.nav-item,
+body.role-teacher .student-only.nav-item,
+body.role-student .student-only.nav-item {
+    display: list-item !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .col-md-4, .col-md-8 {
         margin-bottom: 1.5rem;
+    }
+    
+    .role-selector {
+        margin: 0.5rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
