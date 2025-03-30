@@ -1,0 +1,379 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{{ super() }}
+<style>
+    /* Styles pour les options du QCM */
+    .option-card {
+        cursor: pointer;
+        padding: 15px;
+        margin: 10px 0;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .option-card:hover {
+        border-color: #bbdefb;
+        background-color: #f5f9ff;
+    }
+    
+    .hidden-radio {
+        display: none;
+    }
+    
+    .hidden-radio:checked + .option-label {
+        background-color: #e3f2fd;
+        border-color: #2196f3;
+    }
+    
+    .option-label {
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Styles pour le chronomètre */
+    .timer-container {
+        position: sticky;
+        top: 20px;
+        z-index: 100;
+    }
+    
+    .timer-progress {
+        height: 10px;
+        transition: width 1s linear;
+    }
+    
+    .timer-text {
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+    }
+    
+    /* Styles pour la navigation entre questions */
+    .question-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 0 auto 30px auto;
+        justify-content: center;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-width: 600px;
+    }
+    
+    .question-nav-item {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        color: #333;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .question-nav-item:hover {
+        background-color: #bbdefb;
+        transform: translateY(-2px);
+    }
+    
+    .question-nav-item.active {
+        background-color: #2196f3;
+        color: white;
+        border: 2px solid #0d6efd;
+        box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+        transform: scale(1.1);
+    }
+    
+    .question-nav-item.answered {
+        background-color: #4caf50;
+        color: white;
+        border: 2px solid #2e7d32;
+    }
+    
+    /* Animation pour le temps qui s'écoule */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    .time-warning {
+        animation: pulse 1s infinite;
+        color: #f44336 !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-3">
+    <!-- Chronomètre -->
+    <div class="timer-container mb-4">
+        <div class="card shadow-sm">
+            <div class="card-body p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0"><i class="bi bi-clock"></i> Temps restant</h5>
+                    <span id="timer" class="timer-text fs-4">05:00</span>
+                </div>
+                <div class="progress">
+                    <div id="timer-progress" class="progress-bar timer-progress" role="progressbar" style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <form id="challenge-form" action="{{ url_for('submit_defis') }}" method="POST">
+        <div class="row">
+            <!-- Section QCM -->
+            <div class="col-lg-7 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Questionnaire à choix multiples</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Navigation entre questions -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="d-flex flex-row flex-wrap justify-content-center gap-3 p-3 bg-light rounded shadow-sm">
+                                    {% for i in range(defis_data.qcm_questions|length) %}
+                                    <div class="question-nav-item" data-question="{{ i }}" id="nav-q{{ i }}" 
+                                         style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; 
+                                                border-radius: 50%; background-color: #e0e0e0; color: #333; font-weight: bold; 
+                                                font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; 
+                                                border: 2px solid transparent; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                        {{ i + 1 }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Questions -->
+                        {% for question in defis_data.qcm_questions %}
+                        {% set question_index = loop.index0 %}
+                        <div class="question-container" id="question-{{ question_index }}" style="{% if question_index > 0 %}display: none;{% endif %}">
+                            <h4 class="mb-3">Question {{ loop.index }} : {{ question.question }}</h4>
+                            
+                            <div class="options-container">
+                                {% for option in question.options %}
+                                <div class="option-card">
+                                    <input type="radio" 
+                                           id="q{{ question_index }}-option{{ loop.index0 }}" 
+                                           name="q{{ question_index }}" 
+                                           value="{{ option }}" 
+                                           class="hidden-radio">
+                                    <label for="q{{ question_index }}-option{{ loop.index0 }}" class="option-label">
+                                        <span class="option-text">{{ option }}</span>
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            
+                            <div class="d-flex justify-content-between mt-4">
+                                {% if loop.index0 > 0 %}
+                                <button type="button" class="btn btn-outline-primary prev-question" data-target="{{ loop.index0 - 1 }}">
+                                    <i class="bi bi-arrow-left"></i> Question précédente
+                                </button>
+                                {% else %}
+                                <div></div>
+                                {% endif %}
+                                
+                                {% if loop.index0 < defis_data.qcm_questions|length - 1 %}
+                                <button type="button" class="btn btn-outline-primary next-question" data-target="{{ loop.index0 + 1 }}">
+                                    Question suivante <i class="bi bi-arrow-right"></i>
+                                </button>
+                                {% else %}
+                                <button type="button" class="btn btn-outline-success" id="go-to-exercise">
+                                    Passer à l'exercice <i class="bi bi-code-slash"></i>
+                                </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section Exercice -->
+            <div class="col-lg-5 mb-4">
+                <div class="card shadow-sm" id="exercise-section" style="display: none;">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="mb-0">Exercice pratique</h3>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ defis_data.exercise.theme }}</h4>
+                        <div class="alert alert-info">
+                            <p class="mb-0"><strong>Niveau :</strong> {{ defis_data.exercise.niveau }}/5</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5>Énoncé :</h5>
+                            <p>{{ defis_data.exercise.description }}</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="exercise_code" class="form-label">Votre solution :</label>
+                            <textarea class="form-control" id="exercise_code" name="exercise_code" rows="10" placeholder="# Écrivez votre code Python ici"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bouton de soumission -->
+        <div class="d-grid gap-2 col-md-6 mx-auto mb-5">
+            <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+                <i class="bi bi-check-circle"></i> Soumettre mes réponses
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialisation du chronomètre
+        const timerDisplay = document.getElementById('timer');
+        const timerProgress = document.getElementById('timer-progress');
+        const submitBtn = document.getElementById('submit-btn');
+        const challengeForm = document.getElementById('challenge-form');
+        
+        let timeLeft = {{ remaining_time|int }};
+        const totalTime = {{ defis_data.time_limit }};
+        
+        // Fonction pour mettre à jour le chronomètre
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Mettre à jour la barre de progression
+            const progressPercent = (timeLeft / totalTime) * 100;
+            timerProgress.style.width = `${progressPercent}%`;
+            
+            // Changer la couleur en fonction du temps restant
+            if (timeLeft <= 60) {
+                timerProgress.classList.remove('bg-info', 'bg-warning');
+                timerProgress.classList.add('bg-danger');
+                timerDisplay.classList.add('time-warning');
+            } else if (timeLeft <= 120) {
+                timerProgress.classList.remove('bg-info', 'bg-danger');
+                timerProgress.classList.add('bg-warning');
+            } else {
+                timerProgress.classList.remove('bg-warning', 'bg-danger');
+                timerProgress.classList.add('bg-info');
+            }
+            
+            // Décrémenter le temps
+            timeLeft--;
+            
+            // Si le temps est écoulé, soumettre le formulaire
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+                challengeForm.submit();
+            }
+        }
+        
+        // Mettre à jour le chronomètre toutes les secondes
+        updateTimer();
+        const timerInterval = setInterval(updateTimer, 1000);
+        
+        // Navigation entre les questions
+        const questionContainers = document.querySelectorAll('.question-container');
+        const navItems = document.querySelectorAll('.question-nav-item');
+        const exerciseSection = document.getElementById('exercise-section');
+        
+        // Fonction pour afficher une question
+        function showQuestion(index) {
+            questionContainers.forEach((container, i) => {
+                container.style.display = i === index ? 'block' : 'none';
+            });
+            
+            navItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                    item.style.backgroundColor = '#2196f3';
+                    item.style.color = 'white';
+                    item.style.border = '2px solid #0d6efd';
+                    item.style.boxShadow = '0 0 10px rgba(33, 150, 243, 0.5)';
+                    item.style.transform = 'scale(1.1)';
+                } else {
+                    item.classList.remove('active');
+                    item.style.backgroundColor = '#e0e0e0';
+                    item.style.color = '#333';
+                    item.style.border = '2px solid transparent';
+                    item.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                    item.style.transform = 'none';
+                }
+            });
+        }
+        
+        // Initialiser la première question comme active
+        if (navItems.length > 0) {
+            showQuestion(0);
+        }
+        
+        // Événements pour les boutons de navigation
+        document.querySelectorAll('.next-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetIndex = parseInt(this.dataset.target);
+                showQuestion(targetIndex);
+            });
+        });
+        
+        document.querySelectorAll('.prev-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetIndex = parseInt(this.dataset.target);
+                showQuestion(targetIndex);
+            });
+        });
+        
+        // Événement pour les items de navigation
+        navItems.forEach((item, index) => {
+            item.addEventListener('click', function() {
+                showQuestion(index);
+                exerciseSection.style.display = 'none';
+            });
+        });
+        
+        // Événement pour le bouton "Passer à l'exercice"
+        document.getElementById('go-to-exercise').addEventListener('click', function() {
+            exerciseSection.style.display = 'block';
+            questionContainers.forEach(container => {
+                container.style.display = 'none';
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        });
+        
+        // Marquer les questions répondues
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const questionIndex = this.name;
+                const navItem = document.getElementById(`nav-q${questionIndex}`);
+                navItem.classList.add('answered');
+                navItem.style.backgroundColor = '#4caf50';
+                navItem.style.color = 'white';
+                navItem.style.border = '2px solid #2e7d32';
+            });
+        });
+    });
+</script>
+{% endblock %}

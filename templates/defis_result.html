@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="bi bi-trophy"></i> Résultats du défi</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Score global -->
+                    <div class="text-center mb-5">
+                        <h3 class="mb-4">Votre score final</h3>
+                        <div class="display-1 fw-bold mb-3">
+                            {{ "%.1f"|format(result.score) }}%
+                        </div>
+                        
+                        <div class="progress mb-3" style="height: 25px;">
+                            <div class="progress-bar bg-success" role="progressbar" 
+                                 style="width: {{ result.details.qcm_percentage * result.details.qcm_weight / 100 }}%;" 
+                                 aria-valuenow="{{ result.details.qcm_percentage * result.details.qcm_weight / 100 }}" 
+                                 aria-valuemin="0" aria-valuemax="100">
+                                QCM ({{ "%.1f"|format(result.details.qcm_percentage * result.details.qcm_weight / 100) }}%)
+                            </div>
+                            <div class="progress-bar bg-info" role="progressbar" 
+                                 style="width: {{ result.details.exercise_score * result.details.exercise_weight / 100 }}%;" 
+                                 aria-valuenow="{{ result.details.exercise_score * result.details.exercise_weight / 100 }}" 
+                                 aria-valuemin="0" aria-valuemax="100">
+                                Exercice ({{ "%.1f"|format(result.details.exercise_score * result.details.exercise_weight / 100) }}%)
+                            </div>
+                        </div>
+                        
+                        <div class="row text-center mt-4">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">QCM</h5>
+                                        <p class="display-6 mb-0">{{ result.details.qcm_score }}/{{ result.details.qcm_total }}</p>
+                                        <p class="text-muted">{{ "%.1f"|format(result.details.qcm_percentage) }}% × {{ result.details.qcm_weight }}% = {{ "%.1f"|format(result.details.qcm_percentage * result.details.qcm_weight / 100) }}%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Exercice pratique</h5>
+                                        <p class="display-6 mb-0">{{ result.details.exercise_score }}/100</p>
+                                        <p class="text-muted">{{ result.details.exercise_score }}% × {{ result.details.exercise_weight }}% = {{ "%.1f"|format(result.details.exercise_score * result.details.exercise_weight / 100) }}%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Détails des réponses au QCM -->
+                    <h3 class="mb-4">Détails des réponses au QCM</h3>
+                    
+                    <div class="accordion mb-5" id="qcmAccordion">
+                        {% for detail in result.details.qcm_details %}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading{{ loop.index }}">
+                                <button class="accordion-button {{ 'collapsed' if not loop.first }}" type="button" 
+                                        data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" 
+                                        aria-expanded="{{ 'true' if loop.first else 'false' }}" 
+                                        aria-controls="collapse{{ loop.index }}">
+                                    <div class="d-flex align-items-center w-100">
+                                        <span class="me-3">Question {{ loop.index }}</span>
+                                        {% if detail.is_correct %}
+                                        <span class="badge bg-success ms-auto">Correct</span>
+                                        {% else %}
+                                        <span class="badge bg-danger ms-auto">Incorrect</span>
+                                        {% endif %}
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapse{{ loop.index }}" class="accordion-collapse collapse {{ 'show' if loop.first }}" 
+                                 aria-labelledby="heading{{ loop.index }}" data-bs-parent="#qcmAccordion">
+                                <div class="accordion-body">
+                                    <h5>{{ detail.question }}</h5>
+                                    
+                                    <div class="mt-3">
+                                        <p><strong>Votre réponse :</strong> 
+                                            <span class="{{ 'text-success' if detail.is_correct else 'text-danger' }}">
+                                                {{ detail.user_answer }}
+                                            </span>
+                                        </p>
+                                        
+                                        {% if not detail.is_correct %}
+                                        <p><strong>Réponse correcte :</strong> 
+                                            <span class="text-success">{{ detail.correct_answer }}</span>
+                                        </p>
+                                        {% endif %}
+                                        
+                                        <div class="alert alert-info mt-3">
+                                            <i class="bi bi-info-circle-fill me-2"></i>
+                                            <strong>Explication :</strong> {{ detail.explanation }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Boutons d'action -->
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{{ url_for('defis') }}" class="btn btn-primary">
+                            <i class="bi bi-arrow-repeat"></i> Nouveau défi
+                        </a>
+                        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                            <i class="bi bi-house"></i> Retour à l'accueil
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

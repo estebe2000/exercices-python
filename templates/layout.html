@@ -78,19 +78,31 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/exercices" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Générateur d'exercices Python">
-                        <i class="bi bi-code-square"></i> Exercices
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/cours" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bibliothèque de cours">
                         <i class="bi bi-book"></i> Cours
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/sandbox" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Environnement d'expérimentation Python">
-                        <i class="bi bi-terminal"></i> Bac à sable
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="practiceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Pratique Python">
+                        <i class="bi bi-code-slash"></i> Pratique Python
                     </a>
+                    <ul class="dropdown-menu" aria-labelledby="practiceDropdown">
+                        <li>
+                            <a class="dropdown-item" href="/exercices">
+                                <i class="bi bi-code-square"></i> Exercices
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/sandbox">
+                                <i class="bi bi-terminal"></i> Bac à sable
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/defis">
+                                <i class="bi bi-trophy"></i> Défis
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <!-- Menu Admin - visible uniquement pour les administrateurs -->
                 <li class="nav-item dropdown admin-only">

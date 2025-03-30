@@ -17,7 +17,7 @@ except ImportError:
 
 from flask import Flask
 from models import db
-from routes import main, data_editor, ged, notebook
+from routes import main, data_editor, ged, notebook, defis
 
 # Configuration de l'application
 app = Flask(__name__)
@@ -42,6 +42,7 @@ main.init_routes(app)
 data_editor.init_routes(app)
 ged.init_routes(app)
 notebook.init_routes(app)
+defis.init_routes(app)
 
 # Point d'entrée principal
 if __name__ == '__main__':
