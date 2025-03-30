@@ -186,12 +186,14 @@
                                     <p>Pour générer un nouvel exercice :</p>
                                     <ol>
                                         <li>Accédez à l'onglet <strong>Exercices</strong> dans la barre de navigation</li>
-                                        <li>Sélectionnez un <strong>niveau</strong> (Première ou Terminale)</li>
+                                        <li>Sélectionnez un <strong>niveau</strong> (Troisième, SNT, Prépa NSI, Première ou Terminale)</li>
                                         <li>Choisissez un <strong>thème</strong> parmi ceux disponibles</li>
-                                        <li>Définissez un <strong>niveau de difficulté</strong></li>
+                                        <li>Définissez un <strong>niveau de difficulté</strong> (de 1 à 5)</li>
                                         <li>Cliquez sur le bouton <strong>Générer l'exercice</strong></li>
                                     </ol>
                                     <p>L'IA va alors créer un énoncé personnalisé avec un squelette de code à compléter et des tests pour vérifier votre solution.</p>
+                                    <p><strong>Mode débutant :</strong> Les exercices marqués comme "débutant" (généralement Troisième, SNT et Prépa NSI) sont conçus sans fonctions ni classes, adaptés aux débutants en programmation.</p>
+                                    <p><strong>Télécharger en notebook Jupyter :</strong> Après avoir généré un exercice, vous pouvez cliquer sur le bouton <strong>Télécharger en notebook Jupyter</strong> pour obtenir l'exercice au format .ipynb, utilisable dans Jupyter Notebook ou JupyterLab.</p>
                                 </div>
                             </div>
                         </div>
@@ -239,7 +241,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingGed">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGed" aria-expanded="false" aria-controls="collapseGed">
-                                    <i class="bi bi-file-earmark-text me-2"></i> Utiliser la GED et les Cours
+                                    <i class="bi bi-file-earmark-text me-2"></i> Utiliser la GED
                                 </button>
                             </h2>
                             <div id="collapseGed" class="accordion-collapse collapse" aria-labelledby="headingGed" data-bs-parent="#helpAccordion">
@@ -251,20 +253,59 @@
                                         <li>Rechercher des documents par nom ou par tag</li>
                                         <li>Marquer des documents comme cours pour les afficher dans l'onglet Cours</li>
                                     </ol>
-                                    <p>Pour marquer un document comme cours :</p>
+                                    <p>Pour ajouter un document :</p>
                                     <ol>
                                         <li>Cliquez sur <strong>Admin</strong> dans la barre de navigation</li>
                                         <li>Sélectionnez <strong>GED</strong> dans le menu déroulant</li>
+                                        <li>Cliquez sur <strong>Ajouter un document</strong></li>
+                                        <li>Sélectionnez un fichier à uploader</li>
+                                        <li>Ajoutez des tags pour organiser votre document</li>
+                                        <li>Cliquez sur <strong>Enregistrer</strong></li>
+                                    </ol>
+                                    <p>Pour rechercher des documents :</p>
+                                    <ol>
+                                        <li>Utilisez la barre de recherche pour filtrer par nom</li>
+                                        <li>Cliquez sur un tag pour filtrer les documents par tag</li>
+                                    </ol>
+                                    <p>Pour modifier un document :</p>
+                                    <ol>
+                                        <li>Cliquez sur <strong>Modifier</strong> à côté du document</li>
+                                        <li>Modifiez le nom et/ou les tags</li>
+                                        <li>Cliquez sur <strong>Enregistrer</strong></li>
+                                    </ol>
+                                    <p>Pour marquer un document comme cours :</p>
+                                    <ol>
                                         <li>Cliquez sur le bouton avec l'icône de livre <i class="bi bi-book"></i> à côté du document</li>
                                         <li>Le bouton devient vert plein lorsque le document est marqué comme cours</li>
+                                        <li>Cliquez à nouveau pour retirer le document des cours</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingCours">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCours" aria-expanded="false" aria-controls="collapseCours">
+                                    <i class="bi bi-book me-2"></i> Bibliothèque de Cours
+                                </button>
+                            </h2>
+                            <div id="collapseCours" class="accordion-collapse collapse" aria-labelledby="headingCours" data-bs-parent="#helpAccordion">
+                                <div class="accordion-body">
+                                    <p>La Bibliothèque de Cours vous permet de :</p>
+                                    <ol>
+                                        <li>Consulter les documents marqués comme cours dans un style bibliothèque</li>
+                                        <li>Filtrer les cours par tags</li>
+                                        <li>Rechercher des cours par nom</li>
                                     </ol>
                                     <p>Pour consulter vos cours :</p>
                                     <ol>
-                                        <li>Accédez à l'onglet <strong>Cours</strong></li>
-                                        <li>Consultez les documents marqués comme cours, présentés en style bibliothèque</li>
-                                        <li>Utilisez la recherche et les filtres par tag pour trouver rapidement un cours</li>
+                                        <li>Accédez à l'onglet <strong>Cours</strong> dans la barre de navigation</li>
+                                        <li>Les documents sont affichés sous forme de cartes avec leur nom, description et tags</li>
+                                        <li>Utilisez la barre de recherche pour filtrer par nom</li>
+                                        <li>Utilisez le sélecteur de tags pour filtrer par tag</li>
                                         <li>Cliquez sur <strong>Consulter</strong> pour ouvrir un document</li>
                                     </ol>
+                                    <p><strong>Note :</strong> Seuls les documents marqués comme cours dans l'onglet GED sont visibles dans la Bibliothèque de Cours.</p>
                                 </div>
                             </div>
                         </div>
@@ -278,9 +319,9 @@
                                 <div class="accordion-body">
                                     <p>Vous pouvez choisir entre trois modèles d'IA :</p>
                                     <ul>
-                                        <li><strong>LocalAI (Mistral)</strong> : Modèle hébergé localement sur votre machine</li>
-                                        <li><strong>Google Gemini</strong> : Modèle en ligne de Google</li>
-                                        <li><strong>Mistral (Codestral)</strong> : Modèle spécialisé pour le code via l'API Mistral</li>
+                                        <li><strong>LocalAI (Mistral)</strong> : Modèle hébergé localement sur votre machine, idéal pour une utilisation sans connexion internet</li>
+                                        <li><strong>Google Gemini</strong> : Modèle en ligne de Google, offrant d'excellentes performances pour la génération d'exercices</li>
+                                        <li><strong>Mistral (Codestral)</strong> : Modèle spécialisé pour le code via l'API Mistral, particulièrement efficace pour l'évaluation de code Python</li>
                                     </ul>
                                     <p>Pour changer de modèle :</p>
                                     <ol>
@@ -288,6 +329,59 @@
                                         <li>Sélectionnez <strong>Configuration</strong> dans le menu déroulant</li>
                                         <li>Sélectionnez le modèle souhaité</li>
                                         <li>Cliquez sur <strong>Enregistrer</strong></li>
+                                    </ol>
+                                    <p><strong>Note :</strong> Le modèle sélectionné est affiché en bas de page. Pour utiliser Gemini ou Mistral, vous devez configurer les clés API correspondantes dans le fichier .env.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingNotebook">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNotebook" aria-expanded="false" aria-controls="collapseNotebook">
+                                    <i class="bi bi-journal-code me-2"></i> Notebooks Jupyter
+                                </button>
+                            </h2>
+                            <div id="collapseNotebook" class="accordion-collapse collapse" aria-labelledby="headingNotebook" data-bs-parent="#helpAccordion">
+                                <div class="accordion-body">
+                                    <p>L'application vous permet de télécharger les exercices générés au format notebook Jupyter (.ipynb) :</p>
+                                    <ol>
+                                        <li>Après avoir généré un exercice, cliquez sur <strong>Télécharger en notebook Jupyter</strong></li>
+                                        <li>Donnez un titre à votre notebook</li>
+                                        <li>Cliquez sur <strong>Télécharger</strong></li>
+                                        <li>Le notebook sera téléchargé sur votre ordinateur</li>
+                                    </ol>
+                                    <p>Les notebooks générés contiennent :</p>
+                                    <ul>
+                                        <li>L'énoncé de l'exercice formaté en Markdown</li>
+                                        <li>Le squelette de code à compléter</li>
+                                        <li>Les tests pour vérifier votre solution</li>
+                                    </ul>
+                                    <p>Vous pouvez ouvrir ces notebooks avec Jupyter Notebook, JupyterLab, Google Colab, ou tout autre environnement compatible avec le format .ipynb.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingAdmin">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
+                                    <i class="bi bi-shield-lock me-2"></i> Fonctions d'administration
+                                </button>
+                            </h2>
+                            <div id="collapseAdmin" class="accordion-collapse collapse" aria-labelledby="headingAdmin" data-bs-parent="#helpAccordion">
+                                <div class="accordion-body">
+                                    <p>Le menu Admin donne accès à plusieurs fonctions d'administration :</p>
+                                    <ul>
+                                        <li><strong>GED</strong> : Gestion Électronique de Documents pour uploader, organiser et gérer vos documents</li>
+                                        <li><strong>Éditeur d'exercices</strong> : Interface pour modifier le fichier data.json qui contient les définitions des exercices</li>
+                                        <li><strong>Configuration</strong> : Paramètres de l'application, notamment le choix du modèle d'IA</li>
+                                    </ul>
+                                    <p>L'éditeur d'exercices vous permet de :</p>
+                                    <ol>
+                                        <li>Ajouter de nouveaux niveaux scolaires</li>
+                                        <li>Ajouter de nouveaux thèmes à un niveau</li>
+                                        <li>Ajouter de nouveaux exercices avec différents niveaux de difficulté</li>
+                                        <li>Marquer des exercices comme "débutant" (sans fonctions ni classes)</li>
+                                        <li>Modifier les exercices existants</li>
                                     </ol>
                                 </div>
                             </div>

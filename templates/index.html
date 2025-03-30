@@ -61,9 +61,16 @@
                 <div id="exercise-content" class="d-none">
                     <div id="exercise-text" class="mb-4"></div>
                     <div class="text-end">
-                        <button id="copy-skeleton-btn" class="btn btn-outline-primary">
-                            <i class="bi bi-clipboard"></i> Copier le squelette vers l'éditeur
-                        </button>
+                        <div class="btn-group">
+                            <button id="copy-skeleton-btn" class="btn btn-outline-primary">
+                                <i class="bi bi-clipboard"></i> Copier le squelette vers l'éditeur
+                            </button>
+                            <form action="{{ url_for('prepare_notebook') }}" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-outline-success ms-2">
+                                    <i class="bi bi-file-earmark-code"></i> Télécharger en Jupyter Notebook
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div id="loading-exercise" class="d-none text-center">

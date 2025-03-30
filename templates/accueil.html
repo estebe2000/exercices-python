@@ -16,7 +16,7 @@
                 <div class="card-body text-center">
                     <i class="bi bi-code-square text-primary" style="font-size: 3rem;"></i>
                     <h3 class="card-title mt-3">Exercices</h3>
-                    <p class="card-text">Générez des exercices Python personnalisés adaptés à différents niveaux scolaires. Exécutez et évaluez votre code directement dans l'application.</p>
+                    <p class="card-text">Générez des exercices Python personnalisés adaptés à tous les niveaux (Troisième à Terminale). Exécutez, évaluez votre code et téléchargez en notebook Jupyter.</p>
                     <a href="{{ url_for('exercices') }}" class="btn btn-primary mt-3">
                         <i class="bi bi-code-square"></i> Accéder aux exercices
                     </a>
@@ -28,7 +28,7 @@
                 <div class="card-body text-center">
                     <i class="bi bi-book text-success" style="font-size: 3rem;"></i>
                     <h3 class="card-title mt-3">Cours</h3>
-                    <p class="card-text">Consultez les documents de cours dans une interface en style bibliothèque. Recherchez et filtrez facilement par tags.</p>
+                    <p class="card-text">Consultez les documents de cours dans une interface en style bibliothèque. Recherchez et filtrez facilement par nom ou par tags.</p>
                     <a href="{{ url_for('cours') }}" class="btn btn-success mt-3">
                         <i class="bi bi-book"></i> Accéder aux cours
                     </a>
@@ -40,7 +40,7 @@
                 <div class="card-body text-center">
                     <i class="bi bi-shield-lock text-secondary" style="font-size: 3rem;"></i>
                     <h3 class="card-title mt-3">Administration</h3>
-                    <p class="card-text">Gérez les documents, configurez l'application et éditez les données d'exercices depuis le menu d'administration.</p>
+                    <p class="card-text">Gérez les documents, configurez les modèles d'IA (LocalAI, Gemini, Mistral) et éditez les données d'exercices depuis le menu d'administration.</p>
                     <div class="dropdown mt-3">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="adminDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-shield-lock"></i> Fonctions d'administration
@@ -63,11 +63,13 @@
                     <h3 class="card-title mb-4">À propos de cette application</h3>
                     <p>Cette application a été conçue pour faciliter l'apprentissage et l'enseignement du Python dans un contexte scolaire. Elle offre plusieurs fonctionnalités :</p>
                     <ul class="list-group list-group-flush mb-4">
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Génération d'exercices Python personnalisés adaptés à différents niveaux scolaires</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Génération d'exercices Python personnalisés pour tous les niveaux (Troisième, SNT, Prépa NSI, Première, Terminale)</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Mode débutant avec exercices sans fonctions ni classes pour les niveaux Troisième, SNT et Prépa NSI</li>
                         <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Exécution et évaluation de code Python directement dans l'application</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Téléchargement des exercices au format notebook Jupyter (.ipynb)</li>
                         <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Gestion électronique de documents (GED) pour organiser vos ressources</li>
                         <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Bibliothèque de cours en style visuel pour faciliter l'accès aux documents</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Utilisation de l'intelligence artificielle pour générer et évaluer les exercices</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Triple moteur d'IA : LocalAI (Mistral), Google Gemini et Mistral Codestral</li>
                     </ul>
                     <p>Pour commencer, cliquez sur l'un des boutons ci-dessus ou utilisez la barre de navigation en haut de la page.</p>
                     <div class="text-center mt-4">

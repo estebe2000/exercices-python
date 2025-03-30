@@ -13,19 +13,21 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 ### Interface utilisateur
 - **Fenêtre de bienvenue** : Popup d'accueil présentant les fonctionnalités de l'application aux nouveaux utilisateurs
 - **Interface intuitive** : Navigation simple et claire avec barre de menu et tooltips
-- **Aide contextuelle** : Guide d'utilisation accessible à tout moment via le menu d'aide
+- **Aide contextuelle** : Guide d'utilisation détaillé accessible à tout moment via le menu d'aide
 - **Expérience personnalisée** : Option "Ne plus afficher" pour la fenêtre de bienvenue
+- **Design responsive** : Interface adaptée à différentes tailles d'écran
 
 ### Générateur d'exercices
 - **Génération d'exercices personnalisés** : Création d'énoncés adaptés au niveau des élèves (Troisième, SNT, Prépa NSI, Première, Terminale)
 - **Thèmes variés** : Couvre différents concepts de programmation Python selon le programme scolaire
-- **Niveaux de difficulté** : Exercices adaptables selon les compétences des élèves
-- **Mode débutant** : Option pour générer des exercices sans fonctions ni classes, adaptés aux débutants
-- **Squelettes de code à compléter** : Structure de code avec parties à remplir par l'élève, garantissant une approche pédagogique progressive
-- **Éditeur de code intégré** : Interface conviviale avec coloration syntaxique
+- **Niveaux de difficulté** : Exercices adaptables selon les compétences des élèves (5 niveaux de difficulté)
+- **Mode débutant** : Exercices sans fonctions ni classes pour les niveaux Troisième, SNT et Prépa NSI, adaptés aux débutants
+- **Squelettes de code à compléter** : Structure de code avec parties à remplir par l'élève (zones "# À COMPLÉTER"), garantissant une approche pédagogique progressive
+- **Éditeur de code intégré** : Interface conviviale avec coloration syntaxique et indentation automatique
 - **Exécution de code en temps réel** : Test immédiat des solutions proposées
 - **Évaluation automatique** : Analyse du code et suggestions d'amélioration par IA
 - **Triple moteur d'IA** : Compatible avec LocalAI (Mistral), Google Gemini et Mistral Codestral
+- **Export en notebook Jupyter** : Téléchargement des exercices au format .ipynb pour une utilisation hors ligne
 
 ### Gestion Électronique de Documents (GED)
 - **Upload de fichiers** : Possibilité d'uploader des documents de différents formats
@@ -37,9 +39,10 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 
 ### Bibliothèque de Cours
 - **Affichage en style bibliothèque** : Présentation visuelle des documents marqués comme cours
-- **Mode lecture** : Consultation facile des documents de cours
+- **Mode lecture** : Consultation facile des documents de cours directement dans le navigateur
 - **Filtrage par tags** : Organisation des cours par thématiques
 - **Recherche de cours** : Recherche par nom dans la bibliothèque de cours
+- **Interface visuelle** : Présentation des cours sous forme de cartes avec nom, description et tags
 
 ## Prérequis
 
@@ -81,12 +84,30 @@ Une version de démonstration de l'application est disponible ici : [https://exe
 
 ## Configuration du Fournisseur d'IA
 
-L'application utilise maintenant un fichier `.env` pour stocker les clés API. Créez/modifiez le fichier `.env` avec les variables suivantes :
+L'application utilise un fichier `.env` pour stocker les clés API. Créez/modifiez le fichier `.env` avec les variables suivantes :
 
 ```
 GEMINI_API_KEY=votre_cle_gemini
 MISTRAL_API_KEY=votre_cle_mistral
 ```
+
+### Choix du modèle d'IA
+
+L'application propose trois modèles d'IA différents, chacun avec ses avantages :
+
+1. **LocalAI (Mistral)** : Modèle hébergé localement sur votre machine
+   - Avantages : Fonctionne sans connexion internet, pas de coût d'API
+   - Configuration : Nécessite une installation de LocalAI sur votre machine
+
+2. **Google Gemini** : Modèle en ligne de Google
+   - Avantages : Excellentes performances pour la génération d'exercices
+   - Configuration : Nécessite une clé API Gemini
+
+3. **Mistral Codestral** : Modèle spécialisé pour le code via l'API Mistral
+   - Avantages : Particulièrement efficace pour l'évaluation de code Python
+   - Configuration : Nécessite une clé API Mistral
+
+Vous pouvez changer de modèle à tout moment via l'interface de configuration de l'application.
 
 ### Améliorations des prompts
 
@@ -121,6 +142,7 @@ Options de configuration :
 - Sélectionnez le fournisseur d'IA en modifiant la variable `AI_PROVIDER` dans `ai_provider.py`
   - `AI_PROVIDER = 'localai'` pour utiliser LocalAI (recommandé avec Codestral)
   - `AI_PROVIDER = 'gemini'` pour utiliser Google Gemini
+  - `AI_PROVIDER = 'mistral'` pour utiliser Mistral Codestral
 
 ## Utilisation
 
@@ -136,11 +158,13 @@ Options de configuration :
 1. Accédez à l'onglet "Générateur d'exercices" (page d'accueil)
 
 2. Sélectionnez le niveau scolaire, le thème et la difficulté pour générer un exercice
-   - Pour les débutants, choisissez un exercice marqué comme "Débutant" (SNT par exemple)
+   - Pour les débutants, choisissez un exercice marqué comme "Débutant" (Troisième, SNT ou Prépa NSI)
 
 3. Écrivez votre code dans l'éditeur intégré
 
 4. Exécutez et évaluez votre code directement dans l'interface
+
+5. Téléchargez l'exercice au format notebook Jupyter si vous souhaitez y travailler hors ligne
 
 ### Éditeur de données d'exercices
 
@@ -192,6 +216,18 @@ Options de configuration :
 4. Pour consulter un cours :
    - Cliquez sur le bouton "Consulter" de la carte du document
    - Le document s'ouvrira dans un nouvel onglet du navigateur
+
+### Notebooks Jupyter
+
+1. Après avoir généré un exercice, cliquez sur le bouton "Télécharger en notebook Jupyter"
+
+2. Donnez un titre à votre notebook
+
+3. Cliquez sur "Télécharger"
+
+4. Le notebook sera téléchargé sur votre ordinateur au format .ipynb
+
+5. Ouvrez le notebook avec Jupyter Notebook, JupyterLab, Google Colab ou tout autre environnement compatible
 
 ## Déploiement sur la Forge Éducation
 
@@ -352,6 +388,7 @@ Par défaut, la taille maximale des fichiers pouvant être téléchargés est li
 - Gestion Électronique de Documents (GED)
 - Support pour trois moteurs d'IA (LocalAI, Gemini, Mistral)
 - Squelettes de code à compléter avec tests
+- Export des exercices au format notebook Jupyter
 
 ### Fonctionnalités à venir 🚀
 - **Authentification et autorisations**

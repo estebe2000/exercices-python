@@ -20,3 +20,10 @@ Flask-Talisman==1.1.0  # Pour les en-têtes de sécurité HTTP
 
 # Gestion des fichiers
 uuid==1.30
+
+# Traitement HTML et Markdown
+beautifulsoup4==4.13.3
+soupsieve==2.6
+
+# Génération de notebooks Jupyter
+nbformat==5.9.2
