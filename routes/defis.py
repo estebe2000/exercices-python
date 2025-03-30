@@ -8,11 +8,16 @@ de tester leurs compétences en programmation Python avec des QCM et des exercic
 import os
 import random
 import time
+import json
 from flask import render_template, request, jsonify, session, redirect, url_for
 from utils import load_exercise_data
 from ai_providers import get_ai_provider
 from prompts import get_exercise_prompt
 from code_execution import execute_python_code
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from qcm_generator import load_qcm_questions, add_questions_to_level, THEMES, QCM_FILE_PATH
 
 # Constantes
 VALID_LEVELS = ['Troisième', 'SNT', 'Prépa NSI', 'Première Générale', 'Terminale Générale']
@@ -51,7 +56,10 @@ def init_routes(app):
         """Route pour démarrer un défi."""
         level = request.form.get('level')
         
-        if level not in VALID_LEVELS:
+        if level == 'all':
+            # Sélectionner un niveau aléatoire
+            level = random.choice(VALID_LEVELS)
+        elif level not in VALID_LEVELS:
             return jsonify({'error': 'Niveau invalide'}), 400
         
         # Générer le défi
@@ -126,6 +134,7 @@ def init_routes(app):
         result = session['defis_result']
         
         return render_template('defis_result.html', result=result)
+    
 
 def generate_challenge(level):
     """
@@ -168,7 +177,42 @@ def generate_qcm_questions(level, data, count):
     Returns:
         Une liste de questions QCM
     """
-    # Vérifier si le programme PDF existe
+    # Charger les questions depuis le fichier JSON
+    if os.path.exists(QCM_FILE_PATH):
+        all_questions = load_qcm_questions()
+        
+        # Vérifier si le niveau existe et contient des questions
+        if level in all_questions and all_questions[level]:
+            # Sélectionner des questions aléatoires pour ce niveau
+            level_questions = all_questions[level]
+            selected_questions = random.sample(level_questions, min(count, len(level_questions)))
+            
+            # Formater les questions pour l'affichage
+            questions = []
+            for q in selected_questions:
+                options = q['options']
+                correct = q['correct']
+                
+                # Créer une copie pour éviter de modifier l'original
+                question = {
+                    'question': q['question'],
+                    'options': options.copy(),
+                    'correct': correct,
+                    'explanation': q['explanation']
+                }
+                
+                # Mélanger les options
+                random.shuffle(question['options'])
+                
+                # Mettre à jour l'index de la bonne réponse
+                question['correct_index'] = question['options'].index(correct)
+                
+                questions.append(question)
+            
+            return questions
+    
+    # Si le fichier n'existe pas ou si le niveau n'a pas de questions,
+    # utiliser la méthode existante
     pdf_path = get_program_pdf_path(level)
     
     if pdf_path and os.path.exists(pdf_path):

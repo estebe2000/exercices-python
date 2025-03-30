@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-5 mb-4">
+                <i class="bi bi-question-circle text-primary me-2"></i>Générateur de QCM
+            </h1>
+            <p class="lead">
+                Générez des questions à choix multiples pour différents niveaux scolaires.
+                Ces questions seront utilisées dans le mode Défis et peuvent être utilisées pour créer des évaluations.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-gear-fill me-2"></i>Paramètres
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form action="/generate-qcm" method="post">
+                        <div class="mb-3">
+                            <label for="level" class="form-label">Niveau scolaire</label>
+                            <select class="form-select" id="level" name="level" required>
+                                <option value="" selected disabled>Choisir un niveau</option>
+                                <option value="all">Tous les niveaux</option>
+                                {% for level in levels %}
+                                <option value="{{ level }}">{{ level }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="count" class="form-label">Nombre de questions par niveau</label>
+                            <input type="number" class="form-control" id="count" name="count" min="1" max="10" value="3">
+                            <div class="form-text">Entre 1 et 10 questions seront générées par niveau.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ai_provider" class="form-label">Fournisseur d'IA (optionnel)</label>
+                            <select class="form-select" id="ai_provider" name="ai_provider">
+                                <option value="" selected>Utiliser le fournisseur par défaut</option>
+                                <option value="gemini">Google Gemini</option>
+                                <option value="mistral">Mistral Codestral</option>
+                                <option value="localai">LocalAI (Mistral)</option>
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-lightning-charge-fill me-2"></i>Générer des questions
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-info-circle-fill me-2"></i>Statistiques
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p>Nombre de questions par niveau :</p>
+                    <ul class="list-group">
+                        {% for level, count in stats.items() %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ level }}
+                            <span class="badge bg-primary rounded-pill">{{ count }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-check-circle-fill me-2"></i>Résultats
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if result %}
+                        <div class="alert alert-success">
+                            <h4 class="alert-heading">Génération réussie !</h4>
+                            <p>Les questions ont été générées avec succès et ajoutées à la base de données.</p>
+                        </div>
+                        
+                        {% for level, count in result.items() %}
+                            <div class="mb-4">
+                                <h5>{{ level }} : {{ count }} questions ajoutées</h5>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-5">
+                            <i class="bi bi-question-circle display-1 text-muted"></i>
+                            <p class="lead mt-3">Aucune question générée pour l'instant.</p>
+                            <p>Utilisez le formulaire à gauche pour générer des questions QCM.</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -4203,3 +4203,363 @@ FROM document ORDER BY document.date_upload DESC]
 2025-03-30 14:35:01,412 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:35:01] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
 2025-03-30 14:35:01,412 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:35:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2025-03-30 14:35:01,423 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:35:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:42:15,019 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 14:42:15,102 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:42:15,735 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:42:15,738 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:43:16,721 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\routes\\defis.py', reloading
+2025-03-30 14:43:16,805 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:43:17,531 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:43:17,533 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:43:41,901 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\routes\\defis.py', reloading
+2025-03-30 14:43:41,990 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:43:42,752 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:43:42,755 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:44:03,566 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\routes\\defis.py', reloading
+2025-03-30 14:44:03,646 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:44:04,306 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:44:04,308 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:44:26,652 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\routes\\defis.py', reloading
+2025-03-30 14:44:26,802 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:44:27,531 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:44:27,537 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:46:08,299 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 14:46:08,441 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:52:26,572 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 14:52:26,573 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 14:52:26,573 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:52:27,185 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:52:27,187 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:52:31,547 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:31] "GET / HTTP/1.1" 200 -
+2025-03-30 14:52:31,638 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:52:31,639 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:31] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:52:31,641 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:31] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:52:36,221 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:36] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:52:36,261 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:52:36,262 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:36] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:52:36,266 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:52:59,473 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:59] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:52:59,485 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:59] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:52:59,523 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:52:59,532 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:59] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:52:59,533 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:52:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:53:11,490 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:11] "[35m[1mPOST /generate-qcm HTTP/1.1[0m" 500 -
+2025-03-30 14:53:11,519 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:11] "GET /generate-qcm?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-30 14:53:11,529 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:11] "GET /generate-qcm?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-30 14:53:11,541 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:11] "GET /generate-qcm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-30 14:53:11,771 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:11] "[36mGET /generate-qcm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-30 14:53:19,451 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:19] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:53:19,462 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:19] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:53:19,499 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:53:19,509 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:19] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:53:19,510 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:53:19] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:54:19,488 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:19] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:54:19,497 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:19] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:54:19,537 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:54:19,550 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:19] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:54:19,553 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:19] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:54:22,877 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:22] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:54:22,894 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:54:22,894 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:22] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:54:22,915 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:22] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:54:51,084 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:51] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:54:51,095 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:51] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:54:51,147 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:51] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:54:51,149 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:54:51,156 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:54:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:56:06,269 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:56:06] "[35m[1mPOST /generate-qcm HTTP/1.1[0m" 500 -
+2025-03-30 14:56:06,328 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:56:06] "[36mGET /generate-qcm?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:56:06,341 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:56:06] "[36mGET /generate-qcm?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 14:56:06,362 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:56:06] "[36mGET /generate-qcm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-30 14:56:14,428 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:56:14] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:57:23,451 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\ai_providers.py', reloading
+2025-03-30 14:57:23,618 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:57:25,237 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:57:25,241 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:57:36,908 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:57:36] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:57:36,953 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:57:36] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:57:37,059 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:57:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:57:37,060 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:57:37] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:57:37,060 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:57:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:57:38,567 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 14:57:38,653 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:57:39,247 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:57:39,249 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:57:51,498 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\prompts.py', reloading
+2025-03-30 14:57:51,562 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 14:57:52,213 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 14:57:52,215 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 14:58:04,668 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:04] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:58:04,739 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:58:04,740 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:04] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:58:04,742 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:04] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:58:24,184 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:24] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:58:24,188 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:24] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:58:24,212 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:58:24,215 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:24] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:58:24,216 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:58:48,770 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:48] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:58:48,774 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:48] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:58:48,801 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:58:48,811 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:48] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:58:48,813 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:58:48] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:59:10,605 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:10] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:59:10,609 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:10] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:59:10,637 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:59:10,648 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:10] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:59:10,664 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:10] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 14:59:40,379 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:40] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 14:59:40,384 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:40] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 14:59:40,420 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 14:59:40,423 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:40] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 14:59:40,426 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 14:59:40] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:00:59,447 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 15:00:59,528 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:01:00,162 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:01:00,165 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:01:19,606 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:01:19] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 15:01:19,617 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:01:19] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:01:19,691 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:01:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:01:19,711 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:01:19] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:01:19,711 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:01:19] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:01:21,533 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\prompts.py', reloading
+2025-03-30 15:01:21,629 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:01:22,226 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:01:22,228 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:01:41,585 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 15:01:41,652 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:01:42,271 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:01:42,273 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:01:59,617 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 15:01:59,679 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:02:00,305 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:02:00,307 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:02:06,578 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:06] "GET / HTTP/1.1" 200 -
+2025-03-30 15:02:06,677 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:02:06,679 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:06] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:02:06,681 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:02:09,090 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:09] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:02:09,137 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:09] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:02:09,137 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:02:09,150 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:02:19,508 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 15:02:19,620 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:02:20,252 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:02:20,255 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:02:34,047 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:34] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:02:34,104 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:02:34,118 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:34] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:02:34,119 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:34] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:02:54,263 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:54] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 15:02:54,267 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:54] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:02:54,298 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:02:54,308 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:54] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:02:54,318 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:02:54] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:03:07,084 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\qcm_generator.py', reloading
+2025-03-30 15:03:07,158 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:03:07,752 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:03:07,754 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:03:08,738 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:08] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:03:08,791 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:03:08,806 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:08] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:03:08,807 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:08] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:03:15,852 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:15] "[32mPOST /generate-qcm HTTP/1.1[0m" 302 -
+2025-03-30 15:03:15,863 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:15] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:03:15,903 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:03:15,912 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:15] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:03:15,913 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:03:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:06:06,142 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\generate_100_questions_per_level.py', reloading
+2025-03-30 15:06:06,229 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:06:06,912 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:06:06,914 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:32:44,450 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 15:32:44,450 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 15:32:44,451 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:32:45,036 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:32:45,038 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:32:46,889 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:46] "GET / HTTP/1.1" 200 -
+2025-03-30 15:32:46,964 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:46] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:32:46,964 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:32:46,982 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:32:50,136 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:50] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:32:50,172 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:32:50,188 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:50] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:32:50,188 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:32:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:33:06,213 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:06] "[32mPOST /update-defis-config HTTP/1.1[0m" 302 -
+2025-03-30 15:33:06,229 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:06] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:33:06,276 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:33:06,276 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:06] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:33:06,278 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:33:18,165 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:18] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:33:18,200 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:33:18,213 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:18] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:33:18,214 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:18] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:33:20,815 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:20] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:33:20,818 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:20] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:33:20,822 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:20] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:33:20,868 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:33:20,880 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:20] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:33:20,887 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:33:24,794 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:24] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:33:24,797 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:24] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:33:25,774 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:25] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:33:25,812 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:33:25,822 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:25] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:33:25,832 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:25] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:33:39,926 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:39] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:33:39,930 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:39] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:33:39,934 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:39] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:33:39,984 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:33:39,996 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:39] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:33:39,997 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:33:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:34:26,702 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\utils.py', reloading
+2025-03-30 15:34:26,829 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:34:27,497 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:34:27,499 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:34:41,082 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\utils.py', reloading
+2025-03-30 15:34:41,196 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:34:41,866 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:34:41,868 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:35:00,212 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\routes\\qcm_generator.py', reloading
+2025-03-30 15:35:00,309 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:36:06,845 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 15:36:06,845 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 15:36:06,846 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:36:07,432 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:36:07,435 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:36:09,258 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:09] "GET / HTTP/1.1" 200 -
+2025-03-30 15:36:09,326 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:36:09,328 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:09] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:36:09,345 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:36:12,629 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:12] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:36:12,658 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:36:12,669 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:12] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:36:12,670 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:36:14,867 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:14] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:36:14,870 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:14] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:36:14,873 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:14] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:36:14,941 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:36:14,942 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:14] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:36:14,943 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:36:17,902 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:17] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:36:17,905 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:17] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:36:17,907 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:17] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:36:17,944 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:36:17,958 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:17] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:36:17,967 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:36:23,279 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:23] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:36:23,303 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:36:23,310 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:23] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:36:23,311 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:36:28,296 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:28] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:36:28,299 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:28] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:36:28,302 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:28] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:36:28,365 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:36:28,366 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:28] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:36:28,367 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:36:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:37:22,661 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\routes\\defis.py', reloading
+2025-03-30 15:37:22,754 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:37:23,396 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:37:23,398 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:37:26,162 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:26] "GET / HTTP/1.1" 200 -
+2025-03-30 15:37:26,254 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:37:26,263 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:26] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:37:26,263 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:37:37,124 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:37] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:37:37,169 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:37:37,169 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:37] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:37:37,171 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:37:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:38:07,910 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:07] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:38:07,915 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:07] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:38:07,930 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:07] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:38:07,989 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:38:07,997 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:07] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:38:08,000 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:08] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:38:29,574 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\routes\\defis.py', reloading
+2025-03-30 15:38:29,657 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:38:30,362 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:38:30,364 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:38:32,731 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:32] "GET / HTTP/1.1" 200 -
+2025-03-30 15:38:32,815 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:38:32,817 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:32] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:38:32,818 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:32] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:38:37,472 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:37] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:38:37,510 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:38:37,517 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:37] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:38:37,517 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:38:39,853 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:39] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:38:39,856 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:39] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:38:39,861 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:39] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:38:39,925 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:38:39,933 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:39] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:38:39,934 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:38:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:39:00,870 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\generate_100_questions_per_level.py', reloading
+2025-03-30 15:39:00,960 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:39:01,574 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:39:01,576 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:39:52,932 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\utils.py', reloading
+2025-03-30 15:39:53,021 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:39:53,656 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:39:53,658 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:39:53,766 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:39:53] "GET / HTTP/1.1" 200 -
+2025-03-30 15:39:53,860 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:39:53] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:39:53,860 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:39:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:39:53,862 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:39:53] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:40:17,513 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 15:40:17,513 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 15:40:17,514 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:40:18,102 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:40:18,104 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:40:20,641 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:20] "GET / HTTP/1.1" 200 -
+2025-03-30 15:40:20,697 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:20] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:40:20,697 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:40:20,706 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:40:24,190 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:24] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:40:24,220 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:40:24,233 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:24] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:40:24,233 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:40:25,984 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:25] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:40:25,987 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:25] "[32mGET /defis/challenge HTTP/1.1[0m" 302 -
+2025-03-30 15:40:25,990 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:25] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:40:26,036 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:40:26,045 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:26] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:40:26,052 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:40:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:43:45,912 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 15:43:45,913 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 15:43:45,913 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:43:46,542 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:43:46,544 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:43:46,570 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:43:46] "GET / HTTP/1.1" 200 -
+2025-03-30 15:43:46,655 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:43:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:43:46,657 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:43:46] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:43:46,660 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:43:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:44:07,452 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:07] "GET / HTTP/1.1" 200 -
+2025-03-30 15:44:07,474 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:44:07,483 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:07] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:44:07,492 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:44:11,129 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:11] "GET /qcm-generator HTTP/1.1" 200 -
+2025-03-30 15:44:11,160 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:44:11,172 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:11] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:44:11,173 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:44:13,699 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:13] "GET /defis HTTP/1.1" 200 -
+2025-03-30 15:44:13,727 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:44:13,736 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:13] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:44:13,736 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:44:16,075 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:16] "[32mPOST /defis/start HTTP/1.1[0m" 302 -
+2025-03-30 15:44:16,084 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:16] "GET /defis/challenge HTTP/1.1" 200 -
+2025-03-30 15:44:16,141 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-30 15:44:16,142 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:16] "[36mGET /static/logo.jpg HTTP/1.1[0m" 304 -
+2025-03-30 15:44:16,142 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 15:44:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-30 15:45:13,995 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\generate_questions.py', reloading
+2025-03-30 15:45:14,079 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:45:14,696 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:45:14,699 - werkzeug - INFO -  * Debugger PIN: 104-978-800
+2025-03-30 15:45:31,995 - werkzeug - INFO -  * Detected change in 'D:\\exercices-python-v0\\generate_questions.py', reloading
+2025-03-30 15:45:32,071 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 15:45:32,658 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 15:45:32,660 - werkzeug - INFO -  * Debugger PIN: 104-978-800

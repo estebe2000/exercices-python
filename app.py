@@ -18,6 +18,7 @@ except ImportError:
 from flask import Flask
 from models import db
 from routes import main, data_editor, ged, notebook, defis
+from routes import qcm_generator
 
 # Configuration de l'application
 app = Flask(__name__)
@@ -43,6 +44,7 @@ data_editor.init_routes(app)
 ged.init_routes(app)
 notebook.init_routes(app)
 defis.init_routes(app)
+qcm_generator.init_routes(app)
 
 # Point d'entrée principal
 if __name__ == '__main__':

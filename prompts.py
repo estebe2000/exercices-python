@@ -247,3 +247,55 @@ def get_exercise_prompt(niveau: str, theme: str, difficulte: int, description: s
     
     {HTML_FORMATTING_INSTRUCTIONS}
     """
+
+def get_qcm_prompt(level, theme):
+    """
+    Génère un prompt pour la création de questions QCM.
+    
+    Args:
+        level: Le niveau scolaire
+        theme: Le thème des questions
+    
+    Returns:
+        Le prompt pour l'IA
+    """
+    return f"""
+    Tu es un expert en programmation Python et en pédagogie. Tu dois créer des questions à choix multiples (QCM) pour des élèves de niveau {level} sur le thème "{theme}".
+
+    Génère 3 questions QCM de difficulté variée (facile, moyenne, difficile) sur ce thème.
+
+    Pour chaque question:
+    1. Formule une question claire et précise
+    2. Propose 4 options de réponse dont une seule est correcte
+    3. Indique clairement la réponse correcte
+    4. Fournis une explication détaillée de la réponse correcte
+
+    Format de réponse attendu (JSON):
+    [
+        {{
+            "question": "Texte de la question 1",
+            "options": ["Option A", "Option B", "Option C", "Option D"],
+            "correct": "Option correcte (doit être l'une des options)",
+            "explanation": "Explication détaillée de la réponse correcte"
+        }},
+        {{
+            "question": "Texte de la question 2",
+            "options": ["Option A", "Option B", "Option C", "Option D"],
+            "correct": "Option correcte (doit être l'une des options)",
+            "explanation": "Explication détaillée de la réponse correcte"
+        }},
+        {{
+            "question": "Texte de la question 3",
+            "options": ["Option A", "Option B", "Option C", "Option D"],
+            "correct": "Option correcte (doit être l'une des options)",
+            "explanation": "Explication détaillée de la réponse correcte"
+        }}
+    ]
+
+    IMPORTANT:
+    - Les questions doivent être adaptées au niveau {level}
+    - Les questions doivent porter sur le thème "{theme}"
+    - Les options doivent être plausibles mais une seule doit être correcte
+    - L'explication doit être pédagogique et aider à comprendre pourquoi la réponse est correcte
+    - Respecte strictement le format JSON demandé
+    """
