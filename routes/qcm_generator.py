@@ -1,59 +1,71 @@
 """
-Routes pour le générateur de QCM.
-
-Ce module contient les routes pour le générateur de QCM, permettant aux utilisateurs
-de générer des questions à choix multiples pour différents niveaux scolaires.
+Routes pour la génération et gestion des QCM.
 """
 
-from flask import render_template, request, jsonify, session, redirect, url_for
-import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from qcm_generator import load_qcm_questions, add_questions_to_level, THEMES
-
-# Constantes
-VALID_LEVELS = ['Troisième', 'SNT', 'Prépa NSI', 'Première Générale', 'Terminale Générale']
+import json
+from flask import render_template, request, jsonify
+from qcm_generator import load_qcm_questions, save_qcm_questions, THEMES
 
 def init_routes(app):
     """
     Initialise les routes pour le générateur de QCM.
-    
-    Args:
-        app: L'application Flask
     """
     
     @app.route('/qcm-generator')
     def qcm_generator():
-        """Route principale pour le générateur de QCM."""
-        # Charger les statistiques des questions
-        all_questions = load_qcm_questions()
-        stats = {level: len(questions) for level, questions in all_questions.items()}
-        
-        return render_template(
-            'qcm_generator.html',
-            levels=VALID_LEVELS,
-            stats=stats,
-            result=session.pop('qcm_result', None)
-        )
-    
-    @app.route('/generate-qcm', methods=['POST'])
-    def generate_qcm():
-        """Route pour générer des questions QCM."""
-        level = request.form.get('level')
-        count = int(request.form.get('count', 5))
-        ai_provider = request.form.get('ai_provider', '')
-        
-        result = {}
-        
-        if level == 'all':
-            # Générer des questions pour tous les niveaux
-            for level in VALID_LEVELS:
-                result[level] = add_questions_to_level(level, count, ai_provider if ai_provider else None)
+        """Route pour afficher la page de gestion des QCM"""
+        # Charger les paramètres
+        settings_path = os.path.join('exercices', 'qcm_settings.json')
+        if os.path.exists(settings_path):
+            with open(settings_path, 'r', encoding='utf-8') as f:
+                settings = json.load(f)
         else:
-            # Générer des questions pour un seul niveau
-            result[level] = add_questions_to_level(level, count, ai_provider if ai_provider else None)
+            # Valeurs par défaut si le fichier n'existe pas
+            settings = {
+                "questions_par_niveau": {
+                    "Troisième": 10,
+                    "SNT": 10,
+                    "Prépa NSI": 10,
+                    "Première Générale": 6,
+                    "Terminale Générale": 6
+                }
+            }
         
-        # Stocker le résultat en session pour l'afficher sur la page
-        session['qcm_result'] = result
-        
-        return redirect(url_for('qcm_generator'))
+        return render_template('qcm_generator.html', settings=settings)
+    
+    @app.route('/update-qcm-settings', methods=['POST'])
+    def update_qcm_settings():
+        """Route pour mettre à jour les paramètres des QCM"""
+        try:
+            data = request.json
+            
+            # Valider et convertir les valeurs
+            settings = {
+                "questions_par_niveau": {
+                    level: int(data.get(level, 10))
+                    for level in THEMES.keys()
+                }
+            }
+            
+            # Sauvegarder dans le fichier
+            settings_path = os.path.join('exercices', 'qcm_settings.json')
+            with open(settings_path, 'w', encoding='utf-8') as f:
+                json.dump(settings, f, indent=2)
+            
+            return jsonify({"success": True})
+            
+        except Exception as e:
+            return jsonify({
+                "success": False,
+                "error": str(e)
+            }), 400
+
+
+def load_qcm_settings():
+    """Charge la configuration des QCM"""
+    settings_path = os.path.join('exercices', 'qcm_settings.json')
+    if os.path.exists(settings_path):
+        with open(settings_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return None

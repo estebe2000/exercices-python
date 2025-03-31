@@ -1,0 +1,169 @@
+{
+  "Première Générale NSI": [
+    {
+      "question": "Quel langage est principalement utilisé en NSI pour la programmation ?",
+      "options": [
+        "Python",
+        "Java",
+        "C++",
+        "HTML"
+      ],
+      "correct": "Python",
+      "explanation": "Le langage Python est privilégié en NSI pour son accessibilité et sa lisibilité."
+    },
+    {
+      "question": "Que signifie l'acronyme NSI ?",
+      "options": [
+        "Numérique et Sciences Informatiques",
+        "Nouvelle Structure Informatique",
+        "Navigateur et Système Internet",
+        "Numérisation et Stockage d'Informations"
+      ],
+      "correct": "Numérique et Sciences Informatiques",
+      "explanation": "NSI est la spécialité qui permet d'apprendre les bases de l'informatique et de la programmation."
+    },
+    {
+      "question": "Quel est le rôle d’une variable en programmation ?",
+      "options": [
+        "Stocker une valeur",
+        "Créer une boucle",
+        "Exécuter un programme",
+        "Afficher du texte"
+      ],
+      "correct": "Stocker une valeur",
+      "explanation": "Une variable permet de stocker une donnée en mémoire pour être réutilisée."
+    },
+    {
+      "question": "Que fait l'opérateur `==` en Python ?",
+      "options": [
+        "Compare deux valeurs",
+        "Affecte une valeur à une variable",
+        "Concatène deux chaînes de caractères",
+        "Ajoute deux nombres"
+      ],
+      "correct": "Compare deux valeurs",
+      "explanation": "L'opérateur `==` permet de tester si deux valeurs sont égales."
+    },
+    {
+      "question": "Quelle structure de données fonctionne selon le principe LIFO (Last In, First Out) ?",
+      "options": [
+        "Une pile",
+        "Une file",
+        "Un tableau",
+        "Un dictionnaire"
+      ],
+      "correct": "Une pile",
+      "explanation": "Une pile suit la règle 'Dernier arrivé, premier sorti' (Last In, First Out)."
+    },
+    {
+      "question": "Quel est le format de base pour représenter un nombre entier en informatique ?",
+      "options": [
+        "Binaire",
+        "Décimal",
+        "Hexadécimal",
+        "Octal"
+      ],
+      "correct": "Binaire",
+      "explanation": "Les ordinateurs utilisent le système binaire, composé de 0 et 1, pour stocker les nombres."
+    },
+    {
+      "question": "Comment appelle-t-on une fonction qui s'appelle elle-même ?",
+      "options": [
+        "Une fonction récursive",
+        "Une fonction itérative",
+        "Une fonction aléatoire",
+        "Une fonction conditionnelle"
+      ],
+      "correct": "Une fonction récursive",
+      "explanation": "Une fonction récursive est une fonction qui s'appelle elle-même pour résoudre un problème."
+    },
+    {
+      "question": "Que permet la structure `if` en Python ?",
+      "options": [
+        "Tester une condition",
+        "Créer une boucle",
+        "Définir une variable",
+        "Afficher un message"
+      ],
+      "correct": "Tester une condition",
+      "explanation": "L'instruction `if` permet d'exécuter un bloc de code uniquement si une condition est vraie."
+    },
+    {
+      "question": "Que permet de faire une boucle `for` en Python ?",
+      "options": [
+        "Répéter une action un nombre précis de fois",
+        "Vérifier une condition",
+        "Créer une liste",
+        "Arrêter un programme"
+      ],
+      "correct": "Répéter une action un nombre précis de fois",
+      "explanation": "La boucle `for` permet d'exécuter un bloc de code un nombre déterminé de fois."
+    },
+    {
+      "question": "Quel est le rôle d'une base de données relationnelle ?",
+      "options": [
+        "Stocker des données sous forme de tables liées entre elles",
+        "Sauvegarder uniquement des fichiers textes",
+        "Créer des programmes informatiques",
+        "Exécuter du code en Python"
+      ],
+      "correct": "Stocker des données sous forme de tables liées entre elles",
+      "explanation": "Une base de données relationnelle organise les données en tables connectées par des relations."
+    },
+    {
+      "question": "Quel langage est utilisé pour interagir avec une base de données relationnelle ?",
+      "options": [
+        "SQL",
+        "Python",
+        "HTML",
+        "CSS"
+      ],
+      "correct": "SQL",
+      "explanation": "SQL (Structured Query Language) permet de manipuler des bases de données relationnelles."
+    },
+    {
+      "question": "Quelle est la fonction du protocole HTTP ?",
+      "options": [
+        "Transmettre des pages web",
+        "Envoyer des emails",
+        "Gérer les connexions WiFi",
+        "Crypter les fichiers"
+      ],
+      "correct": "Transmettre des pages web",
+      "explanation": "Le protocole HTTP permet d’échanger des pages web entre un serveur et un navigateur."
+    },
+    {
+      "question": "Quel est le rôle du DNS sur Internet ?",
+      "options": [
+        "Associer un nom de domaine à une adresse IP",
+        "Crypter les communications",
+        "Optimiser le chargement des sites web",
+        "Contrôler la vitesse d’Internet"
+      ],
+      "correct": "Associer un nom de domaine à une adresse IP",
+      "explanation": "Le DNS (Domain Name System) traduit les noms de domaine en adresses IP compréhensibles par les machines."
+    },
+    {
+      "question": "Que signifie l’acronyme URL ?",
+      "options": [
+        "Uniform Resource Locator",
+        "Universal Research Language",
+        "User Reference List",
+        "Unique Random Link"
+      ],
+      "correct": "Uniform Resource Locator",
+      "explanation": "Une URL est une adresse permettant d’accéder à une ressource sur le web."
+    },
+    {
+      "question": "Quel est le rôle d’un système d’exploitation ?",
+      "options": [
+        "Gérer les ressources matérielles et logicielles d'un ordinateur",
+        "Créer des logiciels",
+        "Envoyer des emails",
+        "Analyser des virus"
+      ],
+      "correct": "Gérer les ressources matérielles et logicielles d'un ordinateur",
+      "explanation": "Le système d'exploitation permet à l'utilisateur d'interagir avec le matériel et les logiciels de l'ordinateur."
+    }
+  ]
+}

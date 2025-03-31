@@ -1,0 +1,191 @@
+{
+  "SNT": [
+    {
+      "question": "Qu'est-ce qu'un réseau informatique ?",
+      "options": [
+        "Un ensemble d'ordinateurs connectés entre eux",
+        "Un logiciel pour naviguer sur Internet",
+        "Une base de données en ligne",
+        "Un programme permettant d'envoyer des emails"
+      ],
+      "correct": "Un ensemble d'ordinateurs connectés entre eux",
+      "explanation": "Un réseau informatique est un ensemble d'ordinateurs et de périphériques interconnectés pour partager des ressources et des informations."
+    },
+    {
+      "question": "Que signifie l'acronyme WWW ?",
+      "options": [
+        "World Wide Web",
+        "World Wireless Web",
+        "Wide World Web",
+        "Web Wide Window"
+      ],
+      "correct": "World Wide Web",
+      "explanation": "Le WWW (World Wide Web) est un système hypertexte qui permet d'accéder aux ressources disponibles sur Internet."
+    },
+    {
+      "question": "Quel protocole est utilisé pour transférer des pages web ?",
+      "options": [
+        "HTTP",
+        "FTP",
+        "SMTP",
+        "IP"
+      ],
+      "correct": "HTTP",
+      "explanation": "Le protocole HTTP (HyperText Transfer Protocol) permet de transférer les pages web entre un serveur et un navigateur."
+    },
+    {
+      "question": "Quel est le rôle d'un moteur de recherche ?",
+      "options": [
+        "Permettre de trouver des informations sur Internet",
+        "Accélérer la connexion Internet",
+        "Créer un site web",
+        "Envoyer des emails"
+      ],
+      "correct": "Permettre de trouver des informations sur Internet",
+      "explanation": "Un moteur de recherche (comme Google) permet d'explorer le Web et de trouver des pages correspondant à une requête."
+    },
+    {
+      "question": "Que permet le cloud computing ?",
+      "options": [
+        "Stocker des données et exécuter des programmes à distance",
+        "Naviguer plus rapidement sur Internet",
+        "Télécharger des logiciels gratuitement",
+        "Sécuriser son ordinateur contre les virus"
+      ],
+      "correct": "Stocker des données et exécuter des programmes à distance",
+      "explanation": "Le cloud computing permet d'utiliser des ressources informatiques via Internet sans les stocker localement."
+    },
+    {
+      "question": "Quel appareil permet de connecter un réseau local à Internet ?",
+      "options": [
+        "Un routeur",
+        "Un clavier",
+        "Un disque dur",
+        "Une imprimante"
+      ],
+      "correct": "Un routeur",
+      "explanation": "Un routeur permet de connecter un réseau local (LAN) à Internet en dirigeant le trafic entre les appareils."
+    },
+    {
+      "question": "Qu'est-ce qu'un fichier cookie sur un site web ?",
+      "options": [
+        "Un petit fichier stocké sur l'ordinateur contenant des informations de navigation",
+        "Un virus informatique",
+        "Une extension pour sécuriser le navigateur",
+        "Un programme permettant d'accélérer les téléchargements"
+      ],
+      "correct": "Un petit fichier stocké sur l'ordinateur contenant des informations de navigation",
+      "explanation": "Un cookie est un fichier utilisé par les sites web pour stocker des informations sur l'utilisateur."
+    },
+    {
+      "question": "Quel est l'objectif principal du RGPD (Règlement Général sur la Protection des Données) ?",
+      "options": [
+        "Protéger les données personnelles des citoyens européens",
+        "Augmenter la vitesse d'Internet",
+        "Encourager le commerce en ligne",
+        "Bloquer l'accès à certains sites web"
+      ],
+      "correct": "Protéger les données personnelles des citoyens européens",
+      "explanation": "Le RGPD vise à protéger les données personnelles et à réguler leur traitement dans l'Union Européenne."
+    },
+    {
+      "question": "Qu'est-ce qu'un nom de domaine ?",
+      "options": [
+        "Une adresse textuelle correspondant à une adresse IP",
+        "Une extension de fichier utilisée pour le web",
+        "Un type de protocole réseau",
+        "Un type de malware"
+      ],
+      "correct": "Une adresse textuelle correspondant à une adresse IP",
+      "explanation": "Un nom de domaine est une adresse lisible par l'homme qui correspond à une adresse IP pour accéder à un site web."
+    },
+    {
+      "question": "Quel service permet d'envoyer et de recevoir des emails ?",
+      "options": [
+        "SMTP",
+        "HTTP",
+        "DNS",
+        "IP"
+      ],
+      "correct": "SMTP",
+      "explanation": "Le protocole SMTP (Simple Mail Transfer Protocol) est utilisé pour envoyer des emails."
+    },
+    {
+      "question": "Quel composant est responsable de l'affichage des images sur un écran ?",
+      "options": [
+        "La carte graphique",
+        "Le disque dur",
+        "Le processeur",
+        "La RAM"
+      ],
+      "correct": "La carte graphique",
+      "explanation": "La carte graphique est un composant dédié au rendu des images et vidéos."
+    },
+    {
+      "question": "Que signifie l'acronyme VPN ?",
+      "options": [
+        "Virtual Private Network",
+        "Very Powerful Network",
+        "Visual Processing Node",
+        "Verified Personal Network"
+      ],
+      "correct": "Virtual Private Network",
+      "explanation": "Un VPN (Réseau Privé Virtuel) permet de sécuriser une connexion en la rendant anonyme."
+    },
+    {
+      "question": "Qu'est-ce qu'une intelligence artificielle ?",
+      "options": [
+        "Un programme capable d'apprendre et de prendre des décisions",
+        "Un ordinateur très rapide",
+        "Un algorithme qui stocke des données",
+        "Un protocole Internet"
+      ],
+      "correct": "Un programme capable d'apprendre et de prendre des décisions",
+      "explanation": "L'intelligence artificielle désigne un programme capable d'effectuer des tâches qui nécessitent normalement l'intelligence humaine."
+    },
+    {
+      "question": "Qu'est-ce qu'une donnée personnelle ?",
+      "options": [
+        "Une information qui permet d'identifier une personne",
+        "Un fichier enregistré sur un ordinateur",
+        "Un type de malware",
+        "Un langage de programmation"
+      ],
+      "correct": "Une information qui permet d'identifier une personne",
+      "explanation": "Les données personnelles sont des informations permettant d'identifier une personne, comme son nom ou son adresse."
+    },
+    {
+      "question": "Quel est le rôle du DNS ?",
+      "options": [
+        "Associer un nom de domaine à une adresse IP",
+        "Protéger les sites web contre les cyberattaques",
+        "Augmenter la vitesse d'Internet",
+        "Gérer les emails"
+      ],
+      "correct": "Associer un nom de domaine à une adresse IP",
+      "explanation": "Le DNS (Domain Name System) traduit les noms de domaine en adresses IP."
+    },
+    {
+      "question": "Que signifie le terme 'phishing' ?",
+      "options": [
+        "Une tentative de vol d'informations en ligne",
+        "Un logiciel antivirus",
+        "Un protocole de sécurité",
+        "Une méthode de compression de fichiers"
+      ],
+      "correct": "Une tentative de vol d'informations en ligne",
+      "explanation": "Le phishing est une technique utilisée par les cybercriminels pour obtenir des informations sensibles en se faisant passer pour une entité de confiance."
+    },
+    {
+      "question": "Quel est le rôle d'un pare-feu (firewall) ?",
+      "options": [
+        "Protéger un réseau des intrusions",
+        "Améliorer la vitesse de connexion",
+        "Créer un site web",
+        "Réparer les fichiers endommagés"
+      ],
+      "correct": "Protéger un réseau des intrusions",
+      "explanation": "Un pare-feu est un dispositif de sécurité qui contrôle le trafic réseau pour empêcher les accès non autorisés."
+    }
+  ]
+}

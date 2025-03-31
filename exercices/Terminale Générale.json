@@ -1,0 +1,114 @@
+{
+  "Terminale Générale NSI": [
+    {
+      "question": "Quel est l’intérêt de la programmation orientée objet (POO) ?",
+      "options": [
+        "Réutiliser du code grâce à l’héritage",
+        "Exécuter le programme plus rapidement",
+        "Remplacer l’algorithmique",
+        "Rendre le code plus complexe"
+      ],
+      "correct": "Réutiliser du code grâce à l’héritage",
+      "explanation": "La POO permet la réutilisation du code et une meilleure organisation grâce aux classes et à l’héritage."
+    },
+    {
+      "question": "Quelle est la différence entre une méthode et un attribut dans une classe en Python ?",
+      "options": [
+        "Une méthode est une fonction associée à une classe, un attribut est une variable",
+        "Un attribut est une boucle, une méthode est une condition",
+        "Une méthode stocke des données, un attribut effectue une action",
+        "Il n’y a pas de différence"
+      ],
+      "correct": "Une méthode est une fonction associée à une classe, un attribut est une variable",
+      "explanation": "Dans une classe, un attribut stocke une donnée, tandis qu'une méthode définit un comportement."
+    },
+    {
+      "question": "Quel est l'objectif d'un algorithme de parcours en largeur (BFS) dans un graphe ?",
+      "options": [
+        "Explorer les sommets par niveaux",
+        "Trouver le chemin le plus court",
+        "Explorer le graphe en profondeur",
+        "Compresser les données"
+      ],
+      "correct": "Explorer les sommets par niveaux",
+      "explanation": "L'algorithme BFS explore d'abord les voisins d'un sommet avant de passer aux niveaux suivants."
+    },
+    {
+      "question": "Quel est l'intérêt de la notation Big-O en algorithmique ?",
+      "options": [
+        "Déterminer la complexité d'un algorithme en fonction de la taille des données",
+        "Mesurer la rapidité d'un ordinateur",
+        "Analyser la mémoire occupée par un programme",
+        "Vérifier les erreurs de syntaxe"
+      ],
+      "correct": "Déterminer la complexité d'un algorithme en fonction de la taille des données",
+      "explanation": "La notation Big-O permet d'évaluer l'efficacité d'un algorithme en fonction du volume des entrées."
+    },
+    {
+      "question": "Quel est l'intérêt de la normalisation en bases de données ?",
+      "options": [
+        "Éviter la redondance des données",
+        "Accélérer l'exécution des requêtes",
+        "Remplacer le langage SQL",
+        "Stocker des fichiers multimédias"
+      ],
+      "correct": "Éviter la redondance des données",
+      "explanation": "La normalisation organise les bases de données pour éviter les doublons et améliorer la cohérence des informations."
+    },
+    {
+      "question": "Quelle est la différence entre une clé primaire et une clé étrangère en base de données ?",
+      "options": [
+        "Une clé primaire identifie de manière unique une ligne, une clé étrangère référence une autre table",
+        "Une clé primaire stocke des nombres, une clé étrangère stocke des chaînes",
+        "Les clés primaires sont utilisées uniquement pour les jointures",
+        "Il n’y a pas de différence"
+      ],
+      "correct": "Une clé primaire identifie de manière unique une ligne, une clé étrangère référence une autre table",
+      "explanation": "La clé primaire garantit l'unicité d'un enregistrement, tandis que la clé étrangère établit une relation avec une autre table."
+    },
+    {
+      "question": "Quelle est la couche du modèle OSI correspondant à l’adresse IP ?",
+      "options": [
+        "Couche Réseau",
+        "Couche Transport",
+        "Couche Application",
+        "Couche Physique"
+      ],
+      "correct": "Couche Réseau",
+      "explanation": "L’adresse IP est gérée par la couche Réseau du modèle OSI, qui permet l’acheminement des paquets."
+    },
+    {
+      "question": "Quel est le rôle du protocole HTTPS ?",
+      "options": [
+        "Sécuriser les communications entre un client et un serveur",
+        "Accélérer l’affichage des pages web",
+        "Envoyer des emails",
+        "Assigner une adresse IP"
+      ],
+      "correct": "Sécuriser les communications entre un client et un serveur",
+      "explanation": "Le protocole HTTPS chiffre les échanges pour garantir la confidentialité des données."
+    },
+    {
+      "question": "Quel est l’objectif de la compression de données ?",
+      "options": [
+        "Réduire la taille des fichiers pour économiser de l’espace",
+        "Exécuter le code plus rapidement",
+        "Améliorer la sécurité des données",
+        "Remplacer le format binaire"
+      ],
+      "correct": "Réduire la taille des fichiers pour économiser de l’espace",
+      "explanation": "La compression permet de diminuer la taille des fichiers en supprimant les redondances."
+    },
+    {
+      "question": "Pourquoi utilise-t-on un hashage pour stocker les mots de passe ?",
+      "options": [
+        "Pour éviter qu’ils soient lisibles en clair",
+        "Pour accélérer leur traitement",
+        "Pour les crypter et les décrypter facilement",
+        "Pour éviter leur duplication"
+      ],
+      "correct": "Pour éviter qu’ils soient lisibles en clair",
+      "explanation": "Le hashage est une technique qui rend les mots de passe illisibles et non réversibles."
+    }
+  ]
+}

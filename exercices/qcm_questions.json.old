@@ -1,0 +1,89 @@
+{
+  "Troisième": [
+    {
+      "question": "Quelle est la syntaxe correcte pour créer une liste vide en Python ?",
+      "options": [
+        "liste = []",
+        "liste = list()",
+        "liste = new list()",
+        "liste = {}"
+      ],
+      "correct": "liste = []",
+      "explanation": "En Python, une liste vide peut être créée en utilisant des crochets vides []. Cela initialise une liste sans aucun élément."
+    },
+    {
+      "question": "Comment accéder au troisième élément d'une liste nommée 'fruits' ?",
+      "options": [
+        "fruits[2]",
+        "fruits(2)",
+        "fruits{2}",
+        "fruits[3]"
+      ],
+      "correct": "fruits[2]",
+      "explanation": "En Python, les indices des listes commencent à 0. Donc, pour accéder au troisième élément, on utilise l'indice 2."
+    },
+    {
+      "question": "Quelle méthode permet d'ajouter un élément à la fin d'une liste en Python ?",
+      "options": [
+        "append()",
+        "add()",
+        "insert()",
+        "push()"
+      ],
+      "correct": "append()",
+      "explanation": "La méthode append() est utilisée pour ajouter un élément à la fin d'une liste. Elle modifie la liste en place sans retourner une nouvelle liste."
+    }
+  ],
+  "SNT": [
+    {
+      "question": "Qu'est-ce qu'une adresse IP ?",
+      "options": [
+        "Un identifiant unique pour chaque site web",
+        "Un protocole de communication sur Internet",
+        "Une adresse utilisée pour localiser un appareil sur un réseau",
+        "Un logiciel de navigation sur Internet"
+      ],
+      "correct": "Une adresse utilisée pour localiser un appareil sur un réseau",
+      "explanation": "Une adresse IP (Internet Protocol) est une adresse numérique attribuée à chaque appareil connecté à un réseau utilisant le protocole Internet. Elle permet de localiser et de communiquer avec cet appareil sur le réseau."
+    }
+  ],
+  "Prépa NSI": [
+    {
+      "question": "Quelle est la sortie du code suivant en Python ?\n```\nfor i in range(3):\n    print(i)\n```",
+      "options": [
+        "0 1 2",
+        "1 2 3",
+        "0 1 2 3",
+        "1 2"
+      ],
+      "correct": "0 1 2",
+      "explanation": "La fonction `range(3)` génère une séquence de nombres de 0 à 2. La boucle `for` itère sur cette séquence et imprime chaque nombre."
+    }
+  ],
+  "Première Générale": [
+    {
+      "question": "Quel est le type de la variable suivante : `ma_liste = [1, 2, 3, 4]` ?",
+      "options": [
+        "int",
+        "float",
+        "list",
+        "tuple"
+      ],
+      "correct": "list",
+      "explanation": "La variable `ma_liste` est initialisée avec des crochets, ce qui indique qu'elle est de type `list` (liste). Les listes en Python sont des collections ordonnées et modifiables qui permettent de stocker plusieurs éléments."
+    }
+  ],
+  "Terminale Générale": [
+    {
+      "question": "Quel est le langage de programmation utilisé principalement pour le développement web côté serveur ?",
+      "options": [
+        "JavaScript",
+        "Python",
+        "HTML",
+        "Java"
+      ],
+      "correct": "Python",
+      "explanation": "Python est couramment utilisé pour le développement web côté serveur grâce à des frameworks comme Django et Flask. Bien que JavaScript soit également utilisé côté serveur avec Node.js, Python est souvent préféré pour sa syntaxe simple et sa productivité."
+    }
+  ]
+}

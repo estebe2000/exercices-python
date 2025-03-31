@@ -1,0 +1,202 @@
+{
+  "Prépa NSI": [
+    {
+      "question": "Quelle est la principale fonction d'un ordinateur ?",
+      "options": [
+        "Exécuter des programmes",
+        "Créer des pages web",
+        "Envoyer des emails",
+        "Dessiner des images"
+      ],
+      "correct": "Exécuter des programmes",
+      "explanation": "Un ordinateur exécute des programmes pour réaliser différentes tâches."
+    },
+    {
+      "question": "Quel langage de programmation est souvent utilisé pour débuter en NSI ?",
+      "options": [
+        "Python",
+        "Java",
+        "C++",
+        "HTML"
+      ],
+      "correct": "Python",
+      "explanation": "Python est un langage simple et adapté aux débutants en programmation."
+    },
+    {
+      "question": "Que signifie l’acronyme NSI ?",
+      "options": [
+        "Numérique et Sciences Informatiques",
+        "Nouvelles Systèmes Informatiques",
+        "Numérisation et Sécurité Informatique",
+        "Navigation sur Serveurs Internet"
+      ],
+      "correct": "Numérique et Sciences Informatiques",
+      "explanation": "La spécialité NSI aborde les bases de l’informatique et de la programmation."
+    },
+    {
+      "question": "Quel est le rôle d’une variable en programmation ?",
+      "options": [
+        "Stocker une valeur",
+        "Créer un programme",
+        "Exécuter une boucle",
+        "Corriger des erreurs"
+      ],
+      "correct": "Stocker une valeur",
+      "explanation": "Une variable sert à stocker une information qu’on peut réutiliser."
+    },
+    {
+      "question": "Que permet une boucle en programmation ?",
+      "options": [
+        "Répéter une action plusieurs fois",
+        "Arrêter un programme",
+        "Créer une fonction",
+        "Modifier une variable"
+      ],
+      "correct": "Répéter une action plusieurs fois",
+      "explanation": "Les boucles permettent d’exécuter une série d’instructions plusieurs fois sans les réécrire."
+    },
+    {
+      "question": "Que signifie 'HTML' ?",
+      "options": [
+        "HyperText Markup Language",
+        "High Tech Machine Learning",
+        "Human Technology Modern Language",
+        "Hyper Transfer Main Link"
+      ],
+      "correct": "HyperText Markup Language",
+      "explanation": "HTML est un langage utilisé pour structurer les pages web."
+    },
+    {
+      "question": "Quelle extension de fichier correspond à un programme Python ?",
+      "options": [
+        ".py",
+        ".exe",
+        ".html",
+        ".txt"
+      ],
+      "correct": ".py",
+      "explanation": "Les fichiers Python ont l’extension `.py`."
+    },
+    {
+      "question": "Quel est le rôle d’un algorithme ?",
+      "options": [
+        "Donner une série d’instructions pour résoudre un problème",
+        "Créer un virus informatique",
+        "Envoyer des emails",
+        "Modifier le matériel d’un ordinateur"
+      ],
+      "correct": "Donner une série d’instructions pour résoudre un problème",
+      "explanation": "Un algorithme est une suite d’instructions précises qui permettent de résoudre un problème."
+    },
+    {
+      "question": "Que fait l'opérateur `==` en Python ?",
+      "options": [
+        "Compare deux valeurs",
+        "Additionne deux nombres",
+        "Multiplie deux nombres",
+        "Stocke une valeur dans une variable"
+      ],
+      "correct": "Compare deux valeurs",
+      "explanation": "L'opérateur `==` permet de vérifier si deux valeurs sont égales."
+    },
+    {
+      "question": "Quelle est la bonne façon d'afficher 'Bonjour' en Python ?",
+      "options": [
+        "print('Bonjour')",
+        "afficher('Bonjour')",
+        "echo 'Bonjour'",
+        "console.log('Bonjour')"
+      ],
+      "correct": "print('Bonjour')",
+      "explanation": "La fonction `print()` est utilisée en Python pour afficher du texte."
+    },
+    {
+      "question": "Que fait l’instruction `if` en Python ?",
+      "options": [
+        "Teste une condition",
+        "Répète une action",
+        "Stocke une variable",
+        "Arrête un programme"
+      ],
+      "correct": "Teste une condition",
+      "explanation": "L’instruction `if` permet d’exécuter du code uniquement si une condition est vraie."
+    },
+    {
+      "question": "Comment commence un commentaire en Python ?",
+      "options": [
+        "Avec un #",
+        "Avec //",
+        "Avec <!--",
+        "Avec **"
+      ],
+      "correct": "Avec un #",
+      "explanation": "En Python, les commentaires commencent par un `#`."
+    },
+    {
+      "question": "Que signifie l’acronyme CPU ?",
+      "options": [
+        "Central Processing Unit",
+        "Computer Program Utility",
+        "Cyber Power User",
+        "Core Processor Unit"
+      ],
+      "correct": "Central Processing Unit",
+      "explanation": "Le CPU est le processeur central qui exécute les instructions d’un ordinateur."
+    },
+    {
+      "question": "Quel est l'intérêt des fonctions en programmation ?",
+      "options": [
+        "Éviter la répétition de code",
+        "Rendre le programme plus lent",
+        "Arrêter un programme",
+        "Exécuter un code une seule fois"
+      ],
+      "correct": "Éviter la répétition de code",
+      "explanation": "Les fonctions permettent d’organiser et de réutiliser du code facilement."
+    },
+    {
+      "question": "Quel est le rôle d’un fichier CSS ?",
+      "options": [
+        "Gérer l’apparence d’un site web",
+        "Stocker des images",
+        "Écrire du code Python",
+        "Créer des bases de données"
+      ],
+      "correct": "Gérer l’apparence d’un site web",
+      "explanation": "Le CSS est utilisé pour modifier l’apparence des pages web."
+    },
+    {
+      "question": "Que signifie l'acronyme URL ?",
+      "options": [
+        "Uniform Resource Locator",
+        "Universal Remote Language",
+        "Unique Resource Link",
+        "User Random Location"
+      ],
+      "correct": "Uniform Resource Locator",
+      "explanation": "Une URL est une adresse qui permet d’accéder à une ressource sur Internet."
+    },
+    {
+      "question": "Que permet l’instruction `import` en Python ?",
+      "options": [
+        "Utiliser une bibliothèque",
+        "Créer une boucle",
+        "Afficher du texte",
+        "Déclarer une variable"
+      ],
+      "correct": "Utiliser une bibliothèque",
+      "explanation": "L’instruction `import` permet d’utiliser des modules Python déjà existants."
+    },
+    {
+      "question": "Comment arrondir un nombre en Python ?",
+      "options": [
+        "Avec la fonction round()",
+        "Avec la fonction ceil()",
+        "Avec la fonction sqrt()",
+        "Avec la fonction trunc()"
+      ],
+      "correct": "Avec la fonction round()",
+      "explanation": "La fonction `round()` permet d’arrondir un nombre au plus proche."
+    }
+  ]
+}

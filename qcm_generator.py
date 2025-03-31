@@ -13,6 +13,25 @@ from prompts import get_qcm_prompt
 
 # Constantes
 QCM_FILE_PATH = 'exercices/qcm_questions.json'
+QCM_SETTINGS_PATH = 'exercices/qcm_settings.json'
+
+def load_qcm_settings():
+    """
+    Charge la configuration des QCM depuis le fichier JSON.
+    
+    Returns:
+        Un dictionnaire contenant la configuration ou None si le fichier n'existe pas
+    """
+    try:
+        if os.path.exists(QCM_SETTINGS_PATH):
+            with open(QCM_SETTINGS_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+    except json.JSONDecodeError:
+        print(f"Erreur de décodage JSON dans {QCM_SETTINGS_PATH}")
+    except Exception as e:
+        print(f"Erreur lors du chargement des paramètres QCM: {e}")
+    
+    return None
 THEMES = {
     'Troisième': ['Variables et types', 'Conditions', 'Boucles', 'Listes', 'Fonctions de base'],
     'SNT': ['Internet', 'Web', 'Réseaux sociaux', 'Données structurées', 'Informatique embarquée'],
@@ -23,36 +42,64 @@ THEMES = {
 
 def load_qcm_questions():
     """
-    Charge les questions QCM depuis le fichier JSON.
+    Charge les questions QCM depuis les fichiers JSON par niveau.
     
     Returns:
         Un dictionnaire contenant les questions par niveau
     """
-    if os.path.exists(QCM_FILE_PATH):
-        try:
-            with open(QCM_FILE_PATH, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except json.JSONDecodeError:
-            print(f"Erreur de décodage JSON dans {QCM_FILE_PATH}")
-            return {}
-    else:
-        # Créer un fichier vide avec la structure de base
-        questions = {level: [] for level in THEMES.keys()}
-        save_qcm_questions(questions)
-        return questions
+    questions = {level: [] for level in THEMES.keys()}
+    
+    for level in THEMES.keys():
+        level_file = f"exercices/{level}.json"
+        
+        # Si le fichier spécifique au niveau n'existe pas, utiliser autre.json
+        if not os.path.exists(level_file):
+            level_file = "exercices/autre.json"
+            
+        if os.path.exists(level_file):
+            try:
+                with open(level_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    # Gérer soit un tableau direct soit un objet avec sous-tableaux
+                    if isinstance(data, list):  
+                        level_questions = data
+                    elif isinstance(data, dict):
+                        # Prendre le premier tableau trouvé dans le dictionnaire
+                        for key in data:
+                            if isinstance(data[key], list):
+                                level_questions = data[key]
+                                break
+                        else:
+                            level_questions = []
+                    else:
+                        level_questions = []
+                        
+                    questions[level] = level_questions
+            except json.JSONDecodeError:
+                print(f"Erreur de décodage JSON dans {level_file}")
+    
+    return questions
 
 def save_qcm_questions(questions):
     """
-    Sauvegarde les questions QCM dans le fichier JSON.
+    Sauvegarde les questions QCM dans les fichiers JSON par niveau.
     
     Args:
         questions: Un dictionnaire contenant les questions par niveau
     """
-    # Créer le répertoire si nécessaire
-    os.makedirs(os.path.dirname(QCM_FILE_PATH), exist_ok=True)
-    
-    with open(QCM_FILE_PATH, 'w', encoding='utf-8') as f:
-        json.dump(questions, f, ensure_ascii=False, indent=2)
+    for level, level_questions in questions.items():
+        level_file = f"exercices/{level}.json"
+        
+        # Si le niveau est valide et il y a des questions à sauvegarder
+        if level in THEMES and level_questions:
+            try:
+                # Créer le répertoire si nécessaire
+                os.makedirs(os.path.dirname(level_file), exist_ok=True)
+                
+                with open(level_file, 'w', encoding='utf-8') as f:
+                    json.dump(level_questions, f, ensure_ascii=False, indent=2)
+            except Exception as e:
+                print(f"Erreur lors de la sauvegarde des questions pour {level}: {e}")
 
 def add_questions_to_level(level, count=3, ai_provider_name=None):
     """

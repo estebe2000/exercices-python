@@ -1,0 +1,158 @@
+{
+  "Première Générale NSI": [
+    {
+      "question": "Quelle est la complexité moyenne de l’algorithme de tri rapide (QuickSort) ?",
+      "options": [
+        "O(n log n)",
+        "O(n²)",
+        "O(n)",
+        "O(log n)"
+      ],
+      "correct": "O(n log n)",
+      "explanation": "Le tri rapide (QuickSort) a une complexité moyenne de O(n log n), ce qui en fait un algorithme efficace."
+    },
+    {
+      "question": "Quelle structure de données fonctionne selon le principe FIFO (First In, First Out) ?",
+      "options": [
+        "Une file",
+        "Une pile",
+        "Un tableau",
+        "Un dictionnaire"
+      ],
+      "correct": "Une file",
+      "explanation": "Dans une file (queue), le premier élément inséré est le premier à être retiré (FIFO)."
+    },
+    {
+      "question": "Quel est le rôle d’une fonction récursive ?",
+      "options": [
+        "S’appeler elle-même pour résoudre un problème",
+        "Exécuter du code en boucle",
+        "Créer un programme graphique",
+        "Définir une variable globale"
+      ],
+      "correct": "S’appeler elle-même pour résoudre un problème",
+      "explanation": "Une fonction récursive est une fonction qui s'appelle elle-même pour résoudre un problème."
+    },
+    {
+      "question": "Quelle est la différence entre une liste et un dictionnaire en Python ?",
+      "options": [
+        "Un dictionnaire associe des clés à des valeurs, une liste stocke des éléments ordonnés",
+        "Une liste ne peut contenir que des nombres, un dictionnaire peut contenir des chaînes",
+        "Une liste est plus rapide qu’un dictionnaire",
+        "Un dictionnaire est utilisé pour stocker des données numériques"
+      ],
+      "correct": "Un dictionnaire associe des clés à des valeurs, une liste stocke des éléments ordonnés",
+      "explanation": "Une liste stocke des éléments ordonnés accessibles par un index, alors qu'un dictionnaire associe des clés à des valeurs."
+    },
+    {
+      "question": "Que retourne l’expression `len([3, [4, 5], 6])` en Python ?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "Erreur"
+      ],
+      "correct": "3",
+      "explanation": "La fonction `len()` compte les éléments de premier niveau. Ici, la liste contient trois éléments : `3`, `[4, 5]` et `6`."
+    },
+    {
+      "question": "Quel est l’intérêt d’un arbre binaire de recherche (ABR) ?",
+      "options": [
+        "Permet une recherche rapide des données",
+        "Occupe moins d’espace mémoire",
+        "Est plus facile à coder qu’un tableau",
+        "Permet d'exécuter des programmes en parallèle"
+      ],
+      "correct": "Permet une recherche rapide des données",
+      "explanation": "Un ABR est structuré de manière à permettre une recherche efficace avec une complexité en O(log n) en moyenne."
+    },
+    {
+      "question": "Que fait la méthode `pop()` appliquée à une liste en Python ?",
+      "options": [
+        "Supprime et retourne le dernier élément",
+        "Ajoute un élément en fin de liste",
+        "Trie la liste",
+        "Copie la liste"
+      ],
+      "correct": "Supprime et retourne le dernier élément",
+      "explanation": "La méthode `pop()` supprime et retourne le dernier élément d’une liste par défaut."
+    },
+    {
+      "question": "Quelle est la différence entre un algorithme glouton et un algorithme dynamique ?",
+      "options": [
+        "Un algorithme glouton prend des décisions locales optimales, un algorithme dynamique optimise globalement",
+        "Un algorithme dynamique est plus rapide",
+        "Un algorithme glouton fonctionne uniquement avec des nombres",
+        "Un algorithme glouton est plus efficace dans tous les cas"
+      ],
+      "correct": "Un algorithme glouton prend des décisions locales optimales, un algorithme dynamique optimise globalement",
+      "explanation": "Les algorithmes gloutons prennent des décisions optimales à chaque étape sans forcément garantir une solution optimale globale."
+    },
+    {
+      "question": "Quel est le principe de la notation Big-O ?",
+      "options": [
+        "Exprimer la complexité d’un algorithme en fonction de la taille des données",
+        "Décrire l’espace mémoire utilisé par un programme",
+        "Mesurer la vitesse d’exécution d’un ordinateur",
+        "Déterminer si un programme contient des erreurs"
+      ],
+      "correct": "Exprimer la complexité d’un algorithme en fonction de la taille des données",
+      "explanation": "La notation Big-O permet de quantifier la performance d’un algorithme en fonction du nombre d’entrées."
+    },
+    {
+      "question": "Que fait la fonction `zip()` en Python ?",
+      "options": [
+        "Associe plusieurs listes élément par élément",
+        "Crée un fichier compressé",
+        "Concatène deux chaînes",
+        "Inverse une liste"
+      ],
+      "correct": "Associe plusieurs listes élément par élément",
+      "explanation": "La fonction `zip()` regroupe les éléments de plusieurs listes en tuples."
+    },
+    {
+      "question": "Comment s’appelle le protocole qui permet de transférer des fichiers sur un serveur ?",
+      "options": [
+        "FTP",
+        "HTTP",
+        "SMTP",
+        "DNS"
+      ],
+      "correct": "FTP",
+      "explanation": "Le protocole FTP (File Transfer Protocol) est utilisé pour transférer des fichiers sur un serveur."
+    },
+    {
+      "question": "Quel est le rôle d’un système d’exploitation ?",
+      "options": [
+        "Gérer les ressources matérielles et logicielles d’un ordinateur",
+        "Exécuter uniquement des jeux vidéo",
+        "Transformer du code en binaire",
+        "Analyser les emails"
+      ],
+      "correct": "Gérer les ressources matérielles et logicielles d’un ordinateur",
+      "explanation": "Le système d’exploitation gère les interactions entre le matériel et les logiciels."
+    },
+    {
+      "question": "Quel est l’intérêt des bases de données relationnelles ?",
+      "options": [
+        "Elles permettent d’organiser les données sous forme de tables avec des relations",
+        "Elles sont plus rapides que les fichiers textes",
+        "Elles ne prennent pas d’espace mémoire",
+        "Elles sont toujours stockées sur Internet"
+      ],
+      "correct": "Elles permettent d’organiser les données sous forme de tables avec des relations",
+      "explanation": "Les bases de données relationnelles organisent les informations en tables connectées entre elles."
+    },
+    {
+      "question": "Quel est le langage utilisé pour interagir avec les bases de données relationnelles ?",
+      "options": [
+        "SQL",
+        "Python",
+        "C++",
+        "HTML"
+      ],
+      "correct": "SQL",
+      "explanation": "SQL (Structured Query Language) est utilisé pour manipuler les bases de données relationnelles."
+    }
+  ]
+}

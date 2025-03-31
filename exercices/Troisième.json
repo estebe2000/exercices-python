@@ -1,0 +1,224 @@
+{
+  "Troisième": [
+    {
+      "question": "Que signifie l'acronyme HTML ?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Hyper Transfer Machine Language",
+        "Home Tool Markup Language"
+      ],
+      "correct": "Hyper Text Markup Language",
+      "explanation": "HTML est le langage utilisé pour structurer les pages web."
+    },
+    {
+      "question": "Quelle extension de fichier est utilisée pour les pages web en HTML ?",
+      "options": [
+        ".html",
+        ".css",
+        ".py",
+        ".exe"
+      ],
+      "correct": ".html",
+      "explanation": "Les fichiers HTML ont l'extension .html ou .htm."
+    },
+    {
+      "question": "Quelle est la fonction principale du CSS ?",
+      "options": [
+        "Ajouter du style aux pages web",
+        "Exécuter du code Python",
+        "Créer une base de données",
+        "Compiler du code Java"
+      ],
+      "correct": "Ajouter du style aux pages web",
+      "explanation": "Le CSS est utilisé pour définir la mise en page et le style des pages HTML."
+    },
+    {
+      "question": "Quel symbole est utilisé pour insérer un commentaire en Python ?",
+      "options": [
+        "#",
+        "//",
+        "/* */",
+        "--"
+      ],
+      "correct": "#",
+      "explanation": "En Python, les commentaires commencent par un dièse (#)."
+    },
+    {
+      "question": "Quel est le rôle d’une boucle en programmation ?",
+      "options": [
+        "Répéter un ensemble d'instructions",
+        "Définir une variable",
+        "Arrêter un programme",
+        "Créer une base de données"
+      ],
+      "correct": "Répéter un ensemble d'instructions",
+      "explanation": "Les boucles permettent d'exécuter plusieurs fois un bloc de code."
+    },
+    {
+      "question": "Que retourne `len([10, 20, 30])` en Python ?",
+      "options": [
+        "3",
+        "10",
+        "20",
+        "30"
+      ],
+      "correct": "3",
+      "explanation": "La fonction `len()` retourne le nombre d'éléments dans une liste."
+    },
+    {
+      "question": "Quelle fonction permet d’afficher du texte à l’écran en Python ?",
+      "options": [
+        "print()",
+        "echo()",
+        "display()",
+        "show()"
+      ],
+      "correct": "print()",
+      "explanation": "La fonction `print()` est utilisée pour afficher du texte dans la console."
+    },
+    {
+      "question": "Quelle est la valeur de `5 // 2` en Python ?",
+      "options": [
+        "2",
+        "2.5",
+        "3",
+        "5"
+      ],
+      "correct": "2",
+      "explanation": "L'opérateur `//` effectue une division entière, donnant un résultat sans décimale."
+    },
+    {
+      "question": "Comment concaténer deux chaînes de caractères en Python ?",
+      "options": [
+        "`chaine1 + chaine2`",
+        "`chaine1 * chaine2`",
+        "`concat(chaine1, chaine2)`",
+        "`merge(chaine1, chaine2)`"
+      ],
+      "correct": "`chaine1 + chaine2`",
+      "explanation": "L'opérateur `+` est utilisé pour concaténer deux chaînes en Python."
+    },
+    {
+      "question": "Quelle est la sortie du code suivant en Python ?\n```\na = 5\nb = '5'\nprint(a + int(b))\n```",
+      "options": [
+        "10",
+        "55",
+        "TypeError",
+        "5 + '5'"
+      ],
+      "correct": "10",
+      "explanation": "La fonction `int(b)` convertit '5' en entier, permettant l'addition."
+    },
+    {
+      "question": "Quelle est la valeur de `True and False` en Python ?",
+      "options": [
+        "False",
+        "True",
+        "1",
+        "Erreur"
+      ],
+      "correct": "False",
+      "explanation": "L'opérateur `and` retourne `False` si au moins un des opérandes est `False`."
+    },
+    {
+      "question": "Quel langage est principalement utilisé pour créer des sites web interactifs ?",
+      "options": [
+        "JavaScript",
+        "Python",
+        "Java",
+        "C++"
+      ],
+      "correct": "JavaScript",
+      "explanation": "JavaScript est utilisé pour ajouter de l'interactivité aux sites web."
+    },
+    {
+      "question": "Que signifie l'acronyme URL ?",
+      "options": [
+        "Uniform Resource Locator",
+        "Universal Reference Link",
+        "Unified Routing List",
+        "User Request Link"
+      ],
+      "correct": "Uniform Resource Locator",
+      "explanation": "L'URL est l'adresse d'une ressource sur le web."
+    },
+    {
+      "question": "Quel élément permet de stocker une valeur dans un programme ?",
+      "options": [
+        "Une variable",
+        "Une boucle",
+        "Une fonction",
+        "Une condition"
+      ],
+      "correct": "Une variable",
+      "explanation": "Une variable est utilisée pour stocker des valeurs en programmation."
+    },
+    {
+      "question": "Que signifie l’acronyme CPU ?",
+      "options": [
+        "Central Processing Unit",
+        "Computer Personal Unit",
+        "Central Program Unit",
+        "Control Processing Unit"
+      ],
+      "correct": "Central Processing Unit",
+      "explanation": "Le CPU est le processeur principal d'un ordinateur."
+    },
+    {
+      "question": "Quelle est l’unité de mesure de la fréquence d’un processeur ?",
+      "options": [
+        "Hertz",
+        "Octet",
+        "Pixel",
+        "Watt"
+      ],
+      "correct": "Hertz",
+      "explanation": "La fréquence d'un processeur est mesurée en Hertz (Hz)."
+    },
+    {
+      "question": "Quelle est la différence entre Internet et le Web ?",
+      "options": [
+        "Internet est un réseau, le Web est un service",
+        "Ils sont identiques",
+        "Le Web est plus ancien qu'Internet",
+        "Internet est un site web"
+      ],
+      "correct": "Internet est un réseau, le Web est un service",
+      "explanation": "Internet est l'infrastructure réseau, tandis que le Web est un service qui fonctionne sur Internet."
+    },
+    {
+      "question": "Quelle balise HTML est utilisée pour créer un lien hypertexte ?",
+      "options": [
+        "<a>",
+        "<link>",
+        "<url>",
+        "<href>"
+      ],
+      "correct": "<a>",
+      "explanation": "La balise `<a>` permet de créer des liens vers d'autres pages."
+    },
+    {
+      "question": "Quelle instruction permet d’arrêter une boucle en Python ?",
+      "options": [
+        "break",
+        "stop",
+        "exit",
+        "halt"
+      ],
+      "correct": "break",
+      "explanation": "L'instruction `break` permet de sortir immédiatement d'une boucle."
+    },
+    {
+      "question": "Comment appelle-t-on une erreur dans un programme informatique ?",
+      "options": [
+        "Un bug",
+        "Un virus",
+        "Un fichier",
+        "Une boucle"
+      ],
+      "correct": "Un bug",
+      "explanation": "Un bug est une erreur dans un programme informatique."
+    }
+  ]
+}
