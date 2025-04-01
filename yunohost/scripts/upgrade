@@ -1,0 +1,15 @@
+#!/bin/bash
+# Script de mise à jour YunoHost
+
+# Arrêt temporaire du service
+systemctl stop $YNH_APP_INSTANCE_NAME.service
+
+# Mise à jour du code source
+cp -r * /opt/yunohost/$YNH_APP_INSTANCE_NAME/
+
+# Mise à jour des dépendances
+source /opt/yunohost/$YNH_APP_INSTANCE_NAME/venv/bin/activate
+pip install -r /opt/yunohost/$YNH_APP_INSTANCE_NAME/requirements.txt --upgrade
+
+# Redémarrage du service
+systemctl start $YNH_APP_INSTANCE_NAME.service

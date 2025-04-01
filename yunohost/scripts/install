@@ -1,0 +1,47 @@
+#!/bin/bash
+# Script d'installation YunoHost
+
+# Variables
+APP_DIR="/opt/yunohost/$YNH_APP_INSTANCE_NAME"
+VENV_DIR="$APP_DIR/venv"
+
+# Création des répertoires
+mkdir -p $APP_DIR
+mkdir -p $APP_DIR/uploads
+mkdir -p $APP_DIR/logs
+mkdir -p $APP_DIR/instance
+
+# Installation des dépendances système
+apt-get install -y python3-venv python3-dev
+
+# Création de l'environnement virtuel
+python3 -m venv $VENV_DIR
+source $VENV_DIR/bin/activate
+
+# Installation des dépendances Python
+pip install -r $APP_DIR/requirements.txt
+
+# Configuration des permissions
+chown -R $YNH_APP_INSTANCE_NAME: $APP_DIR
+
+# Configuration du service systemd
+cat > /etc/systemd/system/$YNH_APP_INSTANCE_NAME.service <<EOF
+[Unit]
+Description=Exercices Python App
+After=network.target
+
+[Service]
+User=$YNH_APP_INSTANCE_NAME
+WorkingDirectory=$APP_DIR
+Environment="FLASK_APP=app.py"
+Environment="FLASK_ENV=production"
+ExecStart=$VENV_DIR/bin/gunicorn --bind 127.0.0.1:5000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Activation du service
+systemctl enable $YNH_APP_INSTANCE_NAME.service
+systemctl start $YNH_APP_INSTANCE_NAME.service

@@ -1,0 +1,15 @@
+#!/bin/bash
+# Script de désinstallation YunoHost
+
+# Arrêt et désactivation du service
+systemctl stop $YNH_APP_INSTANCE_NAME.service
+systemctl disable $YNH_APP_INSTANCE_NAME.service
+rm -f /etc/systemd/system/$YNH_APP_INSTANCE_NAME.service
+
+# Suppression des fichiers
+rm -rf /opt/yunohost/$YNH_APP_INSTANCE_NAME
+
+# Suppression de l'utilisateur
+if ynh_user_exists $YNH_APP_INSTANCE_NAME; then
+    ynh_system_user_remove $YNH_APP_INSTANCE_NAME
+fi
