@@ -1,0 +1,19 @@
+{
+  "name": "ExercicesPython",
+  "description": "Application d'exercices Python pour l'éducation",
+  "version": "1.0",
+  "url": "https://github.com/votre-repo/exercices-python",
+  "license": "free",
+  "requirements": {
+    "python": ">=3.7"
+  },
+  "multi_instance": false,
+  "install": {
+    "domain": "DOMAIN",
+    "path": "exercices-python",
+    "admin": {
+      "username": "admin",
+      "password": "PASSWORD"
+    }
+  }
+}
