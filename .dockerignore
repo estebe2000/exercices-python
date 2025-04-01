@@ -1,0 +1,25 @@
+# Fichiers Python générés
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environnements virtuels
+venv
+.env
+.venv
+env/
+
+# Dossiers de développement
+.git
+.gitignore
+.vscode
+
+# Fichiers de données
+instance/ged.db
+logs/*
+uploads/*
+
+# Fichiers de configuration locale
+*.local

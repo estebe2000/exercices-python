@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./instance:/app/instance
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    environment:
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY:-dev_key_123}
+    restart: unless-stopped
